@@ -1,17 +1,28 @@
-@startuml
+@startuml clinicaApp
 class Persona{
-    - int rut
-    - int digitoVerificador
-    - sexo sexo
-    - DateTime fechaNacimiento
-    - int edad
-    - string direccion
-    - int telefono
+    - rut: int
+    - digitoVerificador: int
+    - sexo: Sexo
+    - fechaNacimiento:DateTime
+    - edad:int
+    - direccion: string
+    - telefono: int 
 }
-class Paciente{}
+class Paciente{
+    -motivoDeConsulta: string 
+    - Prevision: prevision
+    - tieneTutor: bool
+    - fechaAtencion: DateTime
+}
+class Tutor{
+    - relacionPaciente: Relacion
+    
+}
 class Secretarios{}
 class Limpieza{}
-class Medico{}
+class Medico{
+
+}
 class Gerencia{}
 class Medicamento {}
 class Desechables {}
@@ -24,30 +35,32 @@ interface Trabajadores{}
 interface Insumo {}
 interface Infraestructura{}
 
-enum sexo{
+enum Sexo{
 
 }
-enum prevision{
+enum Prevision{
 
 }
 
 enum AFP{
 
 }
-enum relacion{
+enum Relacion{
 
 }
-enum turnoTrabajo{
+enum TurnoTrabajo{
 
 }
 
 'Relaciones 
+'Herencias
 Persona<-- Paciente 
 Persona<-- Secretarios 
 Persona<-- Limpieza 
 Persona<-- Medico 
 Persona<-- Gerencia 
 Persona<-- Seguridad 
-
+'Asociaciones
+Paciente -- Tutor
 @enduml
 
