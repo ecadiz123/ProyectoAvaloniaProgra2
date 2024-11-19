@@ -8,9 +8,9 @@ namespace ProyectoConsultorio.Clases
 {
     internal class Paciente : Persona
     {
-        string motivoconsulta = string.Empty;
-        bool tutor;
-        DateTime fechaatencion;
+        private string motivoconsulta = string.Empty;
+        private bool tutor;
+        private DateTime fechaatencion;
 
         public string Motivoconsulta { get => motivoconsulta; set => motivoconsulta = value; }
         public bool Tutor { get => tutor; set => tutor = value; }

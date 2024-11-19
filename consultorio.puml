@@ -7,16 +7,15 @@ class Persona{
     - edad:int
     - direccion: string
     - telefono: int 
+    - Prevision: prevision
 }
 class Paciente{
-    -motivoDeConsulta: string 
-    - Prevision: prevision
+    - motivoDeConsulta: string 
     - tieneTutor: bool
     - fechaAtencion: DateTime
 }
 class Tutor{
     - relacionPaciente: Relacion
-    
 }
 class Secretarios{}
 class Limpieza{}
@@ -34,22 +33,37 @@ class Seguridad{}
 interface Trabajadores{}
 interface Insumo {}
 interface Infraestructura{}
+interface Cliente{}
 
 enum Sexo{
-
+    MASCULINO
+    FEMENINO
 }
 enum Prevision{
-
+    FONASA
+    ISAPRE
 }
 
 enum AFP{
-
+    CAPITAL
+    HABITAT
+    UNO
+    CUPRUM
+    MODELO
+    PLANVITAL
+    PROVIDA
 }
 enum Relacion{
-
+    PADRE
+    MADRE
+    HIJO
+    HIJA
+    OTRO
 }
 enum TurnoTrabajo{
-
+    DIA
+    TARDE
+    NOCHE
 }
 
 'Relaciones 

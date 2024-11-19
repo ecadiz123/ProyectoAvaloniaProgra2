@@ -8,18 +8,18 @@ namespace ProyectoConsultorio.Clases
 {
     internal class Medico : Persona
     {
-        int box;
-        List<DateTime> horasagendadas = new List<DateTime>();
-        List<Paciente> pacientes = new List<Paciente>();
+        private int box;
+        private List<DateTime> horasagendadas = new List<DateTime>();
+        private List<Paciente> pacientes = new List<Paciente>();
 
         public int Box { get => box; set => box = value; }
 
-        void AgregarPaciente(Paciente pas,DateTime fecha)
+        public void AgregarPaciente(Paciente pas,DateTime fecha)
         {
             horasagendadas.Add(fecha);
             pacientes.Add(pas);
         }
-        void EliminarPaciente()
+        public void EliminarPaciente()
         {
             //
         }
