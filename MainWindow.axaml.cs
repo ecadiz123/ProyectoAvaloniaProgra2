@@ -1,4 +1,5 @@
 using Avalonia.Controls;
+using ProyectoConsultorio.Clases;
 
 namespace ProyectoConsultorio
 {
