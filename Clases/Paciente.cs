@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoConsultorio.Clases
 {
-    internal class Paciente
+    internal class Paciente : Persona
     {
         string motivoconsulta = string.Empty;
         bool tutor;
