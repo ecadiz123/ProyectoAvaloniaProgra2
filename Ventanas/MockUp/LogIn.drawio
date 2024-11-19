@@ -1,0 +1,28 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" version="24.8.6">
+  <diagram name="Page-1" id="HPwEfDvkUm1kLfp7Zlqb">
+    <mxGraphModel dx="1434" dy="780" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="9xPF1HUpIvRMGAu8CKrI-1" value="Log In" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.window;align=left;verticalAlign=top;spacingLeft=8;strokeColor2=#008cff;strokeColor3=#c4c4c4;mainText=;fontSize=17;labelBackgroundColor=none;whiteSpace=wrap;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" vertex="1" parent="1">
+          <mxGeometry x="60" y="10" width="550" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="9xPF1HUpIvRMGAu8CKrI-2" value="Contraseña" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.text.textBox;fontColor=#666666;align=left;fontSize=17;spacingLeft=4;spacingTop=-3;whiteSpace=wrap;strokeColor=#666666;mainText=" vertex="1" parent="1">
+          <mxGeometry x="260" y="240" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="9xPF1HUpIvRMGAu8CKrI-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="9xPF1HUpIvRMGAu8CKrI-3" target="9xPF1HUpIvRMGAu8CKrI-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9xPF1HUpIvRMGAu8CKrI-3" value="Usuario" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.text.textBox;fontColor=#666666;align=left;fontSize=17;spacingLeft=4;spacingTop=-3;whiteSpace=wrap;strokeColor=#666666;mainText=" vertex="1" parent="1">
+          <mxGeometry x="260" y="180" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="9xPF1HUpIvRMGAu8CKrI-5" value="Ingresar" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.buttons.button;strokeColor=#666666;fontColor=#ffffff;mainText=;buttonStyle=round;fontSize=17;fontStyle=1;fillColor=#008cff;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="260" y="300" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="9xPF1HUpIvRMGAu8CKrI-6" value="&quot;Clinica Salud&quot;" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="285" y="100" width="100" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
