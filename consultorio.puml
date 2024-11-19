@@ -1,5 +1,7 @@
 @startuml clinicaApp
-class Persona{
+package Personas
+{
+    class Persona{
     - rut: int
     - digitoVerificador: int
     - sexo: Sexo
@@ -17,12 +19,8 @@ class Paciente{
 class Tutor{
     - relacionPaciente: Relacion
 }
-class Secretarios{}
 class Limpieza{}
-class Medico{
 
-}
-class Gerencia{}
 class Medicamento {}
 class Desechables {}
 class SalaDeEspera {}
@@ -38,6 +36,7 @@ interface Cliente{}
 enum Sexo{
     MASCULINO
     FEMENINO
+    OTRO
 }
 enum Prevision{
     FONASA
@@ -74,7 +73,36 @@ Persona<-- Limpieza
 Persona<-- Medico 
 Persona<-- Gerencia 
 Persona<-- Seguridad 
+Persona<-- Tutor
+Persona<-- TENS
 'Asociaciones
 Paciente -- Tutor
+}
+package Usuarios
+{
+    interface IUsuario
+    {
+        LogIn(string,string):void
+        LogOut():void
+        UserName:string
+        Password:string
+        }
+    class Secretario{
+        -userName: string
+        -password: string
+    } 
+    class Medico{}
+
+    class Gerente
+    {
+        -nombre: string
+        -contrasenhia: string
+        
+    }
+    Persona <|-- IUsuario
+    IUsuario<|.. Secretario
+    IUsuario<|.. Gerente
+    IUsuario<|.. Medico
+}
 @enduml
 
