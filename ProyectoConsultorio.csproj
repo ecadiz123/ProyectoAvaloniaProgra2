@@ -22,8 +22,13 @@
 		<Folder Include="Recursos\Imagenes\" />
 		<Folder Include="Recursos\Fuentes\" />
 		<Folder Include="Recursos\Estilos\" />
-		<Folder Include="Ventanas\"/>
-		<AvaloniaResource Include="Recursos\**"/>
+		<Folder Include="Ventanas\" />
+		<AvaloniaResource Include="Recursos\**" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Compile Update="SecondWindow.axaml.cs">
+	    <DependentUpon>SecondWindow.axaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 </Project>

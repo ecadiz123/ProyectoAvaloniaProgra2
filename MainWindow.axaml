@@ -6,28 +6,48 @@
         x:Class="ProyectoConsultorio.MainWindow"
         Title="ProyectoConsultorio">
 
-    	<ScrollViewer>
-		<StackPanel Margin="10" HorizontalAlignment="Left" VerticalAlignment="Top">
+	<ScrollViewer>
+		<StackPanel Margin="10" HorizontalAlignment="Center" VerticalAlignment="Top">
+				<StackPanel>
+					<TextBlock Margin="5" FontSize="30" FontWeight="Bold" Text ="Datos del cliente"/>
+				</StackPanel>
+				<StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal">
+					<TextBox Background="#dfe3f2" Width="400" Margin="5" x:Name="tbRUT" Watermark="RUT(Sin puntos) Ej: 12345678"/>
+					<!-- <TextBlock Margin="5" Text="-"/> -->
+					<!-- <TextBox Margin="5" x:Name="tbVerificador" Watermark="DIGITO VERIFICADOR Ej: 9"/> -->
+					<TextBox Background="#dfe3f2" Width="400" Margin="5" x:Name="tbNombres" Watermark="Nombres"/>
+				</StackPanel>
 
+				<StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal">
+					<TextBox Background="#dfe3f2" Width="400" Margin="5" x:Name="tbApellidoPaterno" Watermark="Apellido Paterno"/>
+					<TextBox Background="#dfe3f2" Width="400" Margin="5" x:Name="tbApellidoMaterno" Watermark="Apellido Materno"/>
+				</StackPanel>
+
+				<StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal">
+					<TextBlock Margin="5" FontSize="10">
+						Fecha de <LineBreak /> Nacimiento
+					</TextBlock>
+					<DatePicker Background="#dfe3f2" Margin="5" Width="336" DayFormat="ddd dd"/>
+					<TextBox Background="#dfe3f2" Width="400" Margin="5" x:Name="tbTelefono" Watermark="Telefono Ej: 9 12345678"/>
+				</StackPanel>
+				<StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal">
+					<TextBox Background="#dfe3f2" Width="400" Margin="5" x:Name="tbMail" Watermark="email"/>
+					<ComboBox Background="#dfe3f2" PlaceholderText="Seleccione su previsión" Width="400" Margin="5" MaxDropDownHeight="100">
+						<ComboBoxItem>Fonasa</ComboBoxItem>
+						<ComboBoxItem>Banmédica</ComboBoxItem>
+						<ComboBoxItem>Colmena</ComboBoxItem>
+						<ComboBoxItem>Consalud</ComboBoxItem>
+						<ComboBoxItem>Cruz Blanca</ComboBoxItem>
+						<ComboBoxItem>Más Vida</ComboBoxItem>
+						<ComboBoxItem>Vida Tres</ComboBoxItem>
+						<ComboBoxItem>Optima</ComboBoxItem>
+						<ComboBoxItem>Particular</ComboBoxItem>
+					</ComboBox>
+				</StackPanel>
+			
 			<StackPanel>
-				<TextBlock Margin="5" FontSize="30" FontWeight="Bold" Text ="Datos del cliente"/>
-			</StackPanel>
-			<StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal">
-				<TextBox Width="400" Margin="5" x:Name="tbRUT" Watermark="RUT(Sin puntos) Ej: 12345678"/>
-				<!-- <TextBlock Margin="5" Text="-"/> -->
-				<!-- <TextBox Margin="5" x:Name="tbVerificador" Watermark="DIGITO VERIFICADOR Ej: 9"/> -->
-				<TextBox Width="400" Margin="5" x:Name="tbNombres" Watermark="Nombres"/>
-			</StackPanel>
-
-			<StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal">
-				<TextBox Width="400" Margin="5" x:Name="tbApellidoPaterno" Watermark="Apellido Paterno"/>
-				<TextBox Width="400" Margin="5" x:Name="tbApellidoMaterno" Watermark="Apellido Materno"/>
-			</StackPanel>
-
-			<StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal">
-				<TextBlock Margin="5" FontSize="10"> Fecha de <LineBreak /> Nacimiento </TextBlock>
-				<DatePicker Margin="5" Width="336" DayFormat="ddd dd"/>
-				<TextBox Width="400" Margin="5" x:Name="tbTelefono" Watermark="Telefono Ej: 9 12345678"/>
+				<TextBlock HorizontalAlignment="Center" Margin="10"/>
+				<Button Content="Abrir Ventana Secundaria" Click="AbrirVentanaSecundaria" HorizontalAlignment="Center" Margin="10"/>
 			</StackPanel>
 			
 		</StackPanel>
