@@ -8,6 +8,13 @@ namespace ProyectoConsultorio
         public MainWindow()
         {
             InitializeComponent();
+
+        }
+        private void AbrirVentanaSecundaria(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            var secondWindow = new SecondWindow();
+            secondWindow.Show(); // Muestra la ventana secundaria
+            this.Close();
         }
     }
 }
