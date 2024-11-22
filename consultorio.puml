@@ -1,159 +1,66 @@
 @startuml clinicaApp
-package Clinica
-{
-    class Persona{
-        - rut: int
-        - digitoVerificador: int
-        - sexo: Sexo
-        - fechaNacimiento:DateTime
-        - edad:int
-        - direccion: string
-        - telefono: int
-        - Prevision: prevision
-    }
-    enum TurnoTrabajo{
-        DIA
-        TARDE
-        NOCHE
-    }
-    enum Sexo{
-        MASCULINO
-        FEMENINO
-        OTRO
-    }
-    enum Prevision{
-        FONASA
-        ISAPRE
-    }
-
-    enum AFP{
-        CAPITAL
-        HABITAT
-        UNO
-        CUPRUM
-        MODELO
-        PLANVITAL
-        PROVIDA
-    }
-    package Infraestructura
-    {
-        interface Infraestructura{
-            CapacidadPersonasMax: int
-            ContadorPersonasActuales:int
-            AddPersonaActual(int):void
-            EliminarPersonaActual(int):void
-        }
-        class Box{
-            medicoDeTurno: Medico
-            limpiezaDeTurno: List<Limpieza>
-            CambioDeTurno(Medico):void
-            CambioLimpieza(List<Limpieza>):void
-        }
-        class SalaDeEspera {
-            seguridadDeTurno: List<Seguridad>
-            CambioDeTurno(List<Seguridad>): void
-        }
-        'Agregacion
-        Box o-- Medico
-        SalaDeEspera o-- Seguridad
-        'Asociacion
-        Box "2" -- Limpieza
-        'Composicion
-        Box o-- Medicamento
-        Box o-- Desechables
-        'Interfaz
-        Infraestructura<|.. Box
-        Infraestructura<|.. SalaDeEspera
-
-    }
-    package Inventario
-    {
-
-        interface Insumo {
-            Cantidad:int
-            AddCantidad(int):void
-            VerCantidad():int
-            RestarCantidad(int):void
-        }
-        class Medicamento {}
-        class Desechables {}
-        'Interfaz
-        Insumo<|.. Medicamento
-        Insumo<|.. Desechables
-    }
-    package Personas
-    {
-
-
-        class Paciente{
-            - motivoDeConsulta: string
-            - tieneTutor: bool
-            - fechaAtencion: DateTime
-        }
-        class Tutor{
-            - relacionPaciente: Relacion
-        }
-        class Limpieza{}
-
-        class Seguridad{
-        }
-
-        interface ITrabajadoresExternos{
-            EmpresaContratista: string
-        }
-        interface ICliente{
-            MotivaDeConsulta:string
-            fechaAtencion: DateTime
-        }
-
-        enum Relacion{
-            PADRE
-            MADRE
-            HIJO
-            HIJA
-            OTRO
-        }
-
-        'Relaciones
-        'Herencias
-        Persona<|-- Tutor
-        Persona<|-- TENS
-        'Composicion
-        Paciente *-- Tutor
-        'Interfaces
-        Persona<|-- ITrabajadoresExternos
-        Persona<|-- ICliente
-        ICliente<|.. Paciente
-        ITrabajadoresExternos<|.. Limpieza
-        ITrabajadoresExternos<|.. Seguridad
-    }
-    package Usuarios
-    {
-        interface IUsuario
-        {
-            LogIn(string,string):void
-            LogOut():void
-            UserName:string
-            Password:string
-        }
-        class Secretario{
-            -userName: string
-            -password: string
-        }
-
-        class Medico{}
-
-        class Gerente
-        {
-            -nombre: string
-            -contrasenhia: string
-
-        }
-        Persona <|-- IUsuario
-        IUsuario<|.. Secretario
-        IUsuario<|.. Gerente
-        IUsuario<|.. Medico
-    }
+class Persona{
+    - rut: int
+    - digitoVerificador: int
+    - sexo: Sexo
+    - fechaNacimiento:DateTime
+    - edad:int
+    - direccion: string
+    - telefono: int 
 }
+class Paciente{
+    -motivoDeConsulta: string 
+    - Prevision: prevision
+    - tieneTutor: bool
+    - fechaAtencion: DateTime
+}
+class Tutor{
+    - relacionPaciente: Relacion
+    
+}
+class Secretarios{}
+class Limpieza{}
+class Medico{
+
+}
+class Gerencia{}
+class Medicamento {}
+class Desechables {}
+class SalaDeEspera {}
+class Box{}
+class TENS{}
+class Seguridad{}
+
+interface Trabajadores{}
+interface Insumo {}
+interface Infraestructura{}
+
+enum Sexo{
+
+}
+enum Prevision{
+
+}
+
+enum AFP{
+
+}
+enum Relacion{
+
+}
+enum TurnoTrabajo{
+
+}
+
+'Relaciones 
+'Herencias
+Persona<-- Paciente 
+Persona<-- Secretarios 
+Persona<-- Limpieza 
+Persona<-- Medico 
+Persona<-- Gerencia 
+Persona<-- Seguridad 
+'Asociaciones
+Paciente -- Tutor
 @enduml
 

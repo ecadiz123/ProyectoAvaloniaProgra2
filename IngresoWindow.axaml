@@ -1,0 +1,49 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        x:Class="ProyectoConsultorio.IngresoWindow"
+        Title="Ingreso de pacientes" Width="1000" Height="500" Background="#bccfe6">
+
+
+	<ScrollViewer>
+		<StackPanel Margin="10" HorizontalAlignment="Center" VerticalAlignment="Top">
+			<StackPanel>
+				<TextBlock Foreground="#031d3b" Margin="5" FontSize="30" FontWeight="Bold" Text ="Datos del cliente"/>
+			</StackPanel>
+			<StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal">
+				<TextBox Foreground="#031d3b" Background="#dfe3f2" Width="400" Margin="5" x:Name="tbRUT" Watermark="RUT(Sin puntos y con guión) Ej: 12345678"/>
+				<TextBox Foreground="#031d3b" Background="#dfe3f2" Width="400" Margin="5" x:Name="tbNombres" Watermark="Nombres"/>
+			</StackPanel>
+
+			<StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal">
+				<TextBox Foreground="#031d3b" Background="#dfe3f2" Width="400" Margin="5" x:Name="tbApellidoPaterno" Watermark="Apellido Paterno"/>
+				<TextBox Foreground="#031d3b" Background="#dfe3f2" Width="400" Margin="5" x:Name="tbApellidoMaterno" Watermark="Apellido Materno"/>
+			</StackPanel>
+
+			<StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal">
+				<TextBlock Foreground="#031d3b" Margin="5" FontSize="10">
+					Fecha de <LineBreak /> Nacimiento
+				</TextBlock>
+				<DatePicker Foreground="#031d3b" Background="#dfe3f2" Margin="5" Width="336" DayFormat="ddd dd"/>
+				<TextBox Foreground="#031d3b" Background="#dfe3f2" Width="400" Margin="5" x:Name="tbTelefono" Watermark="Telefono Ej: 9 12345678"/>
+			</StackPanel>
+			<StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal">
+				<TextBox Foreground="#031d3b" Background="#dfe3f2" Width="400" Margin="5" x:Name="tbMail" Watermark="Email"/>
+				<ComboBox Foreground="#031d3b" Background="#dfe3f2" PlaceholderText="Seleccione su previsión" Width="400" Margin="5" MaxDropDownHeight="100">
+					<ComboBoxItem>Fonasa</ComboBoxItem>
+					<ComboBoxItem>Banmédica</ComboBoxItem>
+					<ComboBoxItem>Colmena</ComboBoxItem>
+					<ComboBoxItem>Consalud</ComboBoxItem>
+					<ComboBoxItem>Cruz Blanca</ComboBoxItem>
+					<ComboBoxItem>Más Vida</ComboBoxItem>
+					<ComboBoxItem>Vida Tres</ComboBoxItem>
+					<ComboBoxItem>Optima</ComboBoxItem>
+					<ComboBoxItem>Particular</ComboBoxItem>
+				</ComboBox>
+			</StackPanel>
+			<Button Foreground="#031d3b" Content="Volver" Click="VolverMenu" HorizontalContentAlignment="Center" Margin="10" VerticalContentAlignment="Center" Width="75" Height="30"/>
+		</StackPanel>
+	</ScrollViewer>
+
+</Window>

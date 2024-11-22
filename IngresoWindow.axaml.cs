@@ -3,14 +3,15 @@ using ProyectoConsultorio.Clases;
 
 namespace ProyectoConsultorio
 {
-    public partial class MainWindow : Window
+    public partial class IngresoWindow : Window
     {
-        public MainWindow()
+        public IngresoWindow()
         {
             InitializeComponent();
 
         }
-        private void AbrirVentanaSecundaria(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+
+        private void VolverMenu(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             var menuWindow = new MenuWindow();
             menuWindow.Show(); // Muestra la ventana secundaria

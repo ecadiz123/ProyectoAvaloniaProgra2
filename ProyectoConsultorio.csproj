@@ -22,8 +22,34 @@
 		<Folder Include="Recursos\Imagenes\" />
 		<Folder Include="Recursos\Fuentes\" />
 		<Folder Include="Recursos\Estilos\" />
-		<Folder Include="Ventanas\"/>
-		<AvaloniaResource Include="Recursos\**"/>
+		<Folder Include="Ventanas\" />
+		<AvaloniaResource Include="Recursos\**" />
+	</ItemGroup>
+	<ItemGroup>
+	  <AvaloniaXaml Update="VerHoraWindow.axaml">
+	    <SubType>Designer</SubType>
+	  </AvaloniaXaml>
+	</ItemGroup>
+	<ItemGroup>
+	  <Compile Update="ModHoraWindow.axaml.cs">
+	    <DependentUpon>ModHoraWindow.axaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="VerHoraWindow.axaml.cs">
+	    <SubType>Code</SubType>
+	    <DependentUpon>VerHoraWindow.axaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="HorasDocWindow.axaml.cs">
+	    <DependentUpon>HorasDocWindow.axaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="MainWindow.axaml.cs">
+	    <DependentUpon>MainWindow.axaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="IngresoWindow.axaml.cs">
+	    <DependentUpon>IngresoWindow.axaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="MenuWindow.axaml.cs">
+	    <DependentUpon>MenuWindow.axaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 </Project>
