@@ -2,6 +2,22 @@
 package Clinica
 {
    
+    
+    package Inventario
+    {
+
+        interface Insumo {
+            Cantidad:int
+            AddCantidad(int):void
+            VerCantidad():int
+            RestarCantidad(int):void
+        }
+        class Medicamento {}
+        class Desechables {}
+    }
+    package Personas
+    {
+
     enum TurnoTrabajo{
         DIA
         TARDE
@@ -26,24 +42,6 @@ package Clinica
         PLANVITAL
         PROVIDA
     }
-    
-    package Inventario
-    {
-
-        interface Insumo {
-            Cantidad:int
-            AddCantidad(int):void
-            VerCantidad():int
-            RestarCantidad(int):void
-        }
-        class Medicamento {}
-        class Desechables {}
-        'Interfaz
-        Insumo<|.. Medicamento
-        Insumo<|.. Desechables
-    }
-    package Personas
-    {
         class Persona
         {
         - rut: int
@@ -91,18 +89,7 @@ package Clinica
         }
         
 
-        'Relaciones
-        'Herencias
-        Persona<|-- Tutor
-       
-        'Composicion
-        Paciente *-- Tutor
-        'Interfaces
-        Persona<|-- ITrabajadoresExternos
-        Persona<|-- ICliente
-        ICliente<|.. Paciente
-        ITrabajadoresExternos<|.. Limpieza
-        ITrabajadoresExternos<|.. Seguridad
+        
         package Usuarios
         {
             interface IUsuario
@@ -127,14 +114,11 @@ package Clinica
                 -contrasenhia: string
 
             }
-            Persona <|-- IUsuario
-            IUsuario<|.. Secretario
-            IUsuario<|.. Gerente
-            IUsuario<|.. Medico
+          
         }
         package Infraestructura
          {
-             interface Infraestructura{
+             interface IInfraestructura{
                  CapacidadPersonasMax: int
                  ContadorPersonasActuales:int
                  AddPersonaActual(int):void
@@ -142,27 +126,54 @@ package Clinica
              }
              class Box{
                  medicoDeTurno: Medico
-                 limpiezaDeTurno: List<Limpieza>
                  CambioDeTurno(Medico):void
-                 CambioLimpieza(List<Limpieza>):void
+                 LimpiarBox(List<Limipieza>):void
              }
              class SalaDeEspera {
                  seguridadDeTurno: List<Seguridad>
                  CambioDeTurno(List<Seguridad>): void
              }
-             'Agregacion
-             Box o-- Medico
-             SalaDeEspera o-- Seguridad
-             'Asociacion
-             Box "2" -- Limpieza
-             'Composicion
-             Box o-- Medicamento
-             Box o-- Desechables
-             'Interfaz
-             Infraestructura<|.. Box
-             Infraestructura<|.. SalaDeEspera
+             
 
          }
+        'Relaciones
+        'Herencias
+        Persona<|-- Tutor
+       
+        'Composicion
+        '(Se tienen en campo y no existen sin estar dentro de la clase)
+        Paciente *-- Tutor
+        'Agregacion
+        '(Se tienen en campo pero existen independiente)
+        Box o-- Medico
+        SalaDeEspera o-- Seguridad
+        Box o-- Medicamento
+        Box o-- Desechables
+        'Asociacion
+        '(Interactuan pero son independientes, ej: pueden estar en metodo de el objeto)
+        Box "2" -- Limpieza
+
+        'Interfaces:
+
+        'Herencias Interfaces
+        Persona <|-- ITrabajadoresExternos
+        Persona <|-- ICliente
+        Persona <|-- IUsuario
+        'Interfaz T externos
+        ITrabajadoresExternos <|.. Limpieza
+        ITrabajadoresExternos <|.. Seguridad
+        'Interfaz Usuarios
+        IUsuario <|.. Secretario
+        IUsuario <|.. Gerente
+        IUsuario <|.. Medico
+        'Interfaz Clientes
+        ICliente <|.. Paciente
+        'Interfaz Insumos
+        Insumo <|.. Medicamento
+        Insumo <|.. Desechables
+        'Interfaz Infraestructura
+        IInfraestructura <|.. Box
+        IInfraestructura <|.. SalaDeEspera
         
     }
     
