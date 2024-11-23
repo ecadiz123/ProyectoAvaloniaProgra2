@@ -31,11 +31,6 @@ package Clinica
     package Personas
     {
 
-    enum TurnoTrabajo{
-        DIA
-        TARDE
-        NOCHE
-    }
     enum Sexo{
         MASCULINO
         FEMENINO
@@ -70,8 +65,17 @@ package Clinica
         - edad:int
         - direccion: string
         - telefono: int
-        - Prevision: Prevision
+        - prevision: Prevision
         - AFP: AFP
+        + Rut: int
+        + DigitoVerificador: int
+        + Sexo: Sexo
+        + FechaNacimiento:DateTime
+        + Edad:int
+        + Direccion: string
+        + Telefono: int
+        + Prevision: Prevision
+        + AFP: AFP
         }
 
         package TrabajadoresExt
