@@ -7,13 +7,26 @@ package Clinica
     {
 
         interface Insumo {
+            Nombre: string
             Cantidad:int
             AddCantidad(int):void
             VerCantidad():int
             RestarCantidad(int):void
         }
-        class Medicamento {}
-        class Desechables {}
+        class Medicamento {
+            - nombre: string
+            - cantidad:int
+            + AddCantidad(int):void
+            + VerCantidad():int
+            + RestarCantidad(int):void
+        }
+        class Desechables {
+            - nombre: string
+            - cantidad:int
+            + AddCantidad(int):void
+            + VerCantidad():int
+            + RestarCantidad(int):void
+        }
     }
     package Personas
     {
@@ -30,7 +43,13 @@ package Clinica
     }
     enum Prevision{
         FONASA
-        ISAPRE
+        COLMENA
+        CRUZBLANCA
+        BANMEDICA
+        CONSALUD
+        FUNDACION_BANCO_DEL_ESTADO
+        VIDA_TRES
+        NUEVA_MAS_VIDA
     }
 
     enum AFP{
@@ -51,7 +70,8 @@ package Clinica
         - edad:int
         - direccion: string
         - telefono: int
-        - Prevision: prevision
+        - Prevision: Prevision
+        - AFP: AFP
         }
 
         package TrabajadoresExt
@@ -59,9 +79,14 @@ package Clinica
         interface ITrabajadoresExternos{
             EmpresaContratista: string
         }
-         class Limpieza{}
+         class Limpieza{
+            - empresaContratista:string
+            + EmpresaContratista: string
+         }
 
         class Seguridad{
+            - empresaContratista:string
+            + EmpresaContratista: string
         }
         }
         package Clientes
@@ -82,6 +107,9 @@ package Clinica
             - motivoDeConsulta: string
             - tieneTutor: bool
             - fechaAtencion: DateTime
+            + CambiarFechaAtencion(DateTime): void
+            + MotivaDeConsulta:string
+            + fechaAtencion: DateTime
         }
         class Tutor{
             - relacionPaciente: Relacion
@@ -102,16 +130,29 @@ package Clinica
             class Secretario{
                 -userName: string
                 -password: string
+                + LogIn(string,string):void
+                + LogOut():void
+                + UserName:string
+                + Password:string
             }
 
             class Medico{
                 - userName:string
+                - password: string
+                + LogIn(string,string):void
+                + LogOut():void
+                + UserName:string
+                + Password:string
             }
 
             class Gerente
             {
-                -nombre: string
-                -contrasenhia: string
+                -userName: string
+                -password: string
+                + LogIn(string,string):void
+                + LogOut():void
+                + UserName:string
+                + Password:string
 
             }
           
@@ -125,13 +166,14 @@ package Clinica
                  EliminarPersonaActual(int):void
              }
              class Box{
-                 medicoDeTurno: Medico
-                 CambioDeTurno(Medico):void
-                 LimpiarBox(List<Limipieza>):void
+                 - medicoDeTurno: Medico
+                 + CambioDeTurno(Medico):void
+                 + LimpiarBox(List<Limipieza>):void
              }
              class SalaDeEspera {
-                 seguridadDeTurno: List<Seguridad>
-                 CambioDeTurno(List<Seguridad>): void
+                 - seguridadDeTurno: List<Seguridad>
+                 + CambioDeTurno(List<Seguridad>): void
+                 + LimpiezaSala(List<Limpiea>): void
              }
              
 
@@ -143,16 +185,16 @@ package Clinica
         'Composicion
         '(Se tienen en campo y no existen sin estar dentro de la clase)
         Paciente *-- Tutor
+        Box *-- Medicamento
+        Box *-- Desechables
         'Agregacion
         '(Se tienen en campo pero existen independiente)
         Box o-- Medico
         SalaDeEspera o-- Seguridad
-        Box o-- Medicamento
-        Box o-- Desechables
         'Asociacion
         '(Interactuan pero son independientes, ej: pueden estar en metodo de el objeto)
-        Box "2" -- Limpieza
-
+        Box "1..*" -- Limpieza
+        SalaDeEspera "1..*"-- Limpieza
         'Interfaces:
 
         'Herencias Interfaces
