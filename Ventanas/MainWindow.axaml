@@ -1,0 +1,28 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        x:Class="ProyectoConsultorio.MainWindow"
+        Title="Inicio de Sesión" Width="500" Height="500" Background="#bccfe6">
+	
+	<ScrollViewer>
+		<StackPanel Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
+			<!--<Image HorizontalAlignment="Center" Margin="20" Height="125" Width="125" Source="C:\Users\chubi\Downloads\ProyectoAvaloniaProgra2-avance21-11\ProyectoAvaloniaProgra2-avance21-11\Recursos\Imagenes\Ucsc_logo.png"/> -->
+			<StackPanel>
+				<TextBlock Foreground="#031d3b" HorizontalAlignment="Center" Margin="5" FontSize="30" FontWeight="Bold" Text ="Inicio de sesión"/>
+			</StackPanel>
+			
+			<StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Vertical">
+				<TextBox Foreground="#031d3b" Background="#dfe3f2" Width="200" Margin="10" x:Name="tbUsuario" Watermark="Usuario"/>
+				<TextBox Foreground="#031d3b" PasswordChar="*" Background="#dfe3f2" Width="200" Margin="10" x:Name="tbContrasenia" Watermark="Contraseña"/>
+			</StackPanel>
+
+		<StackPanel>
+			<TextBlock HorizontalAlignment="Center"/>
+			<Button Foreground="#031d3b" Background="#dfe3f2" Content="Ingresar" Click="AbrirVentanaSecundaria" HorizontalAlignment="Center" Margin="10"/>
+		</StackPanel>
+		</StackPanel>
+	</ScrollViewer>
+	
+			
+</Window>

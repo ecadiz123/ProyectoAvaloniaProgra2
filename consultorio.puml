@@ -143,10 +143,13 @@ package Clinica
             class Medico{
                 - userName:string
                 - password: string
+                - pacientesAAtender: List<Pacientes>
                 + LogIn(string,string):void
                 + LogOut():void
                 + UserName:string
                 + Password:string
+                + AñadirHoraPaciente(Paciente):void
+                + ElimHoraPaciente(Paciente): void
             }
 
             class Gerente

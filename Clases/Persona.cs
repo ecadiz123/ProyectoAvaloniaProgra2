@@ -8,12 +8,17 @@ namespace ProyectoConsultorio.Clases
 {
     enum sexo_t{
         MASCULINO,
-        FEMENINO
+        FEMENINO,
+        OTRO
     }
-    enum previcion_t
+    enum prevision_t
     {
-        FONASA,
-        ISAPRE
+        FONASA, COLMENA, CRUZBLANCA, BANMEDICA, CONSALUD,
+        FUNDACION_BANCO_DEL_ESTADO, VIDA_TRES, NUEVA_MAS_VIDA
+    }
+    enum afp_t
+    {
+        CAPITAL, HABITAT, UNO, CUPRUM, MODELO, PLANVITAL, PROVIDA
     }
     internal class Persona
     {
@@ -21,24 +26,24 @@ namespace ProyectoConsultorio.Clases
         private int digitoverificador;
         private int edad;
         private string nombre = string.Empty;
-        private string apllidoematerno = string.Empty;
+        private string apellidomaterno = string.Empty;
         private string apellidopaterno = string.Empty;
         private string direccion = string.Empty;
         private int telefono;
         private sexo_t sexo;
-        private previcion_t previcion;
+        private prevision_t prevision;
         private DateTime fechanacimiento;
 
         public int Rut { get => rut; set => rut = value; }
         public int Edad { get => edad; set => edad = value; }
         public string Nombre { get => nombre; set => nombre = value; }
-        public string Apllidoematerno { get => apllidoematerno; set => apllidoematerno = value; }
+        public string Apellidoematerno { get => apellidomaterno; set => apellidomaterno = value; }
         public string Apellidopaterno { get => apellidopaterno; set => apellidopaterno = value; }
         public string Direccion { get => direccion; set => direccion = value; }
         public int Telefono { get => telefono; set => telefono = value; }
         public DateTime Fechanacimiento { get => fechanacimiento; set => fechanacimiento = value; }
         public int Digitoverificador { get => digitoverificador; set => digitoverificador = value; }
         internal sexo_t Sexo { get => sexo; set => sexo = value; }
-        internal previcion_t Previcion { get => previcion; set => previcion = value; }
+        internal prevision_t Prevision { get => prevision; set => prevision = value; }
     }
 }

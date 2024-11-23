@@ -1,7 +1,7 @@
 ﻿using Avalonia;
 using System;
 
-namespace ProyectoConsultorio
+namespace ProyectoConsultorio.Clases
 {
     internal class Program
     {
