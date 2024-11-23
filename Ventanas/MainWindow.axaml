@@ -3,7 +3,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         x:Class="ProyectoConsultorio.MainWindow"
-        Title="Inicio de Sesión" Width="500" Height="500" Background="#bccfe6">
+        Title="Inicio de Sesión" Width="500" Height="500" Background="#1BA1E2">
 	
 	<ScrollViewer>
 		<StackPanel Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
