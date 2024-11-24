@@ -111,12 +111,15 @@ package Clinica
             - motivoDeConsulta: string
             - tieneTutor: bool
             - fechaAtencion: DateTime
+            - medicoAtiende: Medico
             + CambiarFechaAtencion(DateTime): void
             + MotivaDeConsulta:string
             + fechaAtencion: DateTime
+            + MedicoAtiende: Medico
         }
         class Tutor{
             - relacionPaciente: Relacion
+            + RelacionPaciente: Relacion
         }
         }
         
@@ -143,7 +146,8 @@ package Clinica
             class Medico{
                 - userName:string
                 - password: string
-                - pacientesAAtender: List<Pacientes>
+                - pacientesAAtender: Dictionary<string,Pacientes>
+                + PacientesAAtender: Dictionary<string,Pacientes>
                 + LogIn(string,string):void
                 + LogOut():void
                 + UserName:string
@@ -152,16 +156,6 @@ package Clinica
                 + ElimHoraPaciente(Paciente): void
             }
 
-            class Gerente
-            {
-                -userName: string
-                -password: string
-                + LogIn(string,string):void
-                + LogOut():void
-                + UserName:string
-                + Password:string
-
-            }
           
         }
         package Infraestructura
@@ -202,6 +196,7 @@ package Clinica
         '(Interactuan pero son independientes, ej: pueden estar en metodo de el objeto)
         Box "1..*" -- Limpieza
         SalaDeEspera "1..*"-- Limpieza
+        Medico "1"--"n" Paciente
         'Interfaces:
 
         'Herencias Interfaces
@@ -213,7 +208,6 @@ package Clinica
         ITrabajadoresExternos <|.. Seguridad
         'Interfaz Usuarios
         IUsuario <|.. Secretario
-        IUsuario <|.. Gerente
         IUsuario <|.. Medico
         'Interfaz Clientes
         ICliente <|.. Paciente
