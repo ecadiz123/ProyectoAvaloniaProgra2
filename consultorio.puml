@@ -6,7 +6,7 @@ package Clinica
     package Inventario
     {
 
-        interface Insumo {
+        interface IInsumo {
             Nombre: string
             Cantidad:int
             AddCantidad(int):void
@@ -28,8 +28,7 @@ package Clinica
             + RestarCantidad(int):void
         }
     }
-    package Personas
-    {
+    
 
     enum Sexo{
         MASCULINO
@@ -99,6 +98,22 @@ package Clinica
             MotivaDeConsulta:string
             fechaAtencion: DateTime
         }
+        class FichaMedica
+        {
+          - pacienteAtendido: Paciente
+          - grupoSanguineo: string
+          - antecedentes: string
+          - alergias: string
+          - observaciones: string
+          - medicoTratante: Medico
+          + PacienteAtendido: Paciente
+          + GrupoSanguineo: string
+          + Antecedentes: string
+          + Alergias: string
+          + Observaciones: string
+          + MedicoTratante: Medico
+          
+        }
 
         enum Relacion{
             PADRE
@@ -110,12 +125,17 @@ package Clinica
          class Paciente{
             - motivoDeConsulta: string
             - tieneTutor: bool
+            - tutor: Tutor
             - fechaAtencion: DateTime
             - medicoAtiende: Medico
+            - ficha:Ficha
             + CambiarFechaAtencion(DateTime): void
+            + Tutor: Tutor
+            + tieneTutor: bool
             + MotivaDeConsulta:string
             + fechaAtencion: DateTime
             + MedicoAtiende: Medico
+            + Ficha: Ficha
         }
         class Tutor{
             - relacionPaciente: Relacion
@@ -141,19 +161,29 @@ package Clinica
                 + LogOut():void
                 + UserName:string
                 + Password:string
+                + AñadirHoraPaciente(Paciente):void
+                + ElimHoraPaciente(Paciente): void
+                + MarcarLlegadaMedico(Medico):void
+                + MarcarTurnoTExt(ITrabajadoresExternos):void
+                + AñadirInsumo(IInsumo): void
+                'Preguntar al profe sobre quien deberia tener metodo de añadir a infraestructura, si la inf o el que hace la cuenta de las personas es decir el secretario
+                + AñadirPersonasInf():void
+                + ElimPersonaInf():void
             }
 
             class Medico{
                 - userName:string
                 - password: string
-                - pacientesAAtender: Dictionary<string,Pacientes>
-                + PacientesAAtender: Dictionary<string,Pacientes>
+                - pacientesAAtender: Dictionary<string,Paciente>
+                + PacientesAAtender: Dictionary<string,Paciente>
                 + LogIn(string,string):void
                 + LogOut():void
                 + UserName:string
                 + Password:string
-                + AñadirHoraPaciente(Paciente):void
-                + ElimHoraPaciente(Paciente): void
+                + AtenderHoraPaciente(Paciente): void
+                + IngresarFicha(FichaMedica): void
+                + ModificarFicha(FichaMedica): void
+                + EliminarFicha(FichaMedica): void
             }
 
           
@@ -182,21 +212,28 @@ package Clinica
         'Relaciones
         'Herencias
         Persona<|-- Tutor
-       
+        
         'Composicion
         '(Se tienen en campo y no existen sin estar dentro de la clase)
         Paciente *-- Tutor
         Box *-- Medicamento
         Box *-- Desechables
+        Paciente *-- FichaMedica
         'Agregacion
         '(Se tienen en campo pero existen independiente)
         Box o-- Medico
         SalaDeEspera o-- Seguridad
+        Box  o-- Limpieza
+        
         'Asociacion
         '(Interactuan pero son independientes, ej: pueden estar en metodo de el objeto)
-        Box "1..*" -- Limpieza
-        SalaDeEspera "1..*"-- Limpieza
-        Medico "1"--"n" Paciente
+        Medico -- Paciente
+        Medico -- FichaMedica
+        Medico -- IInsumo
+        Secretario -- IInsumo
+        Secretario -- Paciente
+        Secretario -- Medico
+        Secretario -- IInfraestructura
         'Interfaces:
 
         'Herencias Interfaces
@@ -212,13 +249,13 @@ package Clinica
         'Interfaz Clientes
         ICliente <|.. Paciente
         'Interfaz Insumos
-        Insumo <|.. Medicamento
-        Insumo <|.. Desechables
+        IInsumo <|.. Medicamento
+        IInsumo <|.. Desechables
         'Interfaz Infraestructura
         IInfraestructura <|.. Box
         IInfraestructura <|.. SalaDeEspera
         
-    }
+    
     
 }
 @enduml
