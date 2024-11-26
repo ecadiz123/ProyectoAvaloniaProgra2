@@ -22,8 +22,18 @@
 		<Folder Include="Recursos\Imagenes\" />
 		<Folder Include="Recursos\Fuentes\" />
 		<Folder Include="Recursos\Estilos\" />
-		<Folder Include="Ventanas\"/>
-		<AvaloniaResource Include="Recursos\**"/>
+		<AvaloniaResource Include="Recursos\**" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Compile Update="Ventanas\TurnosWindow.axaml.cs">
+	    <DependentUpon>TurnosWindow.axaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Ventanas\InvWindow.axaml.cs">
+	    <DependentUpon>InvWindow.axaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Ventanas\ErrorWindow.axaml.cs">
+	    <DependentUpon>ErrorWindow.axaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 </Project>

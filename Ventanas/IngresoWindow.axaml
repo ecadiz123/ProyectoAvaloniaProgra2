@@ -42,6 +42,33 @@
 					<ComboBoxItem>Particular</ComboBoxItem>
 				</ComboBox>
 			</StackPanel>
+
+		<StackPanel>
+			<CheckBox Content="Tiene tutor" x:Name="BoolTutor"></CheckBox>
+			<StackPanel x:Name="PanelTitulo" IsVisible="False">
+				<TextBlock Foreground="#031d3b" Margin="5" FontSize="25" FontWeight="Bold" Text ="Datos del tutor"/>
+			</StackPanel>
+			<StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal" x:Name="PanelDatos" IsVisible="False" >
+				<TextBox Foreground="#031d3b" Background="#dfe3f2" Width="400" Margin="5" x:Name="tbTRUT" Watermark="RUT(Sin puntos y con guión) Ej: 12345678"/>
+				<TextBox Foreground="#031d3b" Background="#dfe3f2" Width="400" Margin="5" x:Name="tbTNombres" Watermark="Nombres"/>
+			</StackPanel>
+
+			<StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal" x:Name="PanelDatos2" IsVisible="False">
+				<TextBox Foreground="#031d3b" Background="#dfe3f2" Width="400" Margin="5" x:Name="tbTApellidoPaterno" Watermark="Apellido Paterno"/>
+				<TextBox Foreground="#031d3b" Background="#dfe3f2" Width="400" Margin="5" x:Name="tbTApellidoMaterno" Watermark="Apellido Materno"/>
+			</StackPanel>
+
+			<StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal" x:Name="PanelDatos3" IsVisible="False">
+				<TextBlock Foreground="#031d3b" Margin="5" FontSize="10">
+					Fecha de <LineBreak /> Nacimiento
+				</TextBlock>
+				<DatePicker Foreground="#031d3b" Background="#dfe3f2" Margin="5" Width="336" DayFormat="ddd dd"/>
+				<TextBox Foreground="#031d3b" Background="#dfe3f2" Width="400" Margin="5" x:Name="tbTTelefono" Watermark="Telefono Ej: 9 12345678"/>
+			</StackPanel>
+			<StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal" x:Name="PanelDatos4" IsVisible="False">
+				<TextBox Foreground="#031d3b" Background="#dfe3f2" Width="400" Margin="5" x:Name="tbTMail" Watermark="Email"/>
+			</StackPanel>
+		</StackPanel>	
 			<Button Foreground="#031d3b" Content="Volver" Click="VolverMenu" HorizontalContentAlignment="Center" Margin="10" VerticalContentAlignment="Center" Width="75" Height="30"/>
 		</StackPanel>
 	</ScrollViewer>

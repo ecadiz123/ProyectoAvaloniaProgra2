@@ -7,7 +7,7 @@
 	
 	<ScrollViewer>
 		<StackPanel Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
-			<!--<Image HorizontalAlignment="Center" Margin="20" Height="125" Width="125" Source="C:\Users\chubi\Downloads\ProyectoAvaloniaProgra2-avance21-11\ProyectoAvaloniaProgra2-avance21-11\Recursos\Imagenes\Ucsc_logo.png"/> -->
+			<Image HorizontalAlignment="Center" Margin="20" Height="125" Width="125" Source="/Recursos/Imagenes/logo_u.png"/>
 			<StackPanel>
 				<TextBlock Foreground="#031d3b" HorizontalAlignment="Center" Margin="5" FontSize="30" FontWeight="Bold" Text ="Inicio de sesión"/>
 			</StackPanel>
