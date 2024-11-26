@@ -174,8 +174,12 @@ package Clinica
             class Medico{
                 - userName:string
                 - password: string
-                - pacientesAAtender: Dictionary<string,Paciente>
-                + PacientesAAtender: Dictionary<string,Paciente>
+                - pacientesAAtender: List<Paciente>
+                - horasDisponibles: List<DateTime>
+                - boxAtiende: Box
+                + boxAtiende: Box
+                + HorasDisponibles: List<DateTime>
+                + PacientesAAtender: List<Paciente>
                 + LogIn(string,string):void
                 + UserName:string
                 + Password:string
@@ -198,6 +202,8 @@ package Clinica
              class Box{
                  - medicoDeTurno: Medico
                  - capacidadPersonasMax: int
+                 - numeroBox: int
+                 + NumeroBox: int
                  + CambioDeTurno(Medico):void
                  + LimpiarBox(List<Limipieza>):void
                  + CapacidadPersonasMax: int
