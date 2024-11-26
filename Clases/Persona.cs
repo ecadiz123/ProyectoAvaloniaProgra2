@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProyectoConsultorio.Clases
+namespace ProyectoConsultorio
 {
     enum sexo_t{
         MASCULINO,
@@ -33,7 +33,7 @@ namespace ProyectoConsultorio.Clases
         private sexo_t sexo;
         private prevision_t prevision;
         private DateTime fechanacimiento;
-
+      
         public int Rut { get => rut; set => rut = value; }
         public int Edad { get => edad; set => edad = value; }
         public string Nombre { get => nombre; set => nombre = value; }

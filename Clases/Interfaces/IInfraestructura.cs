@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProyectoConsultorio.Clases.Interfaces
+namespace ProyectoConsultorio.Infraestructura
 {
     internal interface IInfraestructura
     {
+        int CapacidadPersonasMax { get; set; }
+        int ContadorPersonasActuales { get; set; }
+        void AddPersonaActual(int c);
+        void EliminarPersonaActual(int c);
     }
 }

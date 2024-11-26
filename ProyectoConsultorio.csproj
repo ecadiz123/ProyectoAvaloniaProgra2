@@ -37,6 +37,11 @@
 	  <Compile Update="Ventanas\ErrorWindow.axaml.cs">
 	    <DependentUpon>ErrorWindow.axaml</DependentUpon>
 	  </Compile>
+		<Folder Include="Ventanas\"/>
+		<Folder Include="Usuarios"/>
+		<Folder Include="Usuarios\Medicos"/>
+		<Folder Include="Usuarios\Secretarios"/>
+		<AvaloniaResource Include="Recursos\**"/>
 	</ItemGroup>
 
 </Project>

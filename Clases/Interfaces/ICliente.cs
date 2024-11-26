@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProyectoConsultorio.Clases.Interfaces
+namespace ProyectoConsultorio.Clientes
 {
     internal interface ICliente
     {
-        
+        string MotivoDeConsulta { get; set; }
+        DateTime FechaDeAtencion { get; set; }
     }
 }

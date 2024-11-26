@@ -98,21 +98,23 @@ package Clinica
             MotivaDeConsulta:string
             fechaAtencion: DateTime
         }
+        enum GrupoSanguineo
+        {
+            A
+            B
+            AB
+            O
+        }
         class FichaMedica
         {
-          - pacienteAtendido: Paciente
-          - grupoSanguineo: string
+          - grupoSanguineo: GrupoSanguineo
           - antecedentes: string
           - alergias: string
           - observaciones: string
-          - medicoTratante: Medico
-          + PacienteAtendido: Paciente
-          + GrupoSanguineo: string
+          + GrupoSanguineo: GrupoSanguineo
           + Antecedentes: string
           + Alergias: string
           + Observaciones: string
-          + MedicoTratante: Medico
-          
         }
 
         enum Relacion{
@@ -128,12 +130,12 @@ package Clinica
             - tutor: Tutor
             - fechaAtencion: DateTime
             - medicoAtiende: Medico
-            - ficha:Ficha
+            - ficha:FichaMedica
             + CambiarFechaAtencion(DateTime): void
             + Tutor: Tutor
-            + tieneTutor: bool
+            + TieneTutor: bool
             + MotivaDeConsulta:string
-            + fechaAtencion: DateTime
+            + FechaAtencion: DateTime
             + MedicoAtiende: Medico
             + Ficha: Ficha
         }
@@ -150,7 +152,6 @@ package Clinica
             interface IUsuario
             {
                 LogIn(string,string):void
-                LogOut():void
                 UserName:string
                 Password:string
             }
@@ -158,7 +159,6 @@ package Clinica
                 -userName: string
                 -password: string
                 + LogIn(string,string):void
-                + LogOut():void
                 + UserName:string
                 + Password:string
                 + AñadirHoraPaciente(Paciente):void
@@ -174,10 +174,11 @@ package Clinica
             class Medico{
                 - userName:string
                 - password: string
-                - pacientesAAtender: Dictionary<string,Paciente>
-                + PacientesAAtender: Dictionary<string,Paciente>
+                - pacientesAAtender: List<Paciente>
+                - horasDisponibles: List<DateTime>
+                + HorasDisponibles: List<DateTime>
+                + PacientesAAtender: List<Paciente>
                 + LogIn(string,string):void
-                + LogOut():void
                 + UserName:string
                 + Password:string
                 + AtenderHoraPaciente(Paciente): void
@@ -198,21 +199,41 @@ package Clinica
              }
              class Box{
                  - medicoDeTurno: Medico
+                 - capacidadPersonasMax: int
+                 - numeroBox: int
+                 - desechables: List<Desechables>
+                 - medicamentos: List<Medicamentos>
+                 + NumeroBox: int
                  + CambioDeTurno(Medico):void
                  + LimpiarBox(List<Limipieza>):void
+                 + CapacidadPersonasMax: int
+                 + AddPersonaActual(int):void
+                 + EliminarPersonaActual(int):void
              }
              class SalaDeEspera {
                  - seguridadDeTurno: List<Seguridad>
+                 - capacidadPersonasMax: int
+                 + CapacidadPersonasMax: int
                  + CambioDeTurno(List<Seguridad>): void
                  + LimpiezaSala(List<Limpiea>): void
+                 + AddPersonaActual(int):void
+                 + EliminarPersonaActual(int):void
              }
              
 
          }
         'Relaciones
         'Herencias
-        Persona<|-- Tutor
         
+        Persona<|-- Tutor
+        Persona<|-- Paciente
+        Persona<|-- Secretario
+        Persona<|-- Medico
+        Persona<|-- Limpieza
+        Persona<|-- Seguridad
+
+
+
         'Composicion
         '(Se tienen en campo y no existen sin estar dentro de la clase)
         Paciente *-- Tutor
@@ -236,10 +257,7 @@ package Clinica
         Secretario -- IInfraestructura
         'Interfaces:
 
-        'Herencias Interfaces
-        Persona <|-- ITrabajadoresExternos
-        Persona <|-- ICliente
-        Persona <|-- IUsuario
+        
         'Interfaz T externos
         ITrabajadoresExternos <|.. Limpieza
         ITrabajadoresExternos <|.. Seguridad

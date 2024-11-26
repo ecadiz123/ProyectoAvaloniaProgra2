@@ -1,13 +1,39 @@
-﻿using System;
+﻿using ProyectoConsultorio.TrabajadoresExt;
+using ProyectoConsultorio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProyectoConsultorio.Clases
+namespace ProyectoConsultorio.Infraestructura   
 {
-    internal class SalaDeEspera
+    internal class SalaDeEspera : IInfraestructura
     {
+        private List<Seguridad> seguridadDeTurno;
+        private int capacidadPersonasMax;
+        private int contadorPersonasActuales;
 
+        public int CapacidadPersonasMax { get => capacidadPersonasMax; set => capacidadPersonasMax = value; }
+        internal List<Seguridad> SeguridaDeTurno { get => seguridadDeTurno; set => seguridadDeTurno = value; }
+        public int ContadorPersonasActuales { get => contadorPersonasActuales; set => contadorPersonasActuales = value; }
+        SalaDeEspera(List<Seguridad> Seg) 
+        {
+            seguridadDeTurno = Seg;
+            contadorPersonasActuales = 0;
+        }
+
+        public void CambiodeTurno(List<Seguridad> seguridad)
+        {
+            seguridadDeTurno = seguridad;            
+        }
+        public void AddPersonaActual(int c)
+        {
+            ContadorPersonasActuales += c;
+        }
+        public void EliminarPersonaActual(int c)
+        {
+            contadorPersonasActuales -= c;
+        }
     }
 }
