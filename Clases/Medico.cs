@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoConsultorio.Clases.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoConsultorio.Clases
 {
-    internal class Medico : Persona
+    internal class Medico : Persona , IUsuario
     {
         string userName = string.Empty;
         string password = string.Empty;
@@ -19,6 +20,10 @@ namespace ProyectoConsultorio.Clases
         public string UserName { get => userName; set => userName = value; }
         public string Password { get => password; set => password = value; }
 
+        public void LogIn(string userName, string password) 
+        {
+            
+        }
         public void AgregarPaciente(Paciente pas,DateTime fecha)
         {
             horasagendadas.Add(fecha);

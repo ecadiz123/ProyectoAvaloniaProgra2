@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Avalonia.Controls.Platform;
+using ProyectoConsultorio.Clases.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,23 +8,25 @@ using System.Threading.Tasks;
 
 namespace ProyectoConsultorio.Clases
 {
-    internal class Desechable
+    internal class Desechable : IInsumo
     {
         private string nombre = string.Empty;
-        private int cantidad = 0;
+        private int cantidad;
 
-        public Desechable(string nombre, int cantidad)
+        public string Nombre { get => nombre; set => nombre = value; }
+        public int Cantidad { get => cantidad; set => cantidad = value; }
+
+        public void AddCantidad(int c)
         {
-            this.nombre = nombre;
-            this.cantidad = cantidad;
+            Cantidad += c;
         }
-        public void AgregarDesechable(int x)
+        public void  RestarCantidad(int c)
         {
-            cantidad= cantidad+x;
+            Cantidad -= c;
         }
-        public void  UsarDesechable(int x)
-        {
-            cantidad = cantidad - x;
+        public int VerCantidad() 
+        { 
+            return Cantidad;
         }
     }
 }

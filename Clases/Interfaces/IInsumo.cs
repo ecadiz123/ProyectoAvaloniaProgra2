@@ -8,5 +8,10 @@ namespace ProyectoConsultorio.Clases.Interfaces
 {
     internal interface IInsumo
     {
+        string Nombre { get; set; }
+        int Cantidad { get; set; }
+        void AddCantidad(int c);
+        int VerCantidad();
+        void RestarCantidad(int c);
     }
 }
