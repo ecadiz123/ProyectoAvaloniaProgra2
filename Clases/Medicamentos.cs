@@ -25,7 +25,7 @@ namespace ProyectoConsultorio.Inventario
         }
         public int VerCantidad()
         {
-            return Cantidad;
+            return cantidad;
         }
         public void RestarCantidad(int c)
         {

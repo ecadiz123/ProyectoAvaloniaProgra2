@@ -30,8 +30,6 @@ namespace ProyectoConsultorio.Infraestructura
             numeroBox = 0;
             capacidadPersonasMax = 0;
             contadorPersonasActuales = 0;
-
-
         }
         public void CambiodeTurno(Medico medico)
         {
@@ -39,11 +37,11 @@ namespace ProyectoConsultorio.Infraestructura
         }
         public void AddPersonaActual(int c)
         {
-            ContadorPersonasActuales += c;
+            contadorPersonasActuales += c;
         }
         public void EliminarPersonaActual(int c)
         {
-            ContadorPersonasActuales -= c;
+            contadorPersonasActuales -= c;
         }
     }
 }
