@@ -3,6 +3,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         x:Class="ProyectoConsultorio.HorasDocWindow"
+		Icon="/Recursos/Imagenes/icono_margen.png"
         Title="Visualizador de horarios disponibles" Width="800" Height="800">
 
 	<StackPanel Margin="20">

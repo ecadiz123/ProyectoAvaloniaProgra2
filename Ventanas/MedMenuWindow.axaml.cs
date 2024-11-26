@@ -34,6 +34,12 @@ namespace ProyectoConsultorio
             this.Close();
         }
 
+        //private void VerListaPacientes(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        //{
+          //  var listaPacientesWindow = new ListaPacientesWindow();
+            //listaPacientesWindow.Show(); // Muestra la ventana secundaria
+            //this.Close();
+        //}
         private void Error(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             var errorWindow = new ErrorWindow();
