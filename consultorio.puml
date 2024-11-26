@@ -98,13 +98,20 @@ package Clinica
             MotivaDeConsulta:string
             fechaAtencion: DateTime
         }
+        enum GrupoSanguineo
+        {
+            A
+            B
+            AB
+            O
+        }
         class FichaMedica
         {
-          - grupoSanguineo: string
+          - grupoSanguineo: GrupoSanguineo
           - antecedentes: string
           - alergias: string
           - observaciones: string
-          + GrupoSanguineo: string
+          + GrupoSanguineo: GrupoSanguineo
           + Antecedentes: string
           + Alergias: string
           + Observaciones: string
