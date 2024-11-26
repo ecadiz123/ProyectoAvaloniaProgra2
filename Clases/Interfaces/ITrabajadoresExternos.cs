@@ -8,6 +8,6 @@ namespace ProyectoConsultorio.TrabajadoresExt
 {
     internal interface ITrabajadoresExternos
     {
-        string EmpresaContratista { get => EmpresaContratista; set =>  EmpresaContratista= value; }
+        string EmpresaContratista { get; set; }
     }
 }

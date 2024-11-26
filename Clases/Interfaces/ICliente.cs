@@ -8,6 +8,7 @@ namespace ProyectoConsultorio.Clientes
 {
     internal interface ICliente
     {
-        
+        string MotivoDeConsulta { get; set; }
+        DateTime FechaDeAtencion { get; set; }
     }
 }
