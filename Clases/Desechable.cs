@@ -15,7 +15,11 @@ namespace ProyectoConsultorio.Inventario
 
         public string Nombre { get => nombre; set => nombre = value; }
         public int Cantidad { get => cantidad; set => cantidad = value; }
-
+        public Desechable(string nombre, int cantidadInicial) 
+        {
+            this.nombre = nombre;
+            this.cantidad = cantidadInicial;
+        }
         public void AddCantidad(int c)
         {
             Cantidad += c;
