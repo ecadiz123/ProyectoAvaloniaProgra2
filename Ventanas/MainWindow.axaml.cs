@@ -10,10 +10,17 @@ namespace ProyectoConsultorio
             InitializeComponent();
 
         }
-        private void AbrirVentanaSecundaria(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        private void AbrirLogInSecretario(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
-            var menuWindow = new MenuWindow();
-            menuWindow.Show(); // Muestra la ventana secundaria
+            var logInSecWindow = new LogInSecWindow();
+            logInSecWindow.Show(); // Muestra la ventana LogInSec
+            this.Close();
+        }
+
+        private void AbrirLogInMedico(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            var logInMedWindow = new LogInMedWindow();
+            logInMedWindow.Show(); // Muestra la ventana LogInMed
             this.Close();
         }
     }

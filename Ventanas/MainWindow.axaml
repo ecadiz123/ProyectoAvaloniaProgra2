@@ -3,26 +3,23 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         x:Class="ProyectoConsultorio.MainWindow"
-        Title="Inicio de Sesión" Width="500" Height="500" Background="#1BA1E2">
+        Title="Consultorio" Width="500" Height="600" Background="#1BA1E2">
 	
-	<ScrollViewer>
-		<StackPanel Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
-			<Image HorizontalAlignment="Center" Margin="20" Height="125" Width="125" Source="/Recursos/Imagenes/logo_u.png"/>
-			<StackPanel>
-				<TextBlock Foreground="#031d3b" HorizontalAlignment="Center" Margin="5" FontSize="30" FontWeight="Bold" Text ="Inicio de sesión"/>
-			</StackPanel>
-			
-			<StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Vertical">
-				<TextBox Foreground="#031d3b" Background="#dfe3f2" Width="200" Margin="10" x:Name="tbUsuario" Watermark="Usuario"/>
-				<TextBox Foreground="#031d3b" PasswordChar="*" Background="#dfe3f2" Width="200" Margin="10" x:Name="tbContrasenia" Watermark="Contraseña"/>
-			</StackPanel>
+<ScrollViewer>
 
-		<StackPanel>
-			<TextBlock HorizontalAlignment="Center"/>
-			<Button Foreground="#031d3b" Background="#dfe3f2" Content="Ingresar" Click="AbrirVentanaSecundaria" HorizontalAlignment="Center" Margin="10"/>
-		</StackPanel>
-		</StackPanel>
-	</ScrollViewer>
 	
-			
+	<StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+		<Image HorizontalAlignment="Center" Margin="5" Height="250" Width="250" Source="/Recursos/Imagenes/logo_u.png"/>
+		<TextBlock HorizontalAlignment="Center" Text="¡Bienvenido!" FontSize="40" Margin="10" Foreground="Blue"/>
+		<TextBlock HorizontalAlignment="Center" Text="Ingrese su tipo de usuario" FontSize="15" Margin="10" Foreground="Blue"/>
+		<StackPanel Orientation="Horizontal">
+		<Button Foreground="#031d3b" Background="White" Content="Médico" Click="AbrirLogInMedico" 
+				Width="175" Height="125" HorizontalAlignment="Center" Margin="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+		<Button Foreground="#031d3b" Background="White" Content="Secretario" Click="AbrirLogInSecretario" 
+				Width="175" Height="125" HorizontalAlignment="Center" Margin="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+		</StackPanel>
+	</StackPanel>
+	
+</ScrollViewer>
+	
 </Window>

@@ -41,16 +41,16 @@ namespace ProyectoConsultorio
             mainWindow.Show(); // Muestra la ventana secundaria
             this.Close();
         }
-        private void InventarioMedicamento(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
-        {
-            var invWindow = new InvWindow();
-            invWindow.Show(); // Muestra la ventana secundaria
-            this.Close();
-        }
         private void ManejoTurnos(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             var turnosWindow = new TurnosWindow();
             turnosWindow.Show(); // Muestra la ventana secundaria
+            this.Close();
+        }
+        private void ManejoInventarios(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            var invWindow = new InvWindow();
+            invWindow.Show(); // Muestra la ventana secundaria
             this.Close();
         }
 

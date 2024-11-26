@@ -25,6 +25,9 @@
 		<AvaloniaResource Include="Recursos\**" />
 	</ItemGroup>
 	<ItemGroup>
+	  <Compile Update="Ventanas\MedMenuWindow.axaml.cs">
+	    <DependentUpon>MedMenuWindow.axaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Ventanas\TurnosWindow.axaml.cs">
 	    <DependentUpon>TurnosWindow.axaml</DependentUpon>
 	  </Compile>

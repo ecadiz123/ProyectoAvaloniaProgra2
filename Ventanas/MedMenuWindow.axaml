@@ -1,0 +1,28 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        x:Class="ProyectoConsultorio.MedMenuWindow"
+        Title="Menú médicos" Width="1500" Height="500" Background="#1BA1E2">
+
+
+	<StackPanel>
+
+		<StackPanel>
+			<Button Background="Red" Foreground="AntiqueWhite" Content="Cerrar sesion" Click="CerrarSesion" HorizontalAlignment="Left" Margin="10" Width="110" />
+			<Button Background="Red" Foreground="AntiqueWhite" Content="Prueba Error" Click="Error" HorizontalAlignment="Left" Margin="10" Width="110" />
+		</StackPanel>
+
+		<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+			<Button FontSize="20" Background="White" Content="Ver horas agendadas" Click="VerHoraAgendada" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="30" Width="300" Height="150" />
+			<Button FontSize="20" Background="White" Content="Manejar inventario medicamentos" Click="InventarioMedicamento" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="30" Width="300" Height="150" />
+		</StackPanel>
+
+		<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+			<Button FontSize="20" Background="White" Content="Manejar Fichas Médicas" Click="ManejoFichas" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="30" Width="300" Height="150"/>
+		</StackPanel>
+
+	</StackPanel>
+
+
+</Window>

@@ -3,20 +3,19 @@
 		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         x:Class="ProyectoConsultorio.MenuWindow"
-        Title="Menú Principal" Width="1500" Height="500" Background="#1BA1E2">
+        Title="Menú secretarios" Width="1500" Height="500" Background="#1BA1E2">
 
 
 	<StackPanel>
-
 		<StackPanel>
 			<Button Background="Red" Foreground="AntiqueWhite" Content="Cerrar sesion" Click="CerrarSesion" HorizontalAlignment="Left" Margin="10" Width="110" />
 			<Button Background="Red" Foreground="AntiqueWhite" Content="Prueba Error" Click="Error" HorizontalAlignment="Left" Margin="10" Width="110" />
 		</StackPanel>
 
 		<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-			<Button FontSize="20" Background="White" Content="Ingreso hora paciente" Click="HoraPaciente" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="30" Width="300" Height="150"/>
-			<Button FontSize="20" Background="White" Content="Ver horas disponibles" Click="DisponiblesDoctores" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="30" Width="300" Height="150" />
-			<Button FontSize="20" Background="White" Content="Manejar inventario medicamentos" Click="InventarioMedicamento" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="30" Width="300" Height="150" />
+			<Button FontSize="20" Background="White" Content="Ingreso Hora Paciente" Click="HoraPaciente" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="30" Width="300" Height="150"/>
+			<Button FontSize="20" Background="White" Content="Ver Horas Disponibles Doctores" Click="DisponiblesDoctores" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="30" Width="300" Height="150"/>
+			<Button FontSize="20" Background="White" Content="Manejo inventarios" Click="ManejoInventarios" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="30" Width="300" Height="150"/>
 		</StackPanel>
 
 		<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -24,8 +23,5 @@
 			<Button FontSize="20" Background="White" Content="Ver horas agendadas" Click="VerHoraAgendada" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="30" Width="300" Height="150"/>
 			<Button FontSize="20" Background="White" Content="Manejo de Turnos" Click="ManejoTurnos" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="30" Width="300" Height="150"/>
 		</StackPanel>
-
 	</StackPanel>
-
-
 </Window>

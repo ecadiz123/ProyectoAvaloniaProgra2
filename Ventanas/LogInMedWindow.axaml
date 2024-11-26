@@ -1,0 +1,31 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        x:Class="ProyectoConsultorio.LogInMedWindow"
+        Title="Inicio de Sesión Médicos" Width="500" Height="700" Background="#1BA1E2">
+	
+	<ScrollViewer>
+		<StackPanel>
+			<Button Background="#dfe3f2" Foreground="AntiqueWhite" Content="Volver" Click="Volver" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10" Width="110" />
+		<StackPanel Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
+			<StackPanel>
+				<Image HorizontalAlignment="Center" Margin="20" Height="125" Width="125" Source="/Recursos/Imagenes/logo_medicos.png"/>
+				<TextBlock Foreground="#031d3b" HorizontalAlignment="Center" Margin="20" FontSize="30" FontWeight="Bold" Text ="Inicio de sesión Médicos"/>
+			</StackPanel>
+			
+			<StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Vertical">
+				<TextBox Foreground="#031d3b" Background="#dfe3f2" Width="200" Margin="10" x:Name="tbUsuario" Watermark="Usuario"/>
+				<TextBox Foreground="#031d3b" PasswordChar="*" Background="#dfe3f2" Width="200" Margin="10" x:Name="tbContrasenia" Watermark="Contraseña"/>
+			</StackPanel>
+
+		<StackPanel>
+			<TextBlock HorizontalAlignment="Center"/>
+			<Button Foreground="#031d3b" Background="#dfe3f2" Content="Ingresar" Click="AbrirMenuMed" HorizontalAlignment="Center" Margin="10"/>
+		</StackPanel>
+		</StackPanel>
+		</StackPanel>
+	</ScrollViewer>
+	
+			
+</Window>
