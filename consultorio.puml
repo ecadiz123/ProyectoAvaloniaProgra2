@@ -100,19 +100,14 @@ package Clinica
         }
         class FichaMedica
         {
-          - pacienteAtendido: Paciente
           - grupoSanguineo: string
           - antecedentes: string
           - alergias: string
           - observaciones: string
-          - medicoTratante: Medico
-          + PacienteAtendido: Paciente
           + GrupoSanguineo: string
           + Antecedentes: string
           + Alergias: string
           + Observaciones: string
-          + MedicoTratante: Medico
-          
         }
 
         enum Relacion{
@@ -128,12 +123,12 @@ package Clinica
             - tutor: Tutor
             - fechaAtencion: DateTime
             - medicoAtiende: Medico
-            - ficha:Ficha
+            - ficha:FichaMedica
             + CambiarFechaAtencion(DateTime): void
             + Tutor: Tutor
-            + tieneTutor: bool
+            + TieneTutor: bool
             + MotivaDeConsulta:string
-            + fechaAtencion: DateTime
+            + FechaAtencion: DateTime
             + MedicoAtiende: Medico
             + Ficha: Ficha
         }

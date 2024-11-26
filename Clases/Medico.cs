@@ -24,9 +24,21 @@ namespace ProyectoConsultorio.Clases
             horasagendadas.Add(fecha);
             pacientes.Add(pas);
         }
-        public void EliminarPaciente()
+        public void AtenderHoraPaciente(Paciente pas)
         {
             //
+        }
+        public void IngresarFicha(FichaMedica ficha)
+        {
+            
+        }
+        public void ModificarFicha(FichaMedica ficha) 
+        { 
+            
+        }
+        public void EliminarFicha(FichaMedica ficha) 
+        {
+            
         }
     }
 }

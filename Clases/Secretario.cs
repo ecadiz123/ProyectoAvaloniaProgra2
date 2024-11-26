@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoConsultorio.Clases
 {
-    internal class Secretario
+    internal class Secretario : Persona
     {
         string userName = string.Empty;
         string password = string.Empty;
