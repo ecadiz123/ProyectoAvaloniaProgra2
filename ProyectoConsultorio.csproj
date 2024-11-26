@@ -23,6 +23,9 @@
 		<Folder Include="Recursos\Fuentes\" />
 		<Folder Include="Recursos\Estilos\" />
 		<Folder Include="Ventanas\"/>
+		<Folder Include="Usuarios"/>
+		<Folder Include="Usuarios\Medicos"/>
+		<Folder Include="Usuarios\Secretarios"/>
 		<AvaloniaResource Include="Recursos\**"/>
 	</ItemGroup>
 

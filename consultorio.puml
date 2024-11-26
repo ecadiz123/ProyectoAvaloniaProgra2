@@ -176,8 +176,6 @@ package Clinica
                 - password: string
                 - pacientesAAtender: List<Paciente>
                 - horasDisponibles: List<DateTime>
-                - boxAtiende: Box
-                + boxAtiende: Box
                 + HorasDisponibles: List<DateTime>
                 + PacientesAAtender: List<Paciente>
                 + LogIn(string,string):void
@@ -203,6 +201,8 @@ package Clinica
                  - medicoDeTurno: Medico
                  - capacidadPersonasMax: int
                  - numeroBox: int
+                 - desechables: List<Desechables>
+                 - medicamentos: List<Medicamentos>
                  + NumeroBox: int
                  + CambioDeTurno(Medico):void
                  + LimpiarBox(List<Limipieza>):void

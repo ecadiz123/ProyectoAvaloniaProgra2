@@ -26,7 +26,6 @@ namespace ProyectoConsultorio.Infraestructura
             this.desechables=desechablesMinimos;
             this.medicamentos=medicamentosMinimos;
             medicoDeTurno= new Medico();
-            medicoDeTurno = new Medico();
             numeroBox = 0;
             capacidadPersonasMax = 0;
             contadorPersonasActuales = 0;
