@@ -8,5 +8,6 @@ namespace ProyectoConsultorio.Clases.Interfaces
 {
     internal interface ITrabajadoresExternos
     {
+        string EmpresaContratista { get => EmpresaContratista; set =>  EmpresaContratista= value; }
     }
 }

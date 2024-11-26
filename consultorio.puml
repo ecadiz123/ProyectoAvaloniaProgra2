@@ -152,7 +152,6 @@ package Clinica
             interface IUsuario
             {
                 LogIn(string,string):void
-                LogOut():void
                 UserName:string
                 Password:string
             }
@@ -160,7 +159,6 @@ package Clinica
                 -userName: string
                 -password: string
                 + LogIn(string,string):void
-                + LogOut():void
                 + UserName:string
                 + Password:string
                 + AñadirHoraPaciente(Paciente):void
@@ -179,7 +177,6 @@ package Clinica
                 - pacientesAAtender: Dictionary<string,Paciente>
                 + PacientesAAtender: Dictionary<string,Paciente>
                 + LogIn(string,string):void
-                + LogOut():void
                 + UserName:string
                 + Password:string
                 + AtenderHoraPaciente(Paciente): void
