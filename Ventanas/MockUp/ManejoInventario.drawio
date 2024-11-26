@@ -7,6 +7,24 @@
         <mxCell id="k10KO1cujoMn8raNGXop-1" value="Manejo Inventario" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.window;align=left;verticalAlign=top;spacingLeft=8;strokeColor2=#008cff;strokeColor3=#c4c4c4;fontColor=#666666;mainText=;fontSize=17;labelBackgroundColor=none;whiteSpace=wrap;fillColor=#1BA1E2;" vertex="1" parent="1">
           <mxGeometry width="840" height="510" as="geometry" />
         </mxCell>
+        <mxCell id="k10KO1cujoMn8raNGXop-59" value="" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.marginRect2;rectMarginTop=32;strokeColor=#666666;gradientColor=none;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="60" y="70" width="670" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="k10KO1cujoMn8raNGXop-60" value="Limpieza" style="strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.rrect;rSize=0;fontSize=17;fontColor=#666666;gradientColor=none;" vertex="1" parent="k10KO1cujoMn8raNGXop-59">
+          <mxGeometry width="150" height="25" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k10KO1cujoMn8raNGXop-61" value="Medicamentos" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.rrect;rSize=0;fontSize=17;fontColor=#ffffff;strokeColor=#008cff;fillColor=#008cff;" vertex="1" parent="k10KO1cujoMn8raNGXop-59">
+          <mxGeometry width="140" height="25" relative="1" as="geometry">
+            <mxPoint x="155" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k10KO1cujoMn8raNGXop-62" value="" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.topButton;rSize=5;strokeColor=#008cff;fillColor=#008cff;gradientColor=none;resizeWidth=1;movable=0;deletable=1;" vertex="1" parent="k10KO1cujoMn8raNGXop-59">
+          <mxGeometry width="670" height="7" relative="1" as="geometry">
+            <mxPoint y="25" as="offset" />
+          </mxGeometry>
+        </mxCell>
         <mxCell id="k10KO1cujoMn8raNGXop-3" value="" style="shape=table;startSize=0;container=1;collapsible=0;childLayout=tableLayout;" vertex="1" parent="1">
           <mxGeometry x="59" y="100" width="671" height="334" as="geometry" />
         </mxCell>
