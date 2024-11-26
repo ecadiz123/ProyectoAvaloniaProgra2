@@ -198,21 +198,37 @@ package Clinica
              }
              class Box{
                  - medicoDeTurno: Medico
+                 - capacidadPersonasMax: int
                  + CambioDeTurno(Medico):void
                  + LimpiarBox(List<Limipieza>):void
+                 + CapacidadPersonasMax: int
+                 + AddPersonaActual(int):void
+                 + EliminarPersonaActual(int):void
              }
              class SalaDeEspera {
                  - seguridadDeTurno: List<Seguridad>
+                 - capacidadPersonasMax: int
+                 + CapacidadPersonasMax: int
                  + CambioDeTurno(List<Seguridad>): void
                  + LimpiezaSala(List<Limpiea>): void
+                 + AddPersonaActual(int):void
+                 + EliminarPersonaActual(int):void
              }
              
 
          }
         'Relaciones
         'Herencias
-        Persona<|-- Tutor
         
+        Persona<|-- Tutor
+        Persona<|-- Paciente
+        Persona<|-- Secretario
+        Persona<|-- Medico
+        Persona<|-- Limpieza
+        Persona<|-- Seguridad
+
+
+
         'Composicion
         '(Se tienen en campo y no existen sin estar dentro de la clase)
         Paciente *-- Tutor
@@ -236,10 +252,7 @@ package Clinica
         Secretario -- IInfraestructura
         'Interfaces:
 
-        'Herencias Interfaces
-        Persona <|-- ITrabajadoresExternos
-        Persona <|-- ICliente
-        Persona <|-- IUsuario
+        
         'Interfaz T externos
         ITrabajadoresExternos <|.. Limpieza
         ITrabajadoresExternos <|.. Seguridad
