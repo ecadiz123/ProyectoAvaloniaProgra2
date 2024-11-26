@@ -1,10 +1,12 @@
-﻿using System;
+﻿using ProyectoConsultorio;
+using ProyectoConsultorio.Usuarios;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProyectoConsultorio.Clases
+namespace ProyectoConsultorio.Clientes
 {
     internal class Paciente : Persona
     {

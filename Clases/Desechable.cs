@@ -1,16 +1,16 @@
 ﻿using Avalonia.Controls.Platform;
-using ProyectoConsultorio.Clases.Interfaces;
+using ProyectoConsultorio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProyectoConsultorio.Clases
+namespace ProyectoConsultorio.Inventario
 {
     internal class Desechable : IInsumo
     {
-        private string nombre = string.Empty;
+        private string nombre;
         private int cantidad;
 
         public string Nombre { get => nombre; set => nombre = value; }

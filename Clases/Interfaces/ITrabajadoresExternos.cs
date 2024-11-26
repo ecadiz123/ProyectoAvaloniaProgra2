@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProyectoConsultorio.Clases.Interfaces
+namespace ProyectoConsultorio.TrabajadoresExt
 {
     internal interface ITrabajadoresExternos
     {

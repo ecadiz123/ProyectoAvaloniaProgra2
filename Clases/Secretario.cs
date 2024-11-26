@@ -1,13 +1,13 @@
-﻿using ProyectoConsultorio.Clases.Interfaces;
+﻿using ProyectoConsultorio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProyectoConsultorio.Clases
+namespace ProyectoConsultorio.Usuarios
 {
-    internal class Secretario : Persona , IUsuario
+    internal class Secretario : Persona, IUsuario
     {
         string userName = string.Empty;
         string password = string.Empty;

@@ -1,11 +1,11 @@
-﻿using ProyectoConsultorio.Clases.Interfaces;
+﻿using ProyectoConsultorio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProyectoConsultorio.Clases
+namespace ProyectoConsultorio.Inventario
 {
     internal class Medicamentos : IInsumo
     {
@@ -22,7 +22,7 @@ namespace ProyectoConsultorio.Clases
         public int VerCantidad()
         {
             return Cantidad;
-        } 
+        }
         public void RestarCantidad(int c)
         {
             Cantidad -= c;
