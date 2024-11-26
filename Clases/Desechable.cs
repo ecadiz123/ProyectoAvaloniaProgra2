@@ -22,15 +22,15 @@ namespace ProyectoConsultorio.Inventario
         }
         public void AddCantidad(int c)
         {
-            Cantidad += c;
+            cantidad += c;
         }
         public void  RestarCantidad(int c)
         {
-            Cantidad -= c;
+            cantidad -= c;
         }
         public int VerCantidad() 
         { 
-            return Cantidad;
+            return cantidad;
         }
     }
 }

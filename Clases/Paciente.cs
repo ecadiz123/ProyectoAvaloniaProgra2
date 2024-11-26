@@ -22,5 +22,12 @@ namespace ProyectoConsultorio.Clientes
         public DateTime Fechaatencion { get => fechaatencion; set => fechaatencion = value; }
         internal Medico MedicoAtiende { get => medicoAtiende; set => medicoAtiende = value; }
         internal FichaMedica Ficha { get => ficha; set => ficha = value; }
+
+        Paciente(Tutor tutor , Medico medico, FichaMedica ficha)
+        {
+            this.tutor = tutor;
+            this.medicoAtiende = medico;
+            this.ficha = ficha;
+        }
     }
 }

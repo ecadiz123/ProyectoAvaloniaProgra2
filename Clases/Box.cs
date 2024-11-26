@@ -25,7 +25,7 @@ namespace ProyectoConsultorio.Infraestructura
         {
             this.desechables=desechablesMinimos;
             this.medicamentos=medicamentosMinimos;
-            medicoDeTurno= new Medico();
+            this.medicoDeTurno= new Medico();
             numeroBox = 0;
             capacidadPersonasMax = 0;
             contadorPersonasActuales = 0;
@@ -38,11 +38,11 @@ namespace ProyectoConsultorio.Infraestructura
         }
         public void AddPersonaActual(int c)
         {
-            ContadorPersonasActuales += c;
+            contadorPersonasActuales += c;
         }
         public void EliminarPersonaActual(int c)
         {
-            ContadorPersonasActuales -= c;
+            contadorPersonasActuales -= c;
         }
     }
 }

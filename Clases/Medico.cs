@@ -10,19 +10,21 @@ using System.Threading.Tasks;
 
 namespace ProyectoConsultorio.Usuarios
 {
-      internal class Medico : Persona , IUsuario
+    internal class Medico : Persona, IUsuario
     {
         string userName = string.Empty;
         string password = string.Empty;
 
-        
+
         private List<DateTime> horasagendadas = new List<DateTime>();
         private List<Paciente> pacientes = new List<Paciente>();
 
- 
+
         public string UserName { get => userName; set => userName = value; }
         public string Password { get => password; set => password = value; }
-
+        public Medico()
+        { 
+        } 
         public Medico(string userName, string pass)
         {
             this.userName = userName;
@@ -31,7 +33,7 @@ namespace ProyectoConsultorio.Usuarios
 
         public void LogIn(string userName, string password)
         {
-            StreamReader usuariocontrasena = new StreamReader("/Usuarios/Medicos/" + this.Nombre);
+            StreamReader usuariocontrasena = new StreamReader("/Usuarios/Medicos/" + this.Nombre+this.Apellidopaterno);
             string recuperado = usuariocontrasena.ReadToEnd();
             usuariocontrasena.Close();
             Medico medrecuperado = JsonConvert.DeserializeObject<Medico>(recuperado);
