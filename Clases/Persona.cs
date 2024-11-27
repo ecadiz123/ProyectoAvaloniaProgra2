@@ -36,7 +36,7 @@ namespace ProyectoConsultorio
         public Persona(int rut,int digitoverificador,int edad,string nombre,string apellidomaterno,string apellidopaterno,string direccion,int telefono,sexo_t sexo,prevision_t prevision,DateTime fechanacimiento)
         {
             this.rut = rut;
-            this.digitoverificador = digitoverificador;
+            this.Digitoverificador = digitoverificador;
             this.edad = edad;
             this.nombre = nombre;
             this.apellidomaterno = apellidomaterno;
@@ -50,7 +50,7 @@ namespace ProyectoConsultorio
         public Persona()
         {
             rut = 0;
-            digitoverificador = 0;
+            Digitoverificador = 0;
             edad = 0;
             nombre = string.Empty;
             apellidomaterno = string.Empty;
@@ -71,5 +71,6 @@ namespace ProyectoConsultorio
         public DateTime Fechanacimiento { get => fechanacimiento; set => fechanacimiento = value; }
         internal sexo_t Sexo { get => sexo; set => sexo = value; }
         internal prevision_t Prevision { get => prevision; set => prevision = value; }
+        public int Digitoverificador { get => digitoverificador; set => digitoverificador = value; }
     }
 }

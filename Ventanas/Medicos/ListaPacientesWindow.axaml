@@ -9,10 +9,9 @@
 	<StackPanel>
 	<Button Content="Volver" Click="VolverMenu" HorizontalContentAlignment="Center" Margin="10" VerticalContentAlignment="Center" Width="75" Height="30"/>
 		
-			<StackPanel>
+			<StackPanel HorizontalAlignment="Center" Orientation="Vertical">
 				<TextBlock Text="Lista de Pacientes" FontWeight="Bold" FontSize="16" Margin="10" />
-				<DataGrid Name="PacientesDataGrid" AutoGenerateColumns="True" Margin="10" />
-				<Button Content="Volver" Click="VolverMenu" Margin="10" />
+				<ListBox x:Name="LboxPacientes" ></ListBox>
 			</StackPanel>
 		
 
