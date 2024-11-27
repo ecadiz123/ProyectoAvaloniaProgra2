@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoConsultorio.Clinica.Inventario
 {
-    internal class Desechable : IInsumo
+    public class Desechable : IInsumo
     {
         private string nombre;
         private int cantidad;

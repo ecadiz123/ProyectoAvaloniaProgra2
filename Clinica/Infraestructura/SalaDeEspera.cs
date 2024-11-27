@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoConsultorio.Clinica.Infraestructura
 {
-    internal class SalaDeEspera : IInfraestructura
+    public class SalaDeEspera : IInfraestructura
     {
         private List<Seguridad> seguridadDeTurno;
         private int capacidadPersonasMax;

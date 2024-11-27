@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoConsultorio.Clinica.Clientes
 {
-    internal interface ICliente
+    public interface ICliente
     {
         string MotivoDeConsulta { get; set; }
         DateTime FechaDeAtencion { get; set; }

@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace ProyectoConsultorio.Clinica.Clientes
 {
-    enum GrupoSanguineo
+    public enum GrupoSanguineo
     {
         A, B, AB, O
     }
-    internal class FichaMedica
+    public class FichaMedica
     {
         private GrupoSanguineo grupoSanguineo;
         private string antecedentes = string.Empty;

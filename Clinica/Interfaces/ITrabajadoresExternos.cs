@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoConsultorio.TrabajadoresExt
 {
-    internal interface ITrabajadoresExternos
+    public interface ITrabajadoresExternos
     {
         string EmpresaContratista { get; set; }
     }

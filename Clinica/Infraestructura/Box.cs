@@ -8,7 +8,7 @@ using ProyectoConsultorio.Clinica.Usuarios;
 
 namespace ProyectoConsultorio.Clinica.Infraestructura
 {
-    internal class Box : IInfraestructura
+    public class Box : IInfraestructura
     {
         private Medico medicoDeTurno;
         private int numeroBox;
