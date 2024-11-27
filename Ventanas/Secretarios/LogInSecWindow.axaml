@@ -8,7 +8,7 @@
 	
 	<ScrollViewer>
 		<StackPanel>
-			<Button Background="#dfe3f2" Foreground="AntiqueWhite" Content="Volver" Click="Volver" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10" Width="110" />
+			<Button Background="#dfe3f2" Foreground="#031d3b" Content="Volver" Click="Volver" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10" Width="110" />
 		<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
 			<StackPanel>
 				<Image HorizontalAlignment="Center" Margin="20" Height="125" Width="125" Source="/Recursos/Imagenes/logo_secretaria.png"/>

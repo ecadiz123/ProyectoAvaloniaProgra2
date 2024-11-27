@@ -27,6 +27,9 @@
 	  <AvaloniaXaml Update="Ventanas\Medicos\ModFichasWindow.axaml">
 	    <SubType>Designer</SubType>
 	  </AvaloniaXaml>
+	  <AvaloniaXaml Update="Ventanas\Secretarios\IngresoHoraWindow.axaml">
+	    <SubType>Designer</SubType>
+	  </AvaloniaXaml>
 	</ItemGroup>
 	<ItemGroup>
 	  <Compile Update="Ventanas\Medicos\ModFichasWindow.axaml.cs">
@@ -41,6 +44,10 @@
 	  </Compile>
 	  <Compile Update="Ventanas\Medicos\VerMedHoraWindow.axaml.cs">
 	    <DependentUpon>VerMedHoraWindow.axaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Ventanas\Secretarios\IngresoHoraWindow.axaml.cs">
+	    <SubType>Code</SubType>
+	    <DependentUpon>IngresoHoraWindow.axaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Ventanas\Secretarios\VerHoraWindow.axaml.cs">
 	    <DependentUpon>VerHoraWindow.axaml</DependentUpon>

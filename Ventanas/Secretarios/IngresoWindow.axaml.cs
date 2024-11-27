@@ -56,8 +56,8 @@ namespace ProyectoConsultorio
 
         private void IngresoDatos(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
-            var menuWindow = new MenuWindow();
-            menuWindow.Show(); // Muestra la ventana secundaria
+            var ingresoHoraWindow = new IngresoHoraWindow();
+            ingresoHoraWindow.Show(); // Muestra la ventana secundaria
             this.Close();
         }
 
