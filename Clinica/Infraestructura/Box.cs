@@ -21,17 +21,7 @@ namespace ProyectoConsultorio.Clinica.Infraestructura
         public Medico MedicoDeTurno { get => medicoDeTurno; set => medicoDeTurno = value; }
         public int NumeroBox { get => numeroBox; set => numeroBox = value; }
         public int ContadorPersonasActuales { get => contadorPersonasActuales; set => contadorPersonasActuales = value; }
-        public Box(List<Medicamentos> medicamentosMinimos, List<Desechable> desechablesMinimos)
-        {
-            desechables = desechablesMinimos;
-            medicamentos = medicamentosMinimos;
-            medicoDeTurno = new Medico();
-            numeroBox = 0;
-            capacidadPersonasMax = 0;
-            contadorPersonasActuales = 0;
-
-
-        }
+       
         public void CambiodeTurno(Medico medico)
         {
             medicoDeTurno = medico;

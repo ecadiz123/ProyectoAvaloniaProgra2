@@ -27,5 +27,6 @@ namespace ProyectoConsultorio.Clinica.Clientes
         {
             fechaatencion = nuevafechaatencion;
         }
+
     }
 }

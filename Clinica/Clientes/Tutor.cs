@@ -16,14 +16,12 @@ namespace ProyectoConsultorio.Clinica.Clientes
     }
     public class Tutor : Persona
     {
-        public relacion_t relacion;
-        public Paciente paciente;
-       public Tutor(relacion_t relacion, Paciente paciente) : base()
-        {
-            this.relacion = relacion;
-            this.paciente = paciente;
-        }
-        public relacion_t Getrelacion() { return relacion; }
-        public Paciente GetPaciente() { return paciente; }
+        private relacion_t relacion;
+        private Paciente paciente;
+
+        public relacion_t Relacion { get => relacion; set => relacion = value; }
+        public Paciente Paciente { get => paciente; set => paciente = value; }
+
+       
     }
 }

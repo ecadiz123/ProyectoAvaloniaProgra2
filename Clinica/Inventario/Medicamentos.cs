@@ -13,11 +13,7 @@ namespace ProyectoConsultorio.Clinica.Inventario
 
         public string Nombre { get => nombre; set => nombre = value; }
         public int Cantidad { get => cantidad; set => cantidad = value; }
-        public Medicamentos(string nombre, int cantMinima)
-        {
-            this.nombre = nombre;
-            cantidad = cantMinima;
-        }
+     
         public void AddCantidad(int c)
         {
             cantidad += c;

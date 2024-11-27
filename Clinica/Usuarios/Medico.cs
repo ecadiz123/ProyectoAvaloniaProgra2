@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using ProyectoConsultorio.Clinica.Clientes;
-using ProyectoConsultorio.Usuarios;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -16,20 +15,25 @@ namespace ProyectoConsultorio.Clinica.Usuarios
         string password = string.Empty;
 
 
-        private List<DateTime> horasagendadas = new List<DateTime>();
+
         private List<Paciente> pacientes = new List<Paciente>();
+        private List<DateTime> horasDisponibles = new List<DateTime>(); 
 
 
         public string UserName { get => userName; set => userName = value; }
         public string Password { get => password; set => password = value; }
+        public List<DateTime> HorasDisponibles { get => horasDisponibles; set => horasDisponibles = value; }
+        public List<Paciente> Pacientes { get => pacientes; set => pacientes = value; }
+
         // Constructor vacio
         public Medico()
         {
 
             userName = string.Empty;
             password = string.Empty;
-            horasagendadas = new List<DateTime>();
-            pacientes = new List<Paciente>();
+            
+            Pacientes = new List<Paciente>();
+
         }
 
 
@@ -45,32 +49,44 @@ namespace ProyectoConsultorio.Clinica.Usuarios
             StreamReader usuariocontrasena = new StreamReader("/Usuarios/Medicos/" + Nombre + Apellidopaterno);
             string recuperado = usuariocontrasena.ReadToEnd();
             usuariocontrasena.Close();
-            Medico medrecuperado = JsonConvert.DeserializeObject<Medico>(recuperado);
-            if (!(medrecuperado.UserName == UserName && medrecuperado.Password == Password))
+            Medico medRecuperado = JsonConvert.DeserializeObject<Medico>(recuperado);
+            if (!(medRecuperado.UserName == UserName && medRecuperado.Password == Password))
             {
                 throw new Exception("Error en ingreso de usuario");
             }
         }
-        public void AgregarPaciente(Paciente pas, DateTime fecha)
+      
+        public void LogOff()//Se debe Hacer log off para guardar estado de medico en json
         {
-            horasagendadas.Add(fecha);
-            pacientes.Add(pas);
+
         }
+        
         public void AtenderHoraPaciente(Paciente pas)
         {
-            //
+            
         }
-        public void IngresarFicha(FichaMedica ficha)
+        public void IngresarFicha(Paciente paciente)
         {
 
         }
-        public void ModificarFicha(FichaMedica ficha)
+        public void ModificarFicha(Paciente paciente)
         {
 
         }
-        public void EliminarFicha(FichaMedica ficha)
+
+        void RecuperarPacientesJson()
         {
 
+        }
+        void RecuperarhorasDispJson()
+        {
+
+        }
+
+        public void JsonMedicoInit()
+        { 
+            RecuperarhorasDispJson();
+            RecuperarPacientesJson();
         }
     }
 }

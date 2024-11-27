@@ -16,11 +16,7 @@ namespace ProyectoConsultorio.Clinica.Infraestructura
         public int CapacidadPersonasMax { get => capacidadPersonasMax; set => capacidadPersonasMax = value; }
         internal List<Seguridad> SeguridaDeTurno { get => seguridadDeTurno; set => seguridadDeTurno = value; }
         public int ContadorPersonasActuales { get => contadorPersonasActuales; set => contadorPersonasActuales = value; }
-        SalaDeEspera(List<Seguridad> Seg)
-        {
-            seguridadDeTurno = Seg;
-            contadorPersonasActuales = 0;
-        }
+        
 
         public void CambiodeTurno(List<Seguridad> seguridad)
         {

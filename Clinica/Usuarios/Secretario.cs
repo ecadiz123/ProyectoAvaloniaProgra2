@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
 using ProyectoConsultorio.Clinica.Clientes;
+using ProyectoConsultorio.Clinica.Infraestructura;
 using ProyectoConsultorio.Clinica.Inventario;
-using ProyectoConsultorio.TrabajadoresExt;
-using ProyectoConsultorio.Usuarios;
+using ProyectoConsultorio.Clinica.TrabajadoresExt;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,26 +17,36 @@ namespace ProyectoConsultorio.Clinica.Usuarios
         string userName = string.Empty;
         string password = string.Empty;
 
+        List<Medico> medicosClinica;
+
+        List<IInsumo> inventario;
+        
+        List<IInfraestructura> infraestructuras;
+
+        List<ITrabajadoresExternos> trabajadores;
         public string UserName { get => userName; set => userName = value; }
         public string Password { get => password; set => password = value; }
+        public List<ITrabajadoresExternos> Trabajadores { get => trabajadores; set => trabajadores = value; }
+        public List<IInfraestructura> Infraestructuras { get => infraestructuras; set => infraestructuras = value; }
+        public List<IInsumo> Inventario { get => inventario; set => inventario = value; }
+        public List<Medico> MedicosClinica { get => medicosClinica; set => medicosClinica = value; }
 
-        public Secretario(string user, string pass) : base()
-        {
-            userName = user;
-            password = pass;
-        }
         public void LogIn(string username, string password)
         {
             StreamReader usuariocontrasena = new StreamReader("/Usuarios/Secretarios/" + Nombre + Apellidopaterno);
             string recuperado = usuariocontrasena.ReadToEnd();
             usuariocontrasena.Close();
-            Secretario medrecuperado = JsonConvert.DeserializeObject<Secretario>(recuperado);
-            if (!(medrecuperado.UserName == UserName && medrecuperado.Password == Password))
+            Secretario secRecuperado = JsonConvert.DeserializeObject<Secretario>(recuperado);
+            if (!(secRecuperado.UserName == UserName && secRecuperado.Password == Password))
             {
                 throw new Exception("Error en ingreso de usuario");
             }
         }
-        public void AñadirHoraPaciente(Paciente pacientenuevo)
+        public void LogOff()//GUarda estado de secretario en Json
+        {
+
+        }
+        public void AñadirPaciente(Paciente nuevoPaciente)
         {
 
         }
@@ -44,18 +54,12 @@ namespace ProyectoConsultorio.Clinica.Usuarios
         {
 
         }
-        public void MarcarLlegadaTurnoMedico(Medico medicoLlegando)
-        {
-
-        }
+        
         public void MarcarTurnoTExterno(ITrabajadoresExternos texterno)
         {
 
         }
-        public void AnhiadirInsumo(IInsumo insumoAdd)
-        {
-
-        }
+       
         public void AnhiadirPersonasInf(int cantidadPersonasEntrantes)
         {
 
