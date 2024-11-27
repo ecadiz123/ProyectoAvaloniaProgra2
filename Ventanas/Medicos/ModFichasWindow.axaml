@@ -1,0 +1,22 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        x:Class="ProyectoConsultorio.ModFichasWindow"
+		Icon="/Recursos/Imagenes/icono_margen.png"
+        Title="Modificar fichas medicas" Width="500" Height="500" Background="#1BA1E2">
+
+	<StackPanel Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Vertical">
+		<TextBlock Text="Grupo Sanguineo" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5"/>
+		<RadioButton GroupName="rbA"
+              Content="A"/>
+		<RadioButton GroupName="rbB"
+				  Content="B"/>
+		<RadioButton GroupName="rbAB"
+				  Content="AB"/>
+		<RadioButton GroupName="rbO"
+		  Content="O"/>
+		<Button Content="Volver" Click="VolverMenu" HorizontalContentAlignment="Center" Margin="10" VerticalContentAlignment="Center" Width="75" Height="30"/>
+	</StackPanel>
+		
+</Window>

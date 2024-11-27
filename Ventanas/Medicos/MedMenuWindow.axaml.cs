@@ -10,8 +10,8 @@ namespace ProyectoConsultorio
         }
         private void VerAgendada(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
-            var verHoraWindow = new VerHoraWindow();
-            verHoraWindow.Show(); // Muestra la ventana secundaria
+            var verMedHoraWindow = new VerMedHoraWindow();
+            verMedHoraWindow.Show(); // Muestra la ventana secundaria
             this.Close();
         }
 

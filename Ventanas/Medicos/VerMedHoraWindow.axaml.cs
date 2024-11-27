@@ -3,19 +3,13 @@ using ProyectoConsultorio.Clases;
 
 namespace ProyectoConsultorio
 {
-    public partial class ManejoFichasWindow : Window
+    public partial class VerMedHoraWindow : Window
     {
-        public ManejoFichasWindow()
+        public VerMedHoraWindow()
         {
             InitializeComponent();
+        }
 
-        }
-        private void ModificarFichas(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
-        {
-            var modFichasWindow = new ModFichasWindow();
-            modFichasWindow.Show(); // Muestra la ventana secundaria
-            this.Close();
-        }
         private void VolverMenu(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             var medMenuWindow = new MedMenuWindow();
@@ -24,3 +18,5 @@ namespace ProyectoConsultorio
         }
     }
 }
+        
+    

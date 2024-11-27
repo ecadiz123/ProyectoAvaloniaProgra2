@@ -25,11 +25,23 @@
 		<AvaloniaResource Include="Recursos\**" />
 	</ItemGroup>
 	<ItemGroup>
+	  <AvaloniaXaml Update="Ventanas\Medicos\ModFichasWindow.axaml">
+	    <SubType>Designer</SubType>
+	  </AvaloniaXaml>
+	</ItemGroup>
+	<ItemGroup>
+	  <Compile Update="Ventanas\Medicos\ModFichasWindow.axaml.cs">
+	    <SubType>Code</SubType>
+	    <DependentUpon>ModFichasWindow.axaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Ventanas\Medicos\MedMenuWindow.axaml.cs">
 	    <DependentUpon>MedMenuWindow.axaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Ventanas\Medicos\ManejoFichasWindow.axaml.cs">
 	    <DependentUpon>ManejoFichasWindow.axaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Ventanas\Medicos\VerMedHoraWindow.axaml.cs">
+	    <DependentUpon>VerMedHoraWindow.axaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Ventanas\Secretarios\VerHoraWindow.axaml.cs">
 	    <DependentUpon>VerHoraWindow.axaml</DependentUpon>
@@ -45,6 +57,9 @@
 	  </Compile>
 	  <Compile Update="Ventanas\Medicos\ListaPacientesWindow.axaml.cs">
 	    <DependentUpon>ListaPacientesWindow.axaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Ventanas\Medicos\VerMedHoraWindow.axaml.cs">
+	    <DependentUpon>VerMedHoraWindow.axaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
