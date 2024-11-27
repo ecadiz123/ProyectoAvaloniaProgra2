@@ -30,6 +30,9 @@
 	  <Compile Update="Ventanas\Medicos\ManejoFichasWindow.axaml.cs">
 	    <DependentUpon>ManejoFichasWindow.axaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Ventanas\Medicos\VerMedHoraWindow.axaml.cs">
+	    <DependentUpon>VerMedHoraWindow.axaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Ventanas\Secretarios\VerHoraWindow.axaml.cs">
 	    <DependentUpon>VerHoraWindow.axaml</DependentUpon>
 	  </Compile>
@@ -44,6 +47,9 @@
 	  </Compile>
 	  <Compile Update="Ventanas\Medicos\ListaPacientesWindow.axaml.cs">
 	    <DependentUpon>ListaPacientesWindow.axaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Ventanas\Medicos\VerMedHoraWindow.axaml.cs">
+	    <DependentUpon>VerMedHoraWindow.axaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
