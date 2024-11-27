@@ -3,6 +3,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         x:Class="ProyectoConsultorio.MainWindow"
+		Icon="/Recursos/Imagenes/icono_margen.png"
         Title="Consultorio" Width="500" Height="600" Background="#1BA1E2">
 	
 <ScrollViewer>

@@ -20,10 +20,9 @@ namespace ProyectoConsultorio
     {
         CAPITAL, HABITAT, UNO, CUPRUM, MODELO, PLANVITAL, PROVIDA
     }
-    internal class Persona
+    public class Persona
     {
-        private int rut;
-        private int digitoverificador;
+        private string rut = string.Empty;
         private int edad;
         private string nombre = string.Empty;
         private string apellidomaterno = string.Empty;
@@ -69,7 +68,6 @@ namespace ProyectoConsultorio
         public string Direccion { get => direccion; set => direccion = value; }
         public int Telefono { get => telefono; set => telefono = value; }
         public DateTime Fechanacimiento { get => fechanacimiento; set => fechanacimiento = value; }
-        public int Digitoverificador { get => digitoverificador; set => digitoverificador = value; }
         internal sexo_t Sexo { get => sexo; set => sexo = value; }
         internal prevision_t Prevision { get => prevision; set => prevision = value; }
     }

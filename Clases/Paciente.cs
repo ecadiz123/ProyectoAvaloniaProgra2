@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoConsultorio.Clientes
 {
-    internal class Paciente : Persona
+    public class Paciente : Persona
     {
         private string motivoConsulta = string.Empty;
         private bool tieneTutor;

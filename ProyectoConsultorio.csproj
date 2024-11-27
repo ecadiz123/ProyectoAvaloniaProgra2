@@ -18,30 +18,33 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 	<ItemGroup>
-		<Folder Include="Clases\" />
 		<Folder Include="Recursos\Imagenes\" />
 		<Folder Include="Recursos\Fuentes\" />
 		<Folder Include="Recursos\Estilos\" />
 		<AvaloniaResource Include="Recursos\**" />
 	</ItemGroup>
 	<ItemGroup>
-	  <Compile Update="Ventanas\MedMenuWindow.axaml.cs">
+	  <Compile Update="Ventanas\Medicos\MedMenuWindow.axaml.cs">
 	    <DependentUpon>MedMenuWindow.axaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="Ventanas\TurnosWindow.axaml.cs">
+	  <Compile Update="Ventanas\Medicos\ManejoFichasWindow.axaml.cs">
+	    <DependentUpon>ManejoFichasWindow.axaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Ventanas\Secretarios\VerHoraWindow.axaml.cs">
+	    <DependentUpon>VerHoraWindow.axaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Ventanas\Secretarios\TurnosWindow.axaml.cs">
 	    <DependentUpon>TurnosWindow.axaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="Ventanas\InvWindow.axaml.cs">
+	  <Compile Update="Ventanas\Secretarios\InvWindow.axaml.cs">
 	    <DependentUpon>InvWindow.axaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Ventanas\ErrorWindow.axaml.cs">
 	    <DependentUpon>ErrorWindow.axaml</DependentUpon>
 	  </Compile>
-		<Folder Include="Ventanas\"/>
-		<Folder Include="Usuarios"/>
-		<Folder Include="Usuarios\Medicos"/>
-		<Folder Include="Usuarios\Secretarios"/>
-		<AvaloniaResource Include="Recursos\**"/>
+	  <Compile Update="Ventanas\Medicos\ListaPacientesWindow.axaml.cs">
+	    <DependentUpon>ListaPacientesWindow.axaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 </Project>

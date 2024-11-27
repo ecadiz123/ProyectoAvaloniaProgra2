@@ -3,6 +3,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         x:Class="ProyectoConsultorio.LogInMedWindow"
+		Icon="/Recursos/Imagenes/icono_margen.png"
         Title="Inicio de Sesión Médicos" Width="500" Height="700" Background="#1BA1E2">
 	
 	<ScrollViewer>
