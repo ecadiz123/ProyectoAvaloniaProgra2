@@ -4,7 +4,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         x:Class="ProyectoConsultorio.VerMedHoraWindow"
 		Icon="/Recursos/Imagenes/icono_margen.png"
-        Title="Ver horas médico" Width="800" Height="800" Background="#1BA1E2">
+        Title="Ver horas médico" Width="1100" Height="800" Background="#1BA1E2">
 	<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
 		<Calendar x:Name="calendar" SelectionMode="MultipleRange"/>
 		<Border Margin="10" BorderBrush="Black" BorderThickness="2" Padding="10" CornerRadius="10">

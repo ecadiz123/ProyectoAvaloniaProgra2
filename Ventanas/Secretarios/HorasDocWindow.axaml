@@ -4,7 +4,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         x:Class="ProyectoConsultorio.HorasDocWindow"
 		Icon="/Recursos/Imagenes/icono_margen.png"
-        Title="Visualizador de horarios disponibles" Width="800" Height="800">
+        Title="Visualizador de horarios disponibles" Width="800" Height="800" Background="#1BA1E2">
 
 	<StackPanel Margin="20">
 		<!-- Título -->

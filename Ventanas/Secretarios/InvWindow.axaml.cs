@@ -1,5 +1,8 @@
 using Avalonia.Controls;
 using ProyectoConsultorio.Clases;
+using System.Collections.ObjectModel;
+using System;
+using System.Collections.Generic;
 
 namespace ProyectoConsultorio
 {
