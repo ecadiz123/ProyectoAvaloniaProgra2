@@ -10,7 +10,10 @@ namespace ProyectoConsultorio.TrabajadoresExt
     internal class Seguridad : Persona , ITrabajadoresExternos
     {
         string empresaContratista = string.Empty;
+        public Seguridad(string empresaContratista):base()
+        {
 
+        }
         public string EmpresaContratista { get => empresaContratista; set => empresaContratista = value; }
     }
 }

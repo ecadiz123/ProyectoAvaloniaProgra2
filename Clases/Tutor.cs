@@ -19,7 +19,7 @@ namespace ProyectoConsultorio.Clientes
     {
         private relacion_t relacion;
         private Paciente paciente;
-        Tutor(relacion_t relacion, Paciente paciente)
+        public Tutor(relacion_t relacion, Paciente paciente):base()
         {
             this.relacion = relacion;
             this.paciente = paciente;

@@ -33,7 +33,34 @@ namespace ProyectoConsultorio
         private sexo_t sexo;
         private prevision_t prevision;
         private DateTime fechanacimiento;
-      
+        public Persona(int rut,int digitoverificador,int edad,string nombre,string apellidomaterno,string apellidopaterno,string direccion,int telefono,sexo_t sexo,prevision_t prevision,DateTime fechanacimiento)
+        {
+            this.rut = rut;
+            this.digitoverificador = digitoverificador;
+            this.edad = edad;
+            this.nombre = nombre;
+            this.apellidomaterno = apellidomaterno;
+            this.apellidopaterno = apellidopaterno;
+            this.direccion = direccion;
+            this.telefono = telefono;
+            this.sexo = sexo;
+            this.prevision = prevision;
+            this.fechanacimiento = fechanacimiento;
+        }
+        public Persona()
+        {
+            rut = 0;
+            digitoverificador = 0;
+            edad = 0;
+            nombre = string.Empty;
+            apellidomaterno = string.Empty;
+            apellidopaterno = string.Empty;
+            direccion = string.Empty;
+            telefono = 0;
+            sexo =sexo_t.MASCULINO;
+            prevision = prevision_t.FONASA; 
+            fechanacimiento = DateTime.MinValue; 
+        }
         public int Rut { get => rut; set => rut = value; }
         public int Edad { get => edad; set => edad = value; }
         public string Nombre { get => nombre; set => nombre = value; }

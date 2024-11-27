@@ -22,9 +22,18 @@ namespace ProyectoConsultorio.Usuarios
 
         public string UserName { get => userName; set => userName = value; }
         public string Password { get => password; set => password = value; }
+        // Constructor vacio
         public Medico()
-        { 
-        } 
+        {
+           
+            userName = string.Empty;
+            password = string.Empty;
+            horasagendadas = new List<DateTime>();
+            pacientes = new List<Paciente>();
+        }
+
+
+      
         public Medico(string userName, string pass)
         {
             this.userName = userName;
