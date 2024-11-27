@@ -1,16 +1,16 @@
-﻿using ProyectoConsultorio;
+﻿using ProyectoConsultorio.TrabajadoresExt;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProyectoConsultorio.TrabajadoresExt
+namespace ProyectoConsultorio.Clinica.TrabajadoresExt
 {
-    internal class Seguridad : Persona , ITrabajadoresExternos
+    internal class Seguridad : Persona, ITrabajadoresExternos
     {
         string empresaContratista = string.Empty;
-        public Seguridad(string empresaContratista):base()
+        public Seguridad(string empresaContratista) : base()
         {
 
         }

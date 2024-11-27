@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProyectoConsultorio.Clientes
+namespace ProyectoConsultorio.Clinica.Clientes
 {
     enum GrupoSanguineo
     {
-        A,B,AB,O
+        A, B, AB, O
     }
     internal class FichaMedica
     {
@@ -21,5 +21,5 @@ namespace ProyectoConsultorio.Clientes
         public string Antecedentes { get => antecedentes; set => antecedentes = value; }
         public string Alergias { get => alergias; set => alergias = value; }
         public string Observaciones { get => observaciones; set => observaciones = value; }
-    } 
+    }
 }

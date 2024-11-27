@@ -1,12 +1,11 @@
-﻿using ProyectoConsultorio.TrabajadoresExt;
-using ProyectoConsultorio;
+﻿using ProyectoConsultorio.Clinica.TrabajadoresExt;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProyectoConsultorio.Infraestructura   
+namespace ProyectoConsultorio.Clinica.Infraestructura
 {
     internal class SalaDeEspera : IInfraestructura
     {
@@ -17,7 +16,7 @@ namespace ProyectoConsultorio.Infraestructura
         public int CapacidadPersonasMax { get => capacidadPersonasMax; set => capacidadPersonasMax = value; }
         internal List<Seguridad> SeguridaDeTurno { get => seguridadDeTurno; set => seguridadDeTurno = value; }
         public int ContadorPersonasActuales { get => contadorPersonasActuales; set => contadorPersonasActuales = value; }
-        SalaDeEspera(List<Seguridad> Seg) 
+        SalaDeEspera(List<Seguridad> Seg)
         {
             seguridadDeTurno = Seg;
             contadorPersonasActuales = 0;
@@ -25,7 +24,7 @@ namespace ProyectoConsultorio.Infraestructura
 
         public void CambiodeTurno(List<Seguridad> seguridad)
         {
-            seguridadDeTurno = seguridad;            
+            seguridadDeTurno = seguridad;
         }
         public void AddPersonaActual(int c)
         {

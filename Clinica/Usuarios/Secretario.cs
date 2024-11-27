@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
-using ProyectoConsultorio;
-using ProyectoConsultorio.Clientes;
-using ProyectoConsultorio.Inventario;
+using ProyectoConsultorio.Clinica.Clientes;
+using ProyectoConsultorio.Clinica.Inventario;
 using ProyectoConsultorio.TrabajadoresExt;
+using ProyectoConsultorio.Usuarios;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProyectoConsultorio.Usuarios
+namespace ProyectoConsultorio.Clinica.Usuarios
 {
     internal class Secretario : Persona, IUsuario
     {
@@ -20,18 +20,18 @@ namespace ProyectoConsultorio.Usuarios
         public string UserName { get => userName; set => userName = value; }
         public string Password { get => password; set => password = value; }
 
-        public Secretario(string user,string pass) :base()
+        public Secretario(string user, string pass) : base()
         {
             userName = user;
             password = pass;
         }
         public void LogIn(string username, string password)
         {
-            StreamReader usuariocontrasena = new StreamReader("/Usuarios/Secretarios/" + this.Nombre + this.Apellidopaterno);
+            StreamReader usuariocontrasena = new StreamReader("/Usuarios/Secretarios/" + Nombre + Apellidopaterno);
             string recuperado = usuariocontrasena.ReadToEnd();
             usuariocontrasena.Close();
             Secretario medrecuperado = JsonConvert.DeserializeObject<Secretario>(recuperado);
-            if (!(medrecuperado.UserName == this.UserName && medrecuperado.Password == this.Password))
+            if (!(medrecuperado.UserName == UserName && medrecuperado.Password == Password))
             {
                 throw new Exception("Error en ingreso de usuario");
             }

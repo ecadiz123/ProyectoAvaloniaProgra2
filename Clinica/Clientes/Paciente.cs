@@ -1,12 +1,11 @@
-﻿using ProyectoConsultorio;
-using ProyectoConsultorio.Usuarios;
+﻿using ProyectoConsultorio.Clinica.Usuarios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProyectoConsultorio.Clientes
+namespace ProyectoConsultorio.Clinica.Clientes
 {
     internal class Paciente : Persona
     {
@@ -26,7 +25,7 @@ namespace ProyectoConsultorio.Clientes
 
         public void CambiarFechaAtencion(DateTime nuevafechaatencion)
         {
-            this.fechaatencion = nuevafechaatencion;
+            fechaatencion = nuevafechaatencion;
         }
     }
 }

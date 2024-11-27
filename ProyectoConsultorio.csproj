@@ -21,7 +21,7 @@
 		<Folder Include="Recursos\Imagenes\" />
 		<Folder Include="Recursos\Fuentes\" />
 		<Folder Include="Recursos\Estilos\" />
-		<Folder Include="Pacientes\"/>
+		<Folder Include="Pacientes\" />
 		<AvaloniaResource Include="Recursos\**" />
 	</ItemGroup>
 	<ItemGroup>

@@ -1,35 +1,35 @@
-﻿using ProyectoConsultorio;
+﻿using Avalonia.Controls.Platform;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProyectoConsultorio.Inventario
+namespace ProyectoConsultorio.Clinica.Inventario
 {
-    internal class Medicamentos : IInsumo
+    internal class Desechable : IInsumo
     {
-        private string nombre = string.Empty;
+        private string nombre;
         private int cantidad;
 
         public string Nombre { get => nombre; set => nombre = value; }
         public int Cantidad { get => cantidad; set => cantidad = value; }
-        public Medicamentos(string nombre, int cantMinima) 
+        public Desechable(string nombre, int cantidadInicial)
         {
             this.nombre = nombre;
-            this.cantidad = cantMinima;
+            cantidad = cantidadInicial;
         }
         public void AddCantidad(int c)
         {
             cantidad += c;
         }
-        public int VerCantidad()
-        {
-            return cantidad;
-        }
         public void RestarCantidad(int c)
         {
             cantidad -= c;
+        }
+        public int VerCantidad()
+        {
+            return cantidad;
         }
     }
 }

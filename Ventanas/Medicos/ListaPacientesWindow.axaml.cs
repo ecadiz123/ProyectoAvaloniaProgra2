@@ -2,8 +2,8 @@ using Avalonia.Controls;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using ProyectoConsultorio.Clases;
-using ProyectoConsultorio.Clientes;
 using System.IO;
+using ProyectoConsultorio.Clinica.Clientes;
 
 namespace ProyectoConsultorio
 {

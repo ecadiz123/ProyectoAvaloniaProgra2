@@ -1,11 +1,10 @@
-﻿using ProyectoConsultorio;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProyectoConsultorio.Clientes
+namespace ProyectoConsultorio.Clinica.Clientes
 {
     enum relacion_t
     {
@@ -19,7 +18,7 @@ namespace ProyectoConsultorio.Clientes
     {
         private relacion_t relacion;
         private Paciente paciente;
-        public Tutor(relacion_t relacion, Paciente paciente):base()
+        public Tutor(relacion_t relacion, Paciente paciente) : base()
         {
             this.relacion = relacion;
             this.paciente = paciente;

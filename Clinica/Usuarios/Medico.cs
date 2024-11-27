@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
-using ProyectoConsultorio;
-using ProyectoConsultorio.Clientes;
+using ProyectoConsultorio.Clinica.Clientes;
+using ProyectoConsultorio.Usuarios;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProyectoConsultorio.Usuarios
+namespace ProyectoConsultorio.Clinica.Usuarios
 {
     internal class Medico : Persona, IUsuario
     {
@@ -25,7 +25,7 @@ namespace ProyectoConsultorio.Usuarios
         // Constructor vacio
         public Medico()
         {
-           
+
             userName = string.Empty;
             password = string.Empty;
             horasagendadas = new List<DateTime>();
@@ -33,25 +33,25 @@ namespace ProyectoConsultorio.Usuarios
         }
 
 
-      
+
         public Medico(string userName, string pass)
         {
             this.userName = userName;
-            this.password = pass;
+            password = pass;
         }
 
         public void LogIn(string userName, string password)
         {
-            StreamReader usuariocontrasena = new StreamReader("/Usuarios/Medicos/" + this.Nombre+this.Apellidopaterno);
+            StreamReader usuariocontrasena = new StreamReader("/Usuarios/Medicos/" + Nombre + Apellidopaterno);
             string recuperado = usuariocontrasena.ReadToEnd();
             usuariocontrasena.Close();
             Medico medrecuperado = JsonConvert.DeserializeObject<Medico>(recuperado);
-            if (!(medrecuperado.UserName == this.UserName && medrecuperado.Password == this.Password))
+            if (!(medrecuperado.UserName == UserName && medrecuperado.Password == Password))
             {
                 throw new Exception("Error en ingreso de usuario");
             }
         }
-        public void AgregarPaciente(Paciente pas,DateTime fecha)
+        public void AgregarPaciente(Paciente pas, DateTime fecha)
         {
             horasagendadas.Add(fecha);
             pacientes.Add(pas);
@@ -62,15 +62,15 @@ namespace ProyectoConsultorio.Usuarios
         }
         public void IngresarFicha(FichaMedica ficha)
         {
-            
+
         }
-        public void ModificarFicha(FichaMedica ficha) 
-        { 
-            
-        }
-        public void EliminarFicha(FichaMedica ficha) 
+        public void ModificarFicha(FichaMedica ficha)
         {
-            
+
+        }
+        public void EliminarFicha(FichaMedica ficha)
+        {
+
         }
     }
 }

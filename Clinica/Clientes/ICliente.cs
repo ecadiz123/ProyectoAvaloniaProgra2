@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProyectoConsultorio.Clientes
+namespace ProyectoConsultorio.Clinica.Clientes
 {
     internal interface ICliente
     {

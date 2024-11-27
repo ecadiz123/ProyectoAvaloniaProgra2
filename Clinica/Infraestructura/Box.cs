@@ -1,12 +1,12 @@
-﻿using ProyectoConsultorio.Usuarios;
-using ProyectoConsultorio.Inventario;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ProyectoConsultorio.Clinica.Inventario;
+using ProyectoConsultorio.Clinica.Usuarios;
 
-namespace ProyectoConsultorio.Infraestructura
+namespace ProyectoConsultorio.Clinica.Infraestructura
 {
     internal class Box : IInfraestructura
     {
@@ -23,9 +23,9 @@ namespace ProyectoConsultorio.Infraestructura
         public int ContadorPersonasActuales { get => contadorPersonasActuales; set => contadorPersonasActuales = value; }
         public Box(List<Medicamentos> medicamentosMinimos, List<Desechable> desechablesMinimos)
         {
-            this.desechables=desechablesMinimos;
-            this.medicamentos=medicamentosMinimos;
-            this.medicoDeTurno= new Medico();
+            desechables = desechablesMinimos;
+            medicamentos = medicamentosMinimos;
+            medicoDeTurno = new Medico();
             numeroBox = 0;
             capacidadPersonasMax = 0;
             contadorPersonasActuales = 0;
