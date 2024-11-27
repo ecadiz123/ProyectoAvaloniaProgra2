@@ -1,5 +1,5 @@
 using Avalonia.Controls;
-using ProyectoConsultorio.Clases;
+using ProyectoConsultorio.Clinica.Clientes;
 using Avalonia.Markup.Xaml;
 using Avalonia.Interactivity;
 using Avalonia.Media;
