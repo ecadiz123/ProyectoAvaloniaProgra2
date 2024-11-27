@@ -4,10 +4,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         x:Class="ProyectoConsultorio.VerHoraWindow"
 		Icon="/Recursos/Imagenes/icono_margen.png"
-        Title="Visor de horas" Width="500" Height="500">
+        Title="Manejo de turnos" Width="500" Height="500">
 
 	<StackPanel>
-	<Button Content="Volver" Click="VolverMenu" HorizontalContentAlignment="Center" Margin="10" VerticalContentAlignment="Center" Width="75" Height="30"/>
+	<Button Name="btnVolverSecretario" Content="Volver" Click="VolverMenu" HorizontalContentAlignment="Center" Margin="10" VerticalContentAlignment="Center" Width="75" Height="30"/>
 	</StackPanel>
 		
 </Window>
