@@ -24,6 +24,15 @@
 		<AvaloniaResource Include="Recursos\**" />
 	</ItemGroup>
 	<ItemGroup>
+	  <AvaloniaXaml Update="Ventanas\Medicos\ModFichasWindow.axaml">
+	    <SubType>Designer</SubType>
+	  </AvaloniaXaml>
+	</ItemGroup>
+	<ItemGroup>
+	  <Compile Update="Ventanas\Medicos\ModFichasWindow.axaml.cs">
+	    <SubType>Code</SubType>
+	    <DependentUpon>ModFichasWindow.axaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Ventanas\Medicos\MedMenuWindow.axaml.cs">
 	    <DependentUpon>MedMenuWindow.axaml</DependentUpon>
 	  </Compile>
