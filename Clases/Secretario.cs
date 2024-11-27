@@ -1,5 +1,8 @@
 ﻿using Newtonsoft.Json;
 using ProyectoConsultorio;
+using ProyectoConsultorio.Clientes;
+using ProyectoConsultorio.Inventario;
+using ProyectoConsultorio.TrabajadoresExt;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -33,6 +36,33 @@ namespace ProyectoConsultorio.Usuarios
                 throw new Exception("Error en ingreso de usuario");
             }
         }
+        public void AñadirHoraPaciente(Paciente pacientenuevo)
+        {
 
+        }
+        public void ElimHoraPaciente(Paciente pacienteElim)
+        {
+
+        }
+        public void MarcarLlegadaTurnoMedico(Medico medicoLlegando)
+        {
+
+        }
+        public void MarcarTurnoTExterno(ITrabajadoresExternos texterno)
+        {
+
+        }
+        public void AnhiadirInsumo(IInsumo insumoAdd)
+        {
+
+        }
+        public void AnhiadirPersonasInf(int cantidadPersonasEntrantes)
+        {
+
+        }
+        public void ElimPersonasInf(int personasSalientes)
+        {
+
+        }
     }
 }
