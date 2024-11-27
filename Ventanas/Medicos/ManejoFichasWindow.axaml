@@ -4,9 +4,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         x:Class="ProyectoConsultorio.ManejoFichasWindow"
 		Icon="/Recursos/Imagenes/icono_margen.png"
-        Title="Manejo de turnos" Width="500" Height="500">
+        Title="Manejo de turnos" Width="600" Height="600" Background="#1BA1E2">
 
-	<StackPanel>
+	<StackPanel VerticalAlignment="Center">
 		<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
 			<Button FontSize="20" Background="White" Content="Modificar Fichas Médicas" Click="ModificarFichas" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="30" Width="300" Height="150"/>
 		</StackPanel>

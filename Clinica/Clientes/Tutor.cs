@@ -16,6 +16,9 @@ namespace ProyectoConsultorio.Clinica.Clientes
     }
     public class Tutor : Persona
     {
+        public relacion_t relacion;
+        public Paciente paciente;
+        Tutor(relacion_t relacion, Paciente paciente)
         private relacion_t relacion;
         private Paciente paciente;
         public Tutor(relacion_t relacion, Paciente paciente) : base()

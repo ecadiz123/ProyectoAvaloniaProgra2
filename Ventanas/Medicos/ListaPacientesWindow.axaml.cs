@@ -2,8 +2,7 @@ using Avalonia.Controls;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using ProyectoConsultorio.Clases;
-using System.IO;
-using ProyectoConsultorio.Clinica.Clientes;
+using System.Linq;
 
 namespace ProyectoConsultorio
 {
@@ -12,16 +11,12 @@ namespace ProyectoConsultorio
         public ListaPacientesWindow()
         {
             InitializeComponent();
-            StreamReader sr = new StreamReader("../../../Pacientes/ListaPacientes.json");
-            string json = sr.ReadToEnd();
-            sr.Close();
-            var ljson = JsonConvert.DeserializeObject<List<Paciente>>(json);
-            foreach(Paciente paciente in ljson)
-            {
-                LboxPacientes.Items.Add(paciente.Nombre+" "+paciente.Apellidopaterno+"              "+paciente.Rut+"-"+paciente.Digitoverificador);
-            }
+
+            lbPacientes.ItemsSource = new string[]
+                {"Ibuprofeno   10", "Paracetamol   10", "Tapsin   50", "Anfetamina   25",
+                    "Prednisona   25", "Clonazepam   54", "Oxolamina   1" }
+                .OrderBy(x => x);
         }
-        
         private void VolverMenu(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             var medMenuWindow = new MedMenuWindow();

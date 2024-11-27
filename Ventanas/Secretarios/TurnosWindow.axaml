@@ -4,10 +4,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         x:Class="ProyectoConsultorio.TurnosWindow"
 		Icon="/Recursos/Imagenes/icono_margen.png"
-        Title="Manejo de turnos" Width="500" Height="500">
+        Title="Manejo de turnos" Width="800" Height="800" Background="#1BA1E2">
 
-	<StackPanel>
-	<Button Content="Volver" Click="VolverMenu" HorizontalContentAlignment="Center" Margin="10" VerticalContentAlignment="Center" Width="75" Height="30"/>
+	<StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
+		<TabControl Margin="5">
+			<TabItem Header="Limpieza">
+				<StackPanel Margin="15">
+					<TextBlock Text="Nombre del empleado:"></TextBlock>
+					<TextBlock Text="Estado de turno:"></TextBlock>
+				</StackPanel>
+			</TabItem>
+			<TabItem Header="Seguridad">
+				<StackPanel Margin="15">
+					<TextBlock Text="Nombre del empleado:"></TextBlock>
+					<TextBlock Text="Estado de turno:"></TextBlock>
+				</StackPanel>
+			</TabItem>
+		</TabControl>
+		<Button Content="Volver" Click="VolverMenu" HorizontalContentAlignment="Center" Margin="10" VerticalContentAlignment="Center" Width="75" Height="30"/>
 	</StackPanel>
 		
 </Window>
