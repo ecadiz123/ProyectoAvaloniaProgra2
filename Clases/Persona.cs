@@ -6,23 +6,24 @@ using System.Threading.Tasks;
 
 namespace ProyectoConsultorio
 {
-    enum sexo_t{
+    public enum sexo_t{
         MASCULINO,
         FEMENINO,
         OTRO
     }
-    enum prevision_t
+    public enum prevision_t
     {
         FONASA, COLMENA, CRUZBLANCA, BANMEDICA, CONSALUD,
         FUNDACION_BANCO_DEL_ESTADO, VIDA_TRES, NUEVA_MAS_VIDA
     }
-    enum afp_t
+    public enum afp_t
     {
         CAPITAL, HABITAT, UNO, CUPRUM, MODELO, PLANVITAL, PROVIDA
     }
     public class Persona
     {
-        private string rut = string.Empty;
+        private int rut;
+        private int digitoverificador;
         private int edad;
         private string nombre = string.Empty;
         private string apellidomaterno = string.Empty;
