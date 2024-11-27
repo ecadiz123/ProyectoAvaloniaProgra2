@@ -13,8 +13,6 @@ namespace ProyectoConsultorio
         private void VolverMenu(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             var medMenuWindow = new MedMenuWindow();
-            medMenuWindow.Show(); // Muestra la ventana secundaria
-            this.Close();
         }
     }
 }

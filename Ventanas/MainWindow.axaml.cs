@@ -9,6 +9,7 @@ namespace ProyectoConsultorio
         {
             InitializeComponent();
 
+
         }
         private void AbrirLogInSecretario(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
