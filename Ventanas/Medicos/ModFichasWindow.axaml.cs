@@ -16,5 +16,11 @@ namespace ProyectoConsultorio
             manejoFichasWindow.Show(); // Muestra la ventana secundaria
             this.Close();
         }
+        private void FichaMedica(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            var manejoFichasWindow = new ManejoFichasWindow();
+            manejoFichasWindow.Show(); // Muestra la ventana secundaria
+            this.Close();
+        }
     }
 }

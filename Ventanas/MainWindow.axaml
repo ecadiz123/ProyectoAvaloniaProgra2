@@ -4,20 +4,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         x:Class="ProyectoConsultorio.MainWindow"
 		Icon="/Recursos/Imagenes/icono_margen.png"
-        Title="Consultorio" Width="500" Height="600" Background="#1BA1E2">
+        Title="Consultorio" Width="1000" Height="800" Background="#1BA1E2">
 	
 <ScrollViewer>
 
 	
 	<StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
 		<Image HorizontalAlignment="Center" Margin="5" Height="250" Width="250" Source="/Recursos/Imagenes/logo_u.png"/>
-		<TextBlock HorizontalAlignment="Center" Text="¡Bienvenido!" FontSize="40" Margin="10" Foreground="Blue"/>
-		<TextBlock HorizontalAlignment="Center" Text="Ingrese su tipo de usuario" FontSize="15" Margin="10" Foreground="Blue"/>
-		<StackPanel Orientation="Horizontal">
-		<Button Foreground="#031d3b" Background="White" Content="Médico" Click="AbrirLogInMedico" 
-				Width="175" Height="125" HorizontalAlignment="Center" Margin="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-		<Button Foreground="#031d3b" Background="White" Content="Secretario" Click="AbrirLogInSecretario" 
-				Width="175" Height="125" HorizontalAlignment="Center" Margin="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+		<TextBlock HorizontalAlignment="Center" Text="¡Bienvenido!" FontSize="50" Margin="10" Foreground="Blue"/>
+		<TextBlock HorizontalAlignment="Center" Text="Ingrese su tipo de usuario" FontSize="20" Margin="10" Foreground="Blue"/>
+		<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+		<Button FontSize="25" Foreground="#031d3b" Background="White" Content="Médico" Click="AbrirLogInMedico" 
+				Width="200" Height="125" HorizontalAlignment="Center" Margin="50" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+		<Button FontSize="25" Foreground="#031d3b" Background="White" Content="Secretario" Click="AbrirLogInSecretario" 
+				Width="200" Height="125" HorizontalAlignment="Center" Margin="50" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
 		</StackPanel>
 	</StackPanel>
 	

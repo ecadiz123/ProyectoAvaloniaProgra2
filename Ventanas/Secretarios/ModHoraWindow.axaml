@@ -5,20 +5,19 @@
         x:Class="ProyectoConsultorio.ModHoraWindow"
 		Icon="/Recursos/Imagenes/icono_margen.png"
         Title="Modificador de horas" Width="1000" Height="800" Background="#1BA1E2">
-	
-	<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
-		<Calendar x:Name="calendar" SelectionMode="MultipleRange"/>
-		<Border Margin="10" BorderBrush="Black" BorderThickness="2" Padding="10" CornerRadius="10">
-			<StackPanel Orientation="Vertical" >
-				<TextBlock Text="Doctores disponibles en el día seleccionado" FontSize="20" Margin="10"/>
-				<TextBlock HorizontalAlignment="Left" Margin="10" FontSize="15">
-					Nombre: <LineBreak />
-					Apellido: <LineBreak />
-					Hora disponible:
-				</TextBlock>
-				<Button Content="Volver" Click="VolverMenu" HorizontalContentAlignment="Center" Margin="10" VerticalContentAlignment="Center" Width="75" Height="30"/>
-			</StackPanel>
-		</Border>
+
+	<StackPanel Orientation="Vertical">
+		<TabControl Margin="5">
+			<TabItem Header="Pacientes">
+				<StackPanel Margin="20">
+					<TextBlock Margin="0 5">Nombre       RUT</TextBlock>
+					<ListBox x:Name="lbPacientes"/>
+				</StackPanel>
+			</TabItem>
+		</TabControl>
+		<StackPanel>
+			<Button Content="Volver" Click="VolverMenu" HorizontalContentAlignment="Center" Margin="10" VerticalContentAlignment="Center" Width="75" Height="30"/>
+		</StackPanel>
 	</StackPanel>
 		
 </Window>

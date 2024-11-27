@@ -30,7 +30,12 @@
 			<TextBlock Text="Observaciones" Margin="2" FontSize="20"/>
 			<TextBox x:Name="tbObs" Watermark="Ingrese texto" Width="600" Height="200" Background="White"/>
 		</StackPanel>
-		<Button Content="Volver" Click="VolverMenu" HorizontalContentAlignment="Center" Margin="10" VerticalContentAlignment="Center" Width="75" Height="30"/>
-	</StackPanel>
+		<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+		<Button Content="Volver" Click="VolverMenu" 
+				HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="10" VerticalContentAlignment="Center" Width="75" Height="30"/>
+		<Button Content="Guardar cambios" Click="FichaMedica" 
+				HorizontalAlignment="Right" HorizontalContentAlignment="Center" Margin="10" VerticalContentAlignment="Center" Width="75" Height="30"/>
+		</StackPanel>
+		</StackPanel>
 </ScrollViewer>		
 </Window>
