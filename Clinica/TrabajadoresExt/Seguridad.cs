@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoConsultorio.Clinica.TrabajadoresExt
 {
-    internal class Seguridad : Persona, ITrabajadoresExternos
+    public class Seguridad : Persona, ITrabajadoresExternos
     {
         string empresaContratista = string.Empty;
         public Seguridad(string empresaContratista) : base()

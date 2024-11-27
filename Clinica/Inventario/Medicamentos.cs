@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoConsultorio.Clinica.Inventario
 {
-    internal class Medicamentos : IInsumo
+    public class Medicamentos : IInsumo
     {
         private string nombre = string.Empty;
         private int cantidad;

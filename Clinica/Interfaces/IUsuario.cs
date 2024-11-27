@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoConsultorio.Usuarios
 {
-    internal interface IUsuario
+    public interface IUsuario
     {
         string UserName { get; set; }
         string Password { get; set; }

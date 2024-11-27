@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoConsultorio.Clinica.TrabajadoresExt
 {
-    internal class Limpieza : Persona, ITrabajadoresExternos
+   public class Limpieza : Persona, ITrabajadoresExternos
     {
         string empresaContratista = string.Empty;
 

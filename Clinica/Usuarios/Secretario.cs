@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoConsultorio.Clinica.Usuarios
 {
-    internal class Secretario : Persona, IUsuario
+    public class Secretario : Persona, IUsuario
     {
         string userName = string.Empty;
         string password = string.Empty;

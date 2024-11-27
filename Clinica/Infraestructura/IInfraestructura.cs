@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoConsultorio.Clinica.Infraestructura
 {
-    internal interface IInfraestructura
+    public interface IInfraestructura
     {
         int CapacidadPersonasMax { get; set; }
         int ContadorPersonasActuales { get; set; }
