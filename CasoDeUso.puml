@@ -1,0 +1,34 @@
+@startuml CasoDeUso
+actor Secretaria
+actor Medico
+
+usecase "Iniciar Sesión Secretaria" as UCS0
+usecase "Iniciar Sesion Medico" as UCM0
+
+usecase "Ingresar Paciente" as UCS1
+usecase "Modificar Hora Paciente" as UCS2
+usecase "Ver Hora Disponible Doctores" as UCS3
+usecase "Manejo de Inventario" as UCS4
+usecase "Modificar Hora Agendada" as UCS5
+usecase "Ver Horas Agendadas" as UCS6
+usecase "Manejo de Turnos" as UCS7
+
+usecase "Ver Horas Agendadas" as UCM1
+usecase "Manejo de Fichas Médicas" as UCM2
+usecase "Ver Lista Pacientes" as UCM3
+
+Secretaria --> UCS0 
+UCS0 --> UCS1
+UCS0 --> UCS2
+UCS0 --> UCS3
+UCS0 --> UCS4
+UCS0 --> UCS5
+UCS0 --> UCS6
+UCS0 --> UCS7
+
+Medico --> UCM0
+UCM0 --> UCM1
+UCM0 --> UCM2
+UCM0 --> UCM3
+
+@enduml
