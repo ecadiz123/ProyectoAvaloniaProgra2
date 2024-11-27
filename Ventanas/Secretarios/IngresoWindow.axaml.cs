@@ -3,11 +3,16 @@ using ProyectoConsultorio.Clases;
 using Avalonia.Markup.Xaml;
 using Avalonia.Interactivity;
 using Avalonia.Media;
+using System.Collections.Generic;
+using System;
 
 namespace ProyectoConsultorio
 {
     public partial class IngresoWindow : Window
     {
+
+        public List<Paciente> ListaPacientes { get; set; } = new List<Paciente>();
+        public List<Tutor> ListaTutores { get; set; } = new List<Tutor>();
         public IngresoWindow()
         {
             InitializeComponent();
@@ -43,6 +48,13 @@ namespace ProyectoConsultorio
             AvaloniaXamlLoader.Load(this);
         }
         private void VolverMenu(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            var menuWindow = new MenuWindow();
+            menuWindow.Show(); // Muestra la ventana secundaria
+            this.Close();
+        }
+
+        private void IngresoDatos(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             var menuWindow = new MenuWindow();
             menuWindow.Show(); // Muestra la ventana secundaria

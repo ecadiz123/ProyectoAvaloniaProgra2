@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoConsultorio.Clases
 {
-    enum relacion_t
+    public enum relacion_t
     {
         PADRE,
         MADRE,
@@ -14,10 +14,10 @@ namespace ProyectoConsultorio.Clases
         HIJA,
         OTRO
     }
-    internal class Tutor : Persona
+    public class Tutor : Persona
     {
-        private relacion_t relacion;
-        private Paciente paciente;
+        public relacion_t relacion;
+        public Paciente paciente;
         Tutor(relacion_t relacion, Paciente paciente)
         {
             this.relacion = relacion;

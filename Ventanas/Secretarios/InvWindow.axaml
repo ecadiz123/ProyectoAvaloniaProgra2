@@ -7,13 +7,19 @@
 		Icon="/Recursos/Imagenes/icono_margen.png"
         Title="Manejo de Inventario" Width="800" Height="800" Background="#1BA1E2">
 
-	<StackPanel>
+	<StackPanel Orientation="Horizontal">
 		<TabControl Margin="5">
 			<TabItem Header="Limpieza">
-
+				<StackPanel Margin="20">
+					<TextBlock Margin="0 5">Insumo     Cantidad</TextBlock>
+					<ListBox x:Name="lbLimpieza"/>
+				</StackPanel>
 			</TabItem>
 			<TabItem Header="Medicamentos">
-				
+				<StackPanel Margin="20">
+					<TextBlock Margin="0 5">Medicamentos     Cantidad</TextBlock>
+					<ListBox x:Name="lbMedicamentos"/>
+				</StackPanel>
 			</TabItem>
 		</TabControl>
 	<Button Content="Volver" Click="VolverMenu" HorizontalContentAlignment="Center" Margin="10" VerticalContentAlignment="Center" Width="75" Height="30"/>

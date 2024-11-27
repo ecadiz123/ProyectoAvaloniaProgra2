@@ -1,5 +1,6 @@
 using Avalonia.Controls;
 using ProyectoConsultorio.Clases;
+using System.Collections.Generic;
 
 namespace ProyectoConsultorio
 {
@@ -8,7 +9,6 @@ namespace ProyectoConsultorio
         public TurnosWindow()
         {
             InitializeComponent();
-
         }
         private void VolverMenu(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {

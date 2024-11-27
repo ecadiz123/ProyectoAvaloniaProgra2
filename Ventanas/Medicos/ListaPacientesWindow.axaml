@@ -4,10 +4,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         x:Class="ProyectoConsultorio.ListaPacientesWindow"
 		Icon="/Recursos/Imagenes/icono_margen.png"
-        Title="Visor de lista de pacientes" Width="500" Height="500">
+        Title="Visor de lista de pacientes" Width="800" Height="800" Background="#1BA1E2">
 
-	<StackPanel>
+	<StackPanel Orientation="Vertical">
+		<TabControl Margin="5">
+			<TabItem Header="Pacientes">
+				<StackPanel Margin="20">
+					<TextBlock Margin="0 5">Nombre       RUT</TextBlock>
+					<ListBox x:Name="lbPacientes"/>
+				</StackPanel>
+			</TabItem>
+		</TabControl>
+		<StackPanel>
 	<Button Content="Volver" Click="VolverMenu" HorizontalContentAlignment="Center" Margin="10" VerticalContentAlignment="Center" Width="75" Height="30"/>
+		</StackPanel>
 	</StackPanel>
 		
 </Window>

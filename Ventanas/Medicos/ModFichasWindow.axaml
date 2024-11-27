@@ -4,19 +4,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         x:Class="ProyectoConsultorio.ModFichasWindow"
 		Icon="/Recursos/Imagenes/icono_margen.png"
-        Title="Modificar fichas medicas" Width="500" Height="500" Background="#1BA1E2">
-
+        Title="Modificar fichas medicas" Width="800" Height="800" Background="#1BA1E2">
+<ScrollViewer>
 	<StackPanel Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Vertical">
-		<TextBlock Text="Grupo Sanguineo" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5"/>
+		<StackPanel Margin="10" Orientation="Vertical">
+		<TextBlock Text="Grupo Sanguineo" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5"/>
 		<RadioButton GroupName="rbA"
-              Content="A"/>
+              Content="A" FontSize="20"/>
 		<RadioButton GroupName="rbB"
-				  Content="B"/>
+				  Content="B" FontSize="20"/>
 		<RadioButton GroupName="rbAB"
-				  Content="AB"/>
+				  Content="AB" FontSize="20"/>
 		<RadioButton GroupName="rbO"
-		  Content="O"/>
+		  Content="O" FontSize="20"/>
+		</StackPanel>
+		<StackPanel Orientation="Vertical" Margin="10">
+			<TextBlock Text="Alergias" Margin="2" FontSize="20"/>
+			<TextBox x:Name="tbAlergias" Watermark="Ingrese texto" Width="600" Height="100" Background="White"/>
+		</StackPanel>
+		<StackPanel Orientation="Vertical" Margin="10">
+			<TextBlock Text="Antecedentes" Margin="2" FontSize="20"/>
+			<TextBox x:Name="tbAntecedentes" Watermark="Ingrese texto" Width="600" Height="150" Background="White"/>
+		</StackPanel>
+		<StackPanel Orientation="Vertical" Margin="10">
+			<TextBlock Text="Observaciones" Margin="2" FontSize="20"/>
+			<TextBox x:Name="tbObs" Watermark="Ingrese texto" Width="600" Height="200" Background="White"/>
+		</StackPanel>
 		<Button Content="Volver" Click="VolverMenu" HorizontalContentAlignment="Center" Margin="10" VerticalContentAlignment="Center" Width="75" Height="30"/>
 	</StackPanel>
-		
+</ScrollViewer>		
 </Window>
