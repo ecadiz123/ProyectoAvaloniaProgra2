@@ -12,8 +12,6 @@ namespace ProyectoConsultorio
         }
         private void Entendido(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
-            var menuWindow = new MenuWindow();
-            menuWindow.Show(); // Muestra la ventana secundaria
             this.Close();
         }
     }

@@ -5,37 +5,142 @@
         x:Class="ProyectoConsultorio.InvWindow"
 		xmlns:vm="using:ProyectoConsultorio.ViewModels"
 		Icon="/Recursos/Imagenes/icono_margen.png"
-        Title="Manejo de Inventario" Width="800" Height="800" Background="#1BA1E2">
+        Title="Manejo de Inventario" Width="1400" Height="700" Background="#1BA1E2">
 
-	<StackPanel Orientation="Horizontal" Margin="10">
-		<TabControl Margin="5">
-			<TabItem Header="Limpieza">
-				<StackPanel Orientation="Horizontal" Margin="20">
-					<StackPanel Orientation="Vertical" Margin="20">
-						<TextBlock Margin="10" Text="Tabla Insumo  -  Cantidad"/>
-						<ListBox x:Name="lbLimpieza"/>
+<StackPanel Orientation="Horizontal" Margin="10">
+	<StackPanel VerticalAlignment="Top" Margin="10">
+		<Button Margin="5" Content="VOLVER" Click="VolverMenu" Height="40" 
+				VerticalContentAlignment="Center" FontWeight="Bold" FontSize="15"/>
+	</StackPanel>
+	<TabControl Margin="5">
+			<TabItem Header="Sala de espera">
+				<StackPanel Orientation="Horizontal">
+				<StackPanel  HorizontalAlignment="Center" Orientation="Vertical" Width="600" Height="400">
+					<TextBlock HorizontalAlignment="Center" Text="Limpieza"/>
+						<StackPanel>
+						<StackPanel Orientation="Horizontal" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+							<StackPanel Orientation="Vertical" VerticalAlignment="Center">
+									<TextBlock Margin="10" Text="Tabla Insumo  -  Cantidad"/>
+									<ListBox x:Name="lbLimpiezaSalaEspera"/>
+								</StackPanel>
+								<StackPanel Orientation="Vertical" Margin="50">
+									<TextBlock Margin="5" Text="Ingrese el nombre del nuevo insumo"/>
+									<TextBox Margin="5" x:Name="tbInsumoSalaEspera" Watermark="Escriba acá"/>
+									<Button Margin="5" Content="Ingresar" x:Name="btAddNewInsumo"/>
+									<TextBlock Margin="5" Text="Ingrese la cantidad a modificar"/>
+									<TextBox Margin="5" x:Name="tbCantidadSalaEspera" Watermark="Valor numérico"/>
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="5">
+										<Button Content="+" x:Name="btAddCantidadSalaEspera"/>
+										<Button Content="-" x:Name="btRestarCantidadSalaEspera"/>
+								</StackPanel>
 					</StackPanel>
-					<StackPanel Orientation="Vertical" Margin="50">
-						<TextBlock Margin="10" Text="Ingrese el nombre del nuevo insumo"/>
-						<TextBox Margin="10" x:Name="tbCantidadInsumo" Watermark="Escriba acá"/>
-						<Button Margin="10" Content="Ingresar" x:Name="btAddNewInsumo"/>
-						<TextBlock Margin="10" Text="Ingrese la cantidad a modificar"/>
-						<TextBox Margin="10" x:Name="tbCantidad" Watermark="Valor numérico"/>
-						<StackPanel Orientation="Horizontal">
-							<Button Content="+" x:Name="btAddCantidad"/>
-							<Button Content="-" x:Name="btRestarCantidad"/>
+				</StackPanel>
+			</StackPanel>
+					
+				</StackPanel>
+				</StackPanel>
+			</TabItem>
+			<TabItem Header="Box 1">
+				<StackPanel Orientation="Horizontal">
+				<StackPanel  HorizontalAlignment="Center" Orientation="Vertical" Width="600" Height="400">
+					<TextBlock HorizontalAlignment="Center" Text="Limpieza"/>
+					<StackPanel>
+						<StackPanel Orientation="Horizontal" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+							<StackPanel Orientation="Vertical" VerticalAlignment="Center">
+								<TextBlock Margin="10" Text="Tabla Insumo  -  Cantidad"/>
+								<ListBox x:Name="lbLimpiezaB1"/>
+							</StackPanel>
+							<StackPanel Orientation="Vertical" Margin="50">
+								<TextBlock Margin="5" Text="Ingrese el nombre del nuevo insumo"/>
+								<TextBox Margin="5" x:Name="tbLimpiezaCantidadInsumoB1" Watermark="Escriba acá"/>
+								<Button Margin="5" Content="Ingresar" x:Name="btLimpiezaAddNewInsumoB1"/>
+								<TextBlock Margin="5" Text="Ingrese la cantidad a modificar"/>
+								<TextBox Margin="5" x:Name="tbLimpiezaCantidadB1" Watermark="Valor numérico"/>
+								<StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="5">
+									<Button Content="+" x:Name="btLimpiezaAddCantidadB1"/>
+									<Button Content="-" x:Name="btLimpiezaRestarCantidadB1"/>
+								</StackPanel>
+							</StackPanel>
 						</StackPanel>
 					</StackPanel>
+
+				</StackPanel>
+				<StackPanel  HorizontalAlignment="Center" Orientation="Vertical" Width="600" Height="400">
+					<TextBlock HorizontalAlignment="Center" Text="Medicamentos y desechables"/>
+					<StackPanel>
+						<StackPanel Orientation="Horizontal" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+							<StackPanel Orientation="Vertical" VerticalAlignment="Center">
+								<TextBlock Margin="10" Text="Tabla Insumos  -  Cantidad"/>
+								<ListBox x:Name="lbMedsB1"/>
+							</StackPanel>
+							<StackPanel Orientation="Vertical" Margin="50">
+								<TextBlock Margin="5" Text="Ingrese el nombre del medicamento"/>
+								<TextBox Margin="5" x:Name="tbNameMed" Watermark="Escriba acá"/>
+								<Button Margin="5" Content="Ingresar" x:Name="btAddNewMedB1"/>
+								<TextBlock Margin="5" Text="Ingrese la cantidad a modificar"/>
+								<TextBox Margin="5" x:Name="tbCantidadMedsB1" Watermark="Valor numérico"/>
+								<StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="5">
+									<Button Content="+" x:Name="btAddCantidadMedB1"/>
+									<Button Content="-" x:Name="btRestarCantidadMedB1"/>
+								</StackPanel>
+							</StackPanel>
+						</StackPanel>
+					</StackPanel>
+
+				</StackPanel>
 				</StackPanel>
 			</TabItem>
-			<TabItem Header="Medicamentos">
-				<StackPanel Margin="20">
-					<TextBlock Margin="0 5">Medicamentos     Cantidad</TextBlock>
-					<ListBox x:Name="lbMedicamentos"/>
+		<TabItem Header="Box 2">
+			<StackPanel Orientation="Horizontal">
+				<StackPanel  HorizontalAlignment="Center" Orientation="Vertical" Width="600" Height="400">
+					<TextBlock HorizontalAlignment="Center" Text="Limpieza"/>
+					<StackPanel>
+						<StackPanel Orientation="Horizontal" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+							<StackPanel Orientation="Vertical" VerticalAlignment="Center">
+								<TextBlock Margin="10" Text="Tabla Insumo  -  Cantidad"/>
+								<ListBox x:Name="lbLimpiezaB2"/>
+							</StackPanel>
+							<StackPanel Orientation="Vertical" Margin="50">
+								<TextBlock Margin="5" Text="Ingrese el nombre del nuevo insumo"/>
+								<TextBox Margin="5" x:Name="tbLimpiezaCantidadInsumoB2" Watermark="Escriba acá"/>
+								<Button Margin="5" Content="Ingresar" x:Name="btLimpiezaAddNewInsumoB2"/>
+								<TextBlock Margin="5" Text="Ingrese la cantidad a modificar"/>
+								<TextBox Margin="5" x:Name="tbLimpiezaCantidadB2" Watermark="Valor numérico"/>
+								<StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="5">
+									<Button Content="+" x:Name="btLimpiezaAddCantidadB2"/>
+									<Button Content="-" x:Name="btLimpiezaRestarCantidadB2"/>
+								</StackPanel>
+							</StackPanel>
+						</StackPanel>
+					</StackPanel>
+
 				</StackPanel>
-			</TabItem>
-		</TabControl>
-	<Button Content="Volver" Click="VolverMenu" HorizontalContentAlignment="Center" Margin="10" VerticalContentAlignment="Center" Width="75" Height="30"/>
-	</StackPanel>
+				<StackPanel  HorizontalAlignment="Center" Orientation="Vertical" Width="600" Height="400">
+					<TextBlock HorizontalAlignment="Center" Text="Medicamentos y desechables"/>
+					<StackPanel>
+						<StackPanel Orientation="Horizontal" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+							<StackPanel Orientation="Vertical" VerticalAlignment="Center">
+								<TextBlock Margin="10" Text="Tabla Insumos  -  Cantidad"/>
+								<ListBox x:Name="lbMedsB2"/>
+							</StackPanel>
+							<StackPanel Orientation="Vertical" Margin="50">
+								<TextBlock Margin="5" Text="Ingrese el nombre del medicamento"/>
+								<TextBox Margin="5" x:Name="tbNameMedB2" Watermark="Escriba acá"/>
+								<Button Margin="5" Content="Ingresar" x:Name="btAddNewMedB2"/>
+								<TextBlock Margin="5" Text="Ingrese la cantidad a modificar"/>
+								<TextBox Margin="5" x:Name="tbCantidadMedsB2" Watermark="Valor numérico"/>
+								<StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="5">
+									<Button Content="+" x:Name="btAddCantidadMedB2"/>
+									<Button Content="-" x:Name="btRestarCantidadMedB2"/>
+								</StackPanel>
+							</StackPanel>
+						</StackPanel>
+					</StackPanel>
+
+				</StackPanel>
+			</StackPanel>
+		</TabItem>
+	</TabControl>
+</StackPanel>
 		
 </Window>
