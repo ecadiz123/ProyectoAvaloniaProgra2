@@ -1,0 +1,34 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 OPR/114.0.0.0 (Edition std-1)" version="24.9.2">
+  <diagram name="Page-1" id="AXslyLzXhd0MhdzWl6rs">
+    <mxGraphModel dx="1009" dy="573" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="sdot0CuQ4gvF2WT7U55k-1" value="Inicio de sesión médicos" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.window;align=left;verticalAlign=top;spacingLeft=8;strokeColor2=#008cff;strokeColor3=#c4c4c4;mainText=;fontSize=17;labelBackgroundColor=none;whiteSpace=wrap;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" vertex="1" parent="1">
+          <mxGeometry x="60" y="10" width="490" height="540" as="geometry" />
+        </mxCell>
+        <mxCell id="sdot0CuQ4gvF2WT7U55k-2" value="Contraseña" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.text.textBox;fontColor=#666666;align=left;fontSize=17;spacingLeft=4;spacingTop=-3;whiteSpace=wrap;strokeColor=#666666;mainText=;fillColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="230" y="350" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sdot0CuQ4gvF2WT7U55k-3" value="Usuario" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.text.textBox;fontColor=#666666;align=left;fontSize=17;spacingLeft=4;spacingTop=-3;whiteSpace=wrap;strokeColor=#666666;mainText=;fillColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="230" y="300" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sdot0CuQ4gvF2WT7U55k-4" value="Ingresar" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.buttons.button;strokeColor=#666666;fontColor=#ffffff;mainText=;buttonStyle=round;fontSize=17;fontStyle=1;fillColor=#000000;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="230" y="410" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="sdot0CuQ4gvF2WT7U55k-5" value="&lt;font color=&quot;#ffffff&quot;&gt;Inicio de sesión Médicos&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="255" y="240" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sdot0CuQ4gvF2WT7U55k-6" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#bac8d3;strokeColor=#23445d;" vertex="1" parent="1">
+          <mxGeometry x="242.5" y="100" width="125" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="sdot0CuQ4gvF2WT7U55k-7" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Imagen&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="275" y="140" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sdot0CuQ4gvF2WT7U55k-8" value="&lt;font color=&quot;#ffffff&quot;&gt;Volver&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="70" y="50" width="80" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
