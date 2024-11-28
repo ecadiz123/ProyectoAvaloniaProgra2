@@ -66,6 +66,12 @@ namespace ProyectoConsultorio.Clinica.Usuarios
             sr1.Close();
             StreamWriter sr2 = new StreamWriter(this.path + "ListaMedicos.json");
             string jsonLMed = JsonConvert.SerializeObject(this.medicosClinica);
+            sr2.WriteLine(jsonLMed);
+            sr2.Close();
+            StreamWriter sr3 = new StreamWriter(this.path + "SalaDeEspera.json");
+            string Sesp = JsonConvert.SerializeObject(this.sala);
+            sr3.WriteLine(jsonLMed);
+            sr3.Close();
         }
         public void AñadirPaciente(Medico medicoAtiende, Paciente nuevoPaciente)
         {

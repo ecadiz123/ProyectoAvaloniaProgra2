@@ -17,7 +17,8 @@ namespace ProyectoConsultorio
 
             foreach (Paciente pac in med.Pacientes)
             {
-                lbPacientes.Items.Add(pac.Rut);
+                lbPacientes.Items.Add(pac);
+                
             }
             
         }
@@ -26,15 +27,18 @@ namespace ProyectoConsultorio
         {
             try
             {
-                ;
-                string pacienteRut = Convert.ToString(lbPacientes.SelectedItem);
-                Paciente pacienteSelec = med.Pacientes.Find(x => x.Rut == int.Parse(pacienteRut));
+                if (lbPacientes.SelectedItem is Paciente pacienteSel)
+                {
+                    var modFichasWindow = new ModFichasWindow(this.med, pacienteSel, pacienteSel.Ficha);
+                    modFichasWindow.Show(); // Muestra la ventana secundaria
+                    this.Close();
+
+                }
+                
 
 
 
-                var modFichasWindow = new ModFichasWindow(this.med,pacienteSelec, pacienteSelec.Ficha);
-                modFichasWindow.Show(); // Muestra la ventana secundaria
-                this.Close();
+              
             }
             catch (Exception ex)
             {

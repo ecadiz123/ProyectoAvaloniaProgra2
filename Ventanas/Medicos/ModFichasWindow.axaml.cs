@@ -49,10 +49,10 @@ namespace ProyectoConsultorio
             if (rbO.IsChecked == true)
                 GS = GrupoSanguineo.O;
 
-            fichaActual.GrupoSanguineo=
-            fichaActual.
-            fichaActual.
-            fichaActual.
+            fichaActual.GrupoSanguineo = GS;
+            fichaActual.Alergias = tbAlergias.Text;
+            fichaActual.Antecedentes = tbAntecedentes.Text;
+            fichaActual.Observaciones = tbObs.Text;
             var listaFichaWindow = new ListaFichaWindow(this.med);
             listaFichaWindow.Show(); // Muestra la ventana secundaria
             this.Close();

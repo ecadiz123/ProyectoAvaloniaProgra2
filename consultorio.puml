@@ -27,6 +27,13 @@ package Clinica
             + VerCantidad():int
             + RestarCantidad(int):void
         }
+        class InsumoLimpieza {
+            - nombre: string
+            - cantidad:int
+            + AddCantidad(int):void
+            + VerCantidad():int
+            + RestarCantidad(int):void
+        }
     }
     
 
@@ -55,9 +62,18 @@ package Clinica
         PLANVITAL
         PROVIDA
     }
+    enum EstadoTurno{
+        SALA
+        BOX
+        FUERA
+    }
         class Persona
         {
         - rut: int
+        - nombre: string
+        - apellidoPaterno: string
+        - apellidoMaterno: string
+        - email: string
         - digitoVerificador: int
         - sexo: Sexo
         - fechaNacimiento:DateTime
@@ -66,6 +82,10 @@ package Clinica
         - telefono: int
         - prevision: Prevision
         - AFP: AFP
+        + Nombre: string
+        + ApellidoPaterno: string
+        + ApellidoMaterno: string
+        + Email: string
         + Rut: int
         + DigitoVerificador: int
         + Sexo: Sexo
@@ -81,15 +101,18 @@ package Clinica
         {
         interface ITrabajadoresExternos{
             EmpresaContratista: string
+            estadoTurno: EstadoTurno
         }
          class Limpieza{
             - empresaContratista:string
             + EmpresaContratista: string
+            + estadoTurno: EstadoTurno
          }
 
         class Seguridad{
             - empresaContratista:string
             + EmpresaContratista: string
+            + estadoTurno: EstadoTurno
         }
         }
         package Clientes
@@ -129,14 +152,12 @@ package Clinica
             - tieneTutor: bool
             - tutor: Tutor
             - fechaAtencion: DateTime
-            - medicoAtiende: Medico
             - ficha:FichaMedica
             + CambiarFechaAtencion(DateTime): void
             + Tutor: Tutor
             + TieneTutor: bool
             + MotivaDeConsulta:string
             + FechaAtencion: DateTime
-            + MedicoAtiende: Medico
             + Ficha: Ficha
         }
         class Tutor{
@@ -156,35 +177,40 @@ package Clinica
                 Password:string
             }
             class Secretario{
-                -userName: string
-                -password: string
-                + LogIn(string,string):void
-                + UserName:string
-                + Password:string
-                + AñadirHoraPaciente(Paciente):void
-                + ElimHoraPaciente(Paciente): void
-                + MarcarLlegadaMedico(Medico):void
-                + MarcarTurnoTExt(ITrabajadoresExternos):void
-                + AñadirInsumo(IInsumo): void
-                'Preguntar al profe sobre quien deberia tener metodo de añadir a infraestructura, si la inf o el que hace la cuenta de las personas es decir el secretario
-                + AñadirPersonasInf():void
-                + ElimPersonaInf():void
+                - userName: string
+                - password: string
+                - path: string
+                + SalaDeEspera: sala
+                + box: List<Box>
+                + limpieza: List<Limpieza>
+                + seguridad: List<Seguridad>
+                + medicosClinica: List<Medico>
+                + LogIn(string, string): void
+                + LogOff(): void
+                + AniadirPaciente(Medico, Paciente): void
+                + ElimPaciente(Medico, Paciente): void
+                + MarcarTurnoTExternoSeguridad(Seguridad, EstadoTurno): void
+                + MarcarTurnoTExternoLimpieza(Limpieza, EstadoTurno): void
+                + JsonListaBox(): void
+                + JsonMedicos(): void
+                +JsonSalaEspera(): void
             }
 
             class Medico{
-                - userName:string
+                - userName: string
                 - password: string
-                - pacientesAAtender: List<Paciente>
-                - horasDisponibles: List<DateTime>
-                + HorasDisponibles: List<DateTime>
-                + PacientesAAtender: List<Paciente>
+                - path: string
                 + LogIn(string,string):void
+                + LogOff(): void
                 + UserName:string
                 + Password:string
-                + AtenderHoraPaciente(Paciente): void
-                + IngresarFicha(FichaMedica): void
-                + ModificarFicha(FichaMedica): void
-                + EliminarFicha(FichaMedica): void
+                + Path: string
+                + AddHoraDisponible(DateTime): void
+                + ElimHoraDisponible(DateTime): void
+                + pacientes: List<Paciente>
+                + horasDisponibles: List<DateTime>
+                + RecuperarPacientesJson(): void
+                + RecuperarhorasDispJason(): void
             }
 
           
@@ -192,32 +218,27 @@ package Clinica
         package Infraestructura
          {
              interface IInfraestructura{
-                 CapacidadPersonasMax: int
-                 ContadorPersonasActuales:int
-                 AddPersonaActual(int):void
-                 EliminarPersonaActual(int):void
+                 AddInsumoCantidad(IInsumo, int): int
+                 ElimInsumocantidad(IInsumo, int):void
              }
              class Box{
                  - medicoDeTurno: Medico
-                 - capacidadPersonasMax: int
+                 - limpieza: Limpieza
                  - numeroBox: int
                  - desechables: List<Desechables>
                  - medicamentos: List<Medicamentos>
                  + NumeroBox: int
-                 + CambioDeTurno(Medico):void
-                 + LimpiarBox(List<Limipieza>):void
-                 + CapacidadPersonasMax: int
-                 + AddPersonaActual(int):void
-                 + EliminarPersonaActual(int):void
+                 + LimpiarBox(List<Limpieza>):void
+                 + AddInsumoCantidad(IInsumo, int):void
+                 + ElimInsumocantidad(IInsumo, int):void
              }
              class SalaDeEspera {
                  - seguridadDeTurno: List<Seguridad>
-                 - capacidadPersonasMax: int
-                 + CapacidadPersonasMax: int
-                 + CambioDeTurno(List<Seguridad>): void
-                 + LimpiezaSala(List<Limpiea>): void
-                 + AddPersonaActual(int):void
-                 + EliminarPersonaActual(int):void
+                 - insumoLimpieza: List<InsumoLimpieza>
+                 + LimpiezaSala(List<Limpieza>): void
+                 + AddInsumoCantidad(IInsumo, int):void
+                 + ElimInsumoCantidad(IInsumo, int):void
+                 + CambiodeTurno(Seguridad, Seguridad): void
              }
              
 
@@ -269,6 +290,7 @@ package Clinica
         'Interfaz Insumos
         IInsumo <|.. Medicamento
         IInsumo <|.. Desechables
+        IInsumo <|.. InsumoLimpieza
         'Interfaz Infraestructura
         IInfraestructura <|.. Box
         IInfraestructura <|.. SalaDeEspera

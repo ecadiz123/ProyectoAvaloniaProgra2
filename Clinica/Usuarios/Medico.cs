@@ -12,6 +12,7 @@ namespace ProyectoConsultorio.Clinica.Usuarios
 {
     public class Medico : IUsuario
     {
+        string nombreAp= string.Empty;
         string userName = string.Empty;
         string password = string.Empty;
         string path = string.Empty;
@@ -27,6 +28,7 @@ namespace ProyectoConsultorio.Clinica.Usuarios
         public List<DateTime> HorasDisponibles { get => horasDisponibles; set => horasDisponibles = value; }
         public List<Paciente> Pacientes { get => pacientes; set => pacientes = value; }
         public Box BoxActual { get => boxActual; set => boxActual = value; }
+        public string NombreAp { get => nombreAp; set => nombreAp = value; }
 
         public void LogIn(string username, string password)
         {   
@@ -42,6 +44,7 @@ namespace ProyectoConsultorio.Clinica.Usuarios
             {
                 this.UserName = username;
                 this.Password = password;
+                this.nombreAp = medRecuperado.nombreAp;
                 this.path = "JSON/Medicos/" + username+"/";
 
                 RecuperarhorasDispJson();

@@ -34,7 +34,7 @@ namespace ProyectoConsultorio
             TimeSpan hora= Tpicker.SelectedTime ??  TimeSpan.Zero;//TimeSpan es representacion de lahora
 
             nuevaFechaD.Add(hora);
-            med.HorasDisponibles.Add(nuevaFechaD);
+            med.AddHoraDisponible(nuevaFechaD);
             HorasDisponibles.Items.Add(nuevaFechaD.ToString());
             
         }
