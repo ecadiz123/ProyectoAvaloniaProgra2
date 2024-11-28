@@ -19,14 +19,11 @@ namespace ProyectoConsultorio.Clinica.Clientes
         public string MotivoConsulta { get => motivoConsulta; set => motivoConsulta = value; }
         public bool TieneTutor { get => tieneTutor; set => tieneTutor = value; }
         public DateTime Fechaatencion { get => fechaatencion; set => fechaatencion = value; }
-        internal Medico MedicoAtiende { get => medicoAtiende; set => medicoAtiende = value; }
-        internal FichaMedica Ficha { get => ficha; set => ficha = value; }
+        public Medico MedicoAtiende { get => medicoAtiende; set => medicoAtiende = value; }
+        public FichaMedica Ficha { get => ficha; set => ficha = value; }
 
 
-        public void CambiarFechaAtencion(DateTime nuevafechaatencion)
-        {
-            fechaatencion = nuevafechaatencion;
-        }
+        
 
     }
 }

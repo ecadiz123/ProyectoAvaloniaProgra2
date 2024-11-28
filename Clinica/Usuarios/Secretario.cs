@@ -5,6 +5,7 @@ using ProyectoConsultorio.Clinica.Inventario;
 using ProyectoConsultorio.Clinica.TrabajadoresExt;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -19,25 +20,31 @@ namespace ProyectoConsultorio.Clinica.Usuarios
 
         List<Medico> medicosClinica;
 
-        List<IInsumo> inventario;
         
-        List<IInfraestructura> infraestructuras;
 
-        List<ITrabajadoresExternos> trabajadores;
+        SalaDeEspera sala;
+
+        List<Box> box;
+
+        List<Seguridad> seguridad;
+        List<Limpieza> limpieza;
         public string UserName { get => userName; set => userName = value; }
         public string Password { get => password; set => password = value; }
-        public List<ITrabajadoresExternos> Trabajadores { get => trabajadores; set => trabajadores = value; }
-        public List<IInfraestructura> Infraestructuras { get => infraestructuras; set => infraestructuras = value; }
-        public List<IInsumo> Inventario { get => inventario; set => inventario = value; }
+        
+        
         public List<Medico> MedicosClinica { get => medicosClinica; set => medicosClinica = value; }
+        public List<Seguridad> Seguridad { get => seguridad; set => seguridad = value; }
+        public List<Limpieza> Limpieza { get => limpieza; set => limpieza = value; }
+        public SalaDeEspera Sala { get => sala; set => sala = value; }
+        public List<Box> Box { get => box; set => box = value; }
 
         public void LogIn(string username, string password)
         {
-            StreamReader usuariocontrasena = new StreamReader("/Usuarios/Secretarios/" + Nombre + Apellidopaterno);
+            StreamReader usuariocontrasena = new StreamReader("/JSON/Secretarios/" + username+"/LogIn.json");
             string recuperado = usuariocontrasena.ReadToEnd();
             usuariocontrasena.Close();
             Secretario secRecuperado = JsonConvert.DeserializeObject<Secretario>(recuperado);
-            if (!(secRecuperado.UserName == UserName && secRecuperado.Password == Password))
+            if (!(secRecuperado.UserName == username && secRecuperado.Password == password))
             {
                 throw new Exception("Error en ingreso de usuario");
             }
@@ -46,25 +53,52 @@ namespace ProyectoConsultorio.Clinica.Usuarios
         {
 
         }
-        public void AñadirPaciente(Paciente nuevoPaciente)
+        public void AñadirPaciente(Medico medicoAtiende,Paciente nuevoPaciente)
         {
-
+            //Se busca mediante predicado en lista a medico por nombre
+            //Luego a su lista de pacientes existentes se le añade el
+            //nuevo paciente
+            MedicosClinica.Find(x=> x.Nombre==medicoAtiende.Nombre).Pacientes.Add(nuevoPaciente);
         }
-        public void ElimHoraPaciente(Paciente pacienteElim)
+        public void ElimPaciente(Medico medicoAtiende,Paciente pacienteElim)
         {
-
+            //Se elimina paciente de medico especifico que se encuentra
+            //En lista de medicos
+            MedicosClinica.Find(x => x.Nombre == medicoAtiende.Nombre).Pacientes.Remove(pacienteElim);
         }
         
-        public void MarcarTurnoTExterno(ITrabajadoresExternos texterno)
+        public void MarcarTurnoTExternoSeguridad(Seguridad texterno, EstadoTurno nuevoTurno)
         {
-
+            seguridad.Find(x => x.Nombre == texterno.Nombre).EstadoTurno = nuevoTurno;
         }
-       
+        public void MarcarTurnoTExternoLimpieza(Limpieza texterno, EstadoTurno nuevoTurno)
+        {
+            limpieza.Find(x => x.Nombre == texterno.Nombre).EstadoTurno = nuevoTurno;
+        }
         public void AnhiadirPersonasInf(int cantidadPersonasEntrantes)
         {
+            sala.AddPersonaActual(cantidadPersonasEntrantes);
+        }
+        public void ElimPersonasInf(int Box,int personasSalientes)
+        {
+            box.Find(x=> x.NumeroBox== Box).EliminarPersonaActual(personasSalientes);
+        }
+        //Metodos Json
+
+        public void JsonMedicos()
+        {
 
         }
-        public void ElimPersonasInf(int personasSalientes)
+        public void JsonListInfraestructura()
+        {
+
+        }
+
+        public void JsonListInsumos()
+        {
+
+        }
+        public void JsonListTExternos()
         {
 
         }
