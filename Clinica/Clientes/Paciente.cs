@@ -11,7 +11,7 @@ namespace ProyectoConsultorio.Clinica.Clientes
     {
         private string motivoConsulta = string.Empty;
         private bool tieneTutor;
-        private Tutor tutor;
+        private Tutor tutor = new Tutor();
         private DateTime fechaatencion;
         
         private FichaMedica ficha;
@@ -21,9 +21,6 @@ namespace ProyectoConsultorio.Clinica.Clientes
         public DateTime Fechaatencion { get => fechaatencion; set => fechaatencion = value; }
        
         public FichaMedica Ficha { get => ficha; set => ficha = value; }
-
-
-        
-
+        public Tutor Tutor { get => tutor; set => tutor = value; }
     }
 }

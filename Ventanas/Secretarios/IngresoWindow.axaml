@@ -40,7 +40,7 @@
 					<ComboBoxItem>Más Vida</ComboBoxItem>
 					<ComboBoxItem>Vida Tres</ComboBoxItem>
 					<ComboBoxItem>Fundacion Banco Estado</ComboBoxItem>
-					<ComboBoxItem>Particular</ComboBoxItem>
+					
 				</ComboBox>
 			</StackPanel>
 
@@ -63,7 +63,7 @@
 				<TextBlock Foreground="#031d3b" Margin="5" FontSize="10">
 					Fecha de <LineBreak /> Nacimiento
 				</TextBlock>
-				<DatePicker Foreground="#031d3b" Background="#dfe3f2" Margin="5" Width="336" DayFormat="ddd dd"/>
+				<DatePicker Foreground="#031d3b" x:Name="dpTNacimiento" Background="#dfe3f2" Margin="5" Width="336" DayFormat="ddd dd"/>
 				<TextBox Foreground="#031d3b" Background="#dfe3f2" Width="400" Margin="5" x:Name="tbTTelefono" Watermark="Telefono Ej: 9 12345678"/>
 		</StackPanel>
 			<StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal" x:Name="PanelDatos4" IsVisible="False">

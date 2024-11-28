@@ -70,7 +70,7 @@ namespace ProyectoConsultorio.Clinica.Usuarios
             sr2.Close();
             StreamWriter sr3 = new StreamWriter(this.path + "SalaDeEspera.json");
             string Sesp = JsonConvert.SerializeObject(this.sala);
-            sr3.WriteLine(jsonLMed);
+            sr3.WriteLine(Sesp);
             sr3.Close();
         }
         public void AñadirPaciente(Medico medicoAtiende, Paciente nuevoPaciente)

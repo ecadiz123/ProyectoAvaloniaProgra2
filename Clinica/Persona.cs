@@ -25,7 +25,7 @@ namespace ProyectoConsultorio
         private int rut;
         private int digitoverificador;
         private int edad;
-        private string nombre = string.Empty;
+        private string nombre = " ";
         private string apellidomaterno = string.Empty;
         private string apellidopaterno = string.Empty;
         private string email = string.Empty;

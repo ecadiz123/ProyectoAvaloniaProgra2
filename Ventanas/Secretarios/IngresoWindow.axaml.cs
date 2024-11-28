@@ -13,8 +13,8 @@ namespace ProyectoConsultorio
     public partial class IngresoWindow : Window
     {
         public Secretario sec;
-        public List<Paciente> ListaPacientes { get; set; } = new List<Paciente>();
-        public List<Tutor> ListaTutores { get; set; } = new List<Tutor>();
+        public Paciente Pnuevo;
+        
         public IngresoWindow(Secretario secr)
         {
             this.sec = secr;
@@ -62,7 +62,7 @@ namespace ProyectoConsultorio
         {
             try
             {
-                var ingresoHoraWindow = new IngresoHoraWindow();
+                
                 Paciente pacienteNuevo = new Paciente();
                 pacienteNuevo.Nombre = tbNombres.Text;
                 string d = tbRUT.Text.Split('-')[1];
@@ -75,35 +75,35 @@ namespace ProyectoConsultorio
                 pacienteNuevo.Telefono = int.Parse(tbTelefono.Text);
                 pacienteNuevo.Email = tbMail.Text;
 
-                prevision_t prev = prevision_t.FONASA;
-                if(CboxPrevision.SelectedItem.ToString()=="Fonasa")
-                    prev = prevision_t.FONASA;
-                if (CboxPrevision.SelectedItem.ToString() == "Banmédica")
-                    prev = prevision_t.BANMEDICA;
-                if ((CboxPrevision.SelectedItem.ToString() == "Colmena"))
-                    prev = prevision_t.COLMENA;
-                if ((CboxPrevision.SelectedItem.ToString() == "Consalud"))
-                    prev = prevision_t.CONSALUD;
-                if ((CboxPrevision.SelectedItem.ToString() == "Cruz Blanca"))
-                    prev= prevision_t.CRUZBLANCA;
-                if ((CboxPrevision.SelectedItem.ToString()=="Más Vida"))
-                    prev=prevision_t.NUEVA_MAS_VIDA;
-                if (((CboxPrevision.SelectedItem.ToString() == "Vida Tres")))
-                    prev = prevision_t.VIDA_TRES;
-                if (((CboxPrevision.SelectedItem.ToString() == "Fundacion Banco Estado")))
-                    prev = prevision_t.FUNDACION_BANCO_DEL_ESTADO;
-                pacienteNuevo.Prevision = prev;
+               
 
-
-
-
-                        ingresoHoraWindow.Show(); // Muestra la ventana secundaria
+                if(BoolTutor.IsChecked==true)
+                {
+                    Tutor tutor = new Tutor();
+                    tutor.Nombre = tbTNombres.Text;
+                    string d2 = tbTRUT.Text.Split('-')[1];
+                    tutor.Rut = int.Parse(tbRUT.Text);
+                    tutor.Digitoverificador = int.Parse(d2);
+                    DateTimeOffset dpOff2 = dpTNacimiento.SelectedDate ?? DateTimeOffset.Now;
+                    tutor.Fechanacimiento = dpOff2.DateTime;
+                    tutor.Apellidopaterno = tbTApellidoPaterno.Text;
+                    tutor.Apellidomaterno = tbTApellidoMaterno.Text;
+                    tutor.Telefono = int.Parse(tbTTelefono.Text);
+                    tutor.Email = tbTMail.Text;
+                    pacienteNuevo.TieneTutor = true;
+                    pacienteNuevo.Tutor=tutor;
+                }
+                pacienteNuevo.Ficha = new FichaMedica();
+                var ingresoHoraWindow = new IngresoHoraWindow(sec,pacienteNuevo);
+               
+                ingresoHoraWindow.Show(); // Muestra la ventana secundaria
                 this.Close();
             }
             catch(Exception ex)
             {
                 ErrorWindow err = new ErrorWindow();
                 err.ErrorMsg.Text = ex.Message;
+                err.ErrorMsg.Text += ex.Source;
                 err.Show();
             }
         }

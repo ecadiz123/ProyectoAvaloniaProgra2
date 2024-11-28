@@ -3,32 +3,25 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         x:Class="ProyectoConsultorio.IngresoHoraWindow"
-		Icon="/Recursos/Imagenes/icono_margen.png"
+Icon="/Recursos/Imagenes/icono_margen.png"
         Title="Modificador de horas" Width="1100" Height="800" Background="#1BA1E2">
-	
+
 	<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
 		<Calendar x:Name="calendar" SelectionMode="MultipleRange"/>
-		<ListBox Margin="10" Width="200" Height="200"
-                 HorizontalAlignment="Center">
-			<ListBoxItem Content="09:00" />
-			<ListBoxItem Content="09:30" />
-			<ListBoxItem Content="10:00" />
-			<ListBoxItem Content="10:30" />
-			<ListBoxItem Content="11:00" />
-			<ListBoxItem Content="11:30" />
-			<ListBoxItem Content="12:00" />
+		<ListBox Margin="10" Width="200" Height="200" x:Name="LbHdisp"
+						 HorizontalAlignment="Center">
+			
 		</ListBox>
 		<Border Margin="10" BorderBrush="Black" BorderThickness="2" Padding="10" CornerRadius="10">
 			<StackPanel Orientation="Vertical" >
-				<TextBlock Text="Doctores disponibles en el día seleccionado" FontSize="20" Margin="10"/>
-				<TextBlock HorizontalAlignment="Left" Margin="10" FontSize="15">
-					Nombre: <LineBreak />
-					Apellido: <LineBreak />
-					Hora disponible:
-				</TextBlock>
+				<TextBlock Text="Doctores" FontSize="20" Margin="10"/>
+				<ListBox Margin="10" Width="200" Height="200"
+				 HorizontalAlignment="Center" x:Name="LbDoctores">
+					
+				</ListBox>
 				<Button Content="Confirmar hora" Click="VolverMenu" HorizontalContentAlignment="Center" Margin="10" VerticalContentAlignment="Center" Width="150" Height="30"/>
 			</StackPanel>
 		</Border>
 	</StackPanel>
-		
+
 </Window>
