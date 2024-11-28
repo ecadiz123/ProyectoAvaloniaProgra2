@@ -28,7 +28,7 @@ namespace ProyectoConsultorio
         private string nombre = string.Empty;
         private string apellidomaterno = string.Empty;
         private string apellidopaterno = string.Empty;
-        private string direccion = string.Empty;
+        private string email = string.Empty;
         private int telefono;
         private sexo_t sexo;
         private prevision_t prevision;
@@ -37,13 +37,13 @@ namespace ProyectoConsultorio
         public int Rut { get => rut; set => rut = value; }
         public int Edad { get => edad; set => edad = value; }
         public string Nombre { get => nombre; set => nombre = value; }
-        public string Apellidoematerno { get => apellidomaterno; set => apellidomaterno = value; }
+        public string Apellidomaterno { get => apellidomaterno; set => apellidomaterno = value; }
         public string Apellidopaterno { get => apellidopaterno; set => apellidopaterno = value; }
-        public string Direccion { get => direccion; set => direccion = value; }
         public int Telefono { get => telefono; set => telefono = value; }
         public DateTime Fechanacimiento { get => fechanacimiento; set => fechanacimiento = value; }
         internal sexo_t Sexo { get => sexo; set => sexo = value; }
         internal prevision_t Prevision { get => prevision; set => prevision = value; }
         public int Digitoverificador { get => digitoverificador; set => digitoverificador = value; }
+        public string Email { get => email; set => email = value; }
     }
 }

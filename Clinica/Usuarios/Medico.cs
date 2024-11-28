@@ -25,51 +25,47 @@ namespace ProyectoConsultorio.Clinica.Usuarios
         public List<DateTime> HorasDisponibles { get => horasDisponibles; set => horasDisponibles = value; }
         public List<Paciente> Pacientes { get => pacientes; set => pacientes = value; }
 
-        // Constructor vacio
-        public Medico()
-        {
-
-            userName = string.Empty;
-            password = string.Empty;
-            
-            Pacientes = new List<Paciente>();
-
-        }
+   
 
 
 
-        public Medico(string userName, string pass)
-        {
-            this.userName = userName;
-            password = pass;
-        }
+   
 
         public void LogIn(string userName, string password)
         {
-            StreamReader usuariocontrasena = new StreamReader("/Usuarios/Medicos/" + Nombre + Apellidopaterno);
+            StreamReader usuariocontrasena = new StreamReader("/JSON/Medicos/" + userName+"/LogIn.json");
             string recuperado = usuariocontrasena.ReadToEnd();
             usuariocontrasena.Close();
             Medico medRecuperado = JsonConvert.DeserializeObject<Medico>(recuperado);
-            if (!(medRecuperado.UserName == UserName && medRecuperado.Password == Password))
+            if (!(medRecuperado.UserName == userName && medRecuperado.Password == password))
             {
                 throw new Exception("Error en ingreso de usuario");
+            }else
+            {
+                StreamReader sr = new StreamReader("/JSON/Medicos/" + userName + "/DatosPersona.json");
+                Persona datosP = JsonConvert.DeserializeObject<Persona>(sr.ReadToEnd());
+                sr.Close();
+               // this.Nombre             =
+               // this.Apellidopaterno    =
+               // this.Apellidomaterno    =
+               // this.Rut                =
+               // this.Digitoverificador  =
+               // this.Edad               =
+               // this.Direccion          =
+               // this.Telefono           =
+               // this.Fechanacimiento
+               // this.Sexo=
+               // this.
             }
         }
       
         public void LogOff()//Se debe Hacer log off para guardar estado de medico en json
         {
 
-        }
-        
-        public void AtenderHoraPaciente(Paciente pas)
-        {
-            
-        }
-        public void IngresarFicha(Paciente paciente)
-        {
 
         }
-        public void ModificarFicha(Paciente paciente)
+        
+        public void AddHoraDisponible(DateTime nuevaHora)
         {
 
         }
