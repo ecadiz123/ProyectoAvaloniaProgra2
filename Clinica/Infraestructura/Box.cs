@@ -4,33 +4,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ProyectoConsultorio.Clinica.Inventario;
+using ProyectoConsultorio.Clinica.TrabajadoresExt;
 using ProyectoConsultorio.Clinica.Usuarios;
 
 namespace ProyectoConsultorio.Clinica.Infraestructura
 {
     public class Box : IInfraestructura
     {
-       
+        private Medico medico;
+        private Limpieza Limpieza { get; set; }
         private int numeroBox;
-        private int capacidadPersonasMax;
-        private int contadorPersonasActuales;
+
+    
         private List<Medicamentos> medicamentos;
         private List<Desechable> desechables;
         
 
-        public int CapacidadPersonasMax { get => capacidadPersonasMax; set => capacidadPersonasMax = value; }
+      
         
         public int NumeroBox { get => numeroBox; set => numeroBox = value; }
-        public int ContadorPersonasActuales { get => contadorPersonasActuales; set => contadorPersonasActuales = value; }
-       
-     
-        public void AddPersonaActual(int c)
+
+        public void AddInsumoCantidad(IInsumo insumo, int c)
         {
-            contadorPersonasActuales += c;
+            insumo.AddCantidad(c);
         }
-        public void EliminarPersonaActual(int c)
+
+        public void ElimInsumoCantidad(IInsumo insumo, int c)
         {
-            contadorPersonasActuales -= c;
+            insumo.RestarCantidad(c);
         }
     }
 }

@@ -13,14 +13,14 @@ using System.Threading.Tasks;
 
 namespace ProyectoConsultorio.Clinica.Usuarios
 {
-    public class Secretario : Persona, IUsuario
+    public class Secretario : IUsuario
     {
         string userName = string.Empty;
         string password = string.Empty;
-
+        string path = string.Empty;
         List<Medico> medicosClinica;
 
-        
+
 
         SalaDeEspera sala;
 
@@ -30,8 +30,8 @@ namespace ProyectoConsultorio.Clinica.Usuarios
         List<Limpieza> limpieza;
         public string UserName { get => userName; set => userName = value; }
         public string Password { get => password; set => password = value; }
-        
-        
+
+
         public List<Medico> MedicosClinica { get => medicosClinica; set => medicosClinica = value; }
         public List<Seguridad> Seguridad { get => seguridad; set => seguridad = value; }
         public List<Limpieza> Limpieza { get => limpieza; set => limpieza = value; }
@@ -40,67 +40,91 @@ namespace ProyectoConsultorio.Clinica.Usuarios
 
         public void LogIn(string username, string password)
         {
-            StreamReader usuariocontrasena = new StreamReader("/JSON/Secretarios/" + username+"/LogIn.json");
+            StreamReader usuariocontrasena = new StreamReader("/JSON/Secretarios/" + username + "/LogIn.json");
             string recuperado = usuariocontrasena.ReadToEnd();
             usuariocontrasena.Close();
             Secretario secRecuperado = JsonConvert.DeserializeObject<Secretario>(recuperado);
             if (!(secRecuperado.UserName == username && secRecuperado.Password == password))
             {
                 throw new Exception("Error en ingreso de usuario");
+            } else
+            {
+                this.UserName = username;
+                this.Password = password;
+                this.path = "/JSON/Secretarios/" + username + "/";
             }
         }
         public void LogOff()//GUarda estado de secretario en Json
         {
 
         }
-        public void AñadirPaciente(Medico medicoAtiende,Paciente nuevoPaciente)
+        public void AñadirPaciente(Medico medicoAtiende, Paciente nuevoPaciente)
         {
             //Se busca mediante predicado en lista a medico por nombre
             //Luego a su lista de pacientes existentes se le añade el
             //nuevo paciente
-            MedicosClinica.Find(x=> x.Nombre==medicoAtiende.Nombre).Pacientes.Add(nuevoPaciente);
+            MedicosClinica.Find(x => x.UserName == medicoAtiende.UserName).Pacientes.Add(nuevoPaciente);
         }
-        public void ElimPaciente(Medico medicoAtiende,Paciente pacienteElim)
+        public void ElimPaciente(Medico medicoAtiende, Paciente pacienteElim)
         {
             //Se elimina paciente de medico especifico que se encuentra
             //En lista de medicos
-            MedicosClinica.Find(x => x.Nombre == medicoAtiende.Nombre).Pacientes.Remove(pacienteElim);
+            MedicosClinica.Find(x => x.UserName == medicoAtiende.UserName).Pacientes.Remove(pacienteElim);
         }
-        
-        public void MarcarTurnoTExternoSeguridad(Seguridad texterno, EstadoTurno nuevoTurno)
-        {
-            seguridad.Find(x => x.Nombre == texterno.Nombre).EstadoTurno = nuevoTurno;
-        }
-        public void MarcarTurnoTExternoLimpieza(Limpieza texterno, EstadoTurno nuevoTurno)
-        {
-            limpieza.Find(x => x.Nombre == texterno.Nombre).EstadoTurno = nuevoTurno;
-        }
+
+      //  public void MarcarTurnoTExternoSeguridad(Seguridad texterno, EstadoTurno nuevoTurno)
+      //  {
+      //      seguridad.Find(x => x.Nombre == texterno.Nombre).EstadoTurno = nuevoTurno;
+      //  }
+      //  public void MarcarTurnoTExternoLimpieza(Limpieza texterno, EstadoTurno nuevoTurno)
+      //  {
+      //      limpieza.Find(x => x.Nombre == texterno.Nombre).EstadoTurno = nuevoTurno;
+      //  }
         public void AnhiadirPersonasInf(int cantidadPersonasEntrantes)
         {
             sala.AddPersonaActual(cantidadPersonasEntrantes);
         }
-        public void ElimPersonasInf(int Box,int personasSalientes)
+        public void ElimPersonasInf(int Box, int personasSalientes)
         {
-            box.Find(x=> x.NumeroBox== Box).EliminarPersonaActual(personasSalientes);
+            box.Find(x => x.NumeroBox == Box).EliminarPersonaActual(personasSalientes);
         }
         //Metodos Json
 
+        public void JsonListaBox()
+        {
+            StreamReader sr = new StreamReader(this.path + "ListaBox.json");
+            string json = sr.ReadToEnd();
+            sr.Close();
+            var boxJson = JsonConvert.DeserializeObject<List<Box>>(json);
+            this.box = boxJson;
+
+        }
+     
         public void JsonMedicos()
         {
-
+            StreamReader sr = new StreamReader(this.path + "ListaMedicos.json");
+            string json = sr.ReadToEnd();
+            sr.Close();
+            List<Medico> medJson = JsonConvert.DeserializeObject<List<Medico>>(json);
+            this.medicosClinica = medJson;
         }
-        public void JsonListInfraestructura()
+
+
+        public void JsonSalaEspera()
         {
+            StreamReader sr = new StreamReader(this.path + "SalaDeEspera.json");
+            string json = sr.ReadToEnd();
+            sr.Close();
+            var SEsperaJson = JsonConvert.DeserializeObject<SalaDeEspera>(json);
+            this.sala = SEsperaJson;
+
+            
+            
+            
+
+            
 
         }
 
-        public void JsonListInsumos()
-        {
-
-        }
-        public void JsonListTExternos()
-        {
-
-        }
     }
 }

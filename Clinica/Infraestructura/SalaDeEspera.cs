@@ -11,15 +11,13 @@ namespace ProyectoConsultorio.Clinica.Infraestructura
     public class SalaDeEspera : IInfraestructura
     {
         private List<Seguridad> seguridadDeTurno;
-        private int capacidadPersonasMax;
-        private int contadorPersonasActuales;
-        private List<Limpieza> insumoLimpieza;
+     
+        private List<InsumoLimpieza> insumoLimpieza;
         
 
-        public int CapacidadPersonasMax { get => capacidadPersonasMax; set => capacidadPersonasMax = value; }
+       
         public List<Seguridad> SeguridaDeTurno { get => seguridadDeTurno; set => seguridadDeTurno = value; }
-        public int ContadorPersonasActuales { get => contadorPersonasActuales; set => contadorPersonasActuales = value; }
-        
+
 
         public void CambiodeTurno(Seguridad seguridadEntra,Seguridad seguridadSale)
         {
@@ -30,13 +28,14 @@ namespace ProyectoConsultorio.Clinica.Infraestructura
             var segSale= SeguridaDeTurno.Find(x => x.Nombre == seguridadSale.Nombre);
             seguridadDeTurno.Remove(segSale);
         }
-        public void AddPersonaActual(int c)
+
+        public void AddInsumoCantidad(IInsumo insumo, int c)
         {
-            ContadorPersonasActuales += c;
+            
         }
-        public void EliminarPersonaActual(int c)
+        public void ElimInsumoCantidad(IInsumo insumo, int c)
         {
-            contadorPersonasActuales -= c;
+            
         }
     }
 }

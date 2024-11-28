@@ -13,13 +13,13 @@ namespace ProyectoConsultorio.Clinica.Clientes
         private bool tieneTutor;
         private Tutor tutor;
         private DateTime fechaatencion;
-        private Medico medicoAtiende;
+        
         private FichaMedica ficha;
 
         public string MotivoConsulta { get => motivoConsulta; set => motivoConsulta = value; }
         public bool TieneTutor { get => tieneTutor; set => tieneTutor = value; }
         public DateTime Fechaatencion { get => fechaatencion; set => fechaatencion = value; }
-        public Medico MedicoAtiende { get => medicoAtiende; set => medicoAtiende = value; }
+       
         public FichaMedica Ficha { get => ficha; set => ficha = value; }
 
 
