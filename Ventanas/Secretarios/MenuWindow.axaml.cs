@@ -14,13 +14,6 @@ namespace ProyectoConsultorio
             ingresoWindow.Show(); // Muestra la ventana secundaria
             this.Close();
         }
-
-        private void DisponiblesDoctores(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
-        {
-            var horasDocWindow = new HorasDocWindow();
-            horasDocWindow.Show(); // Muestra la ventana secundaria
-            this.Close();
-        }
         private void ModificarHora(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             var modHoraWindow = new ModHoraWindow();
