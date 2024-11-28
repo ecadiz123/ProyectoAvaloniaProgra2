@@ -4,11 +4,13 @@ using System.Collections.ObjectModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using ProyectoConsultorio.Clinica.Usuarios;
 
 namespace ProyectoConsultorio
 {
     public partial class InvWindow : Window
     {
+        public Secretario sec;
         public InvWindow()
         {
             InitializeComponent();
@@ -37,7 +39,7 @@ namespace ProyectoConsultorio
         }
         private void VolverMenu(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
-            var menuWindow = new MenuWindow();
+            var menuWindow = new MenuWindow(sec);
             menuWindow.Show(); // Muestra la ventana secundaria
             this.Close();
         }

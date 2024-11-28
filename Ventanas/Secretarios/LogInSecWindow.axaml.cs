@@ -20,7 +20,7 @@ namespace ProyectoConsultorio
                 string user = tbUsuario.Text;
                 string pass = tbContrasenia.Text;
                 secretario.LogIn(user, pass);
-                var menuWindow = new MenuWindow();
+                var menuWindow = new MenuWindow(secretario);
                 menuWindow.Show(); // Muestra la ventana secundaria
                 this.Close();
             }

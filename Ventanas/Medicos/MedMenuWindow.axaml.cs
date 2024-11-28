@@ -23,7 +23,7 @@ namespace ProyectoConsultorio
         private void CerrarSesion(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             var mainWindow = new MainWindow();
-            
+            this.medico.LogOff();
             mainWindow.Show(); // Muestra la ventana secundaria
             this.Close();
         }

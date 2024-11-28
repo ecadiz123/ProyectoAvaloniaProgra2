@@ -31,7 +31,7 @@
 			</StackPanel>
 			<StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal">
 				<TextBox Foreground="#031d3b" Background="#dfe3f2" Width="400" Margin="5" x:Name="tbMail" Watermark="Email"/>
-				<ComboBox Foreground="#031d3b" Background="#dfe3f2" PlaceholderText="Seleccione su previsión" Width="400" Margin="5" MaxDropDownHeight="100">
+				<ComboBox x:Name="CboxPrevision" Foreground="#031d3b" Background="#dfe3f2" PlaceholderText="Seleccione su previsión" Width="400" Margin="5" MaxDropDownHeight="100">
 					<ComboBoxItem>Fonasa</ComboBoxItem>
 					<ComboBoxItem>Banmédica</ComboBoxItem>
 					<ComboBoxItem>Colmena</ComboBoxItem>
@@ -39,7 +39,7 @@
 					<ComboBoxItem>Cruz Blanca</ComboBoxItem>
 					<ComboBoxItem>Más Vida</ComboBoxItem>
 					<ComboBoxItem>Vida Tres</ComboBoxItem>
-					<ComboBoxItem>Optima</ComboBoxItem>
+					<ComboBoxItem>Fundacion Banco Estado</ComboBoxItem>
 					<ComboBoxItem>Particular</ComboBoxItem>
 				</ComboBox>
 			</StackPanel>

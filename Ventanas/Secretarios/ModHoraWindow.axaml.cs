@@ -1,11 +1,13 @@
 using Avalonia.Controls;
 using ProyectoConsultorio.Clases;
+using ProyectoConsultorio.Clinica.Usuarios;
 using System.Linq;
 
 namespace ProyectoConsultorio
 {
     public partial class ModHoraWindow : Window
     {
+        public Secretario sec;
         public ModHoraWindow()
         {
             InitializeComponent();
@@ -16,7 +18,7 @@ namespace ProyectoConsultorio
         }
         private void VolverMenu(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
-            var menuWindow = new MenuWindow();
+            var menuWindow = new MenuWindow(sec);
             menuWindow.Show(); // Muestra la ventana secundaria
             this.Close();
         }

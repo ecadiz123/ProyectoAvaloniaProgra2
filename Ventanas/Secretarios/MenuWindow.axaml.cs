@@ -1,16 +1,19 @@
 using Avalonia.Controls;
+using ProyectoConsultorio.Clinica.Usuarios;
 
 namespace ProyectoConsultorio
 {
     public partial class MenuWindow : Window
     {
-        public MenuWindow()
+        public Secretario sec;
+        public MenuWindow(Secretario secr)
         {
+            this.sec = secr;
             InitializeComponent();
         }
         private void HoraPaciente(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
-            var ingresoWindow = new IngresoWindow();
+            var ingresoWindow = new IngresoWindow(sec);
             ingresoWindow.Show(); // Muestra la ventana secundaria
             this.Close();
         }
@@ -31,6 +34,7 @@ namespace ProyectoConsultorio
         private void CerrarSesion(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             var mainWindow = new MainWindow();
+            sec.LogOff();
             mainWindow.Show(); // Muestra la ventana secundaria
             this.Close();
         }
