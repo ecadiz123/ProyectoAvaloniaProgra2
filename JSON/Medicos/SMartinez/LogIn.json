@@ -1,4 +1,7 @@
 {
-    "UserName": "SMartinez",
-    "Password": "SMartinez"
+  "UserName": "SMartinez",
+  "Password": "SMartinez",
+  "HorasDisponibles": [],
+  "Pacientes": [],
+  "BoxActual": null
 }

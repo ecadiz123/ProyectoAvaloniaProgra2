@@ -40,7 +40,7 @@ namespace ProyectoConsultorio.Clinica.Usuarios
 
         public void LogIn(string username, string password)
         {
-            StreamReader usuariocontrasena = new StreamReader("/JSON/Secretarios/" + username + "/LogIn.json");
+            StreamReader usuariocontrasena = new StreamReader("JSON/Secretarios/" + username + "/LogIn.json");
             string recuperado = usuariocontrasena.ReadToEnd();
             usuariocontrasena.Close();
             Secretario secRecuperado = JsonConvert.DeserializeObject<Secretario>(recuperado);
@@ -51,7 +51,7 @@ namespace ProyectoConsultorio.Clinica.Usuarios
             {
                 this.UserName = username;
                 this.Password = password;
-                this.path = "/JSON/Secretarios/" + username + "/";
+                this.path = "JSON/Secretarios/" + username + "/";
             }
         }
         public void LogOff()//GUarda estado de secretario en Json

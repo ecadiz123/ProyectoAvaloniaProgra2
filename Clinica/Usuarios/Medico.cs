@@ -31,7 +31,7 @@ namespace ProyectoConsultorio.Clinica.Usuarios
         public void LogIn(string username, string password)
         {   
          
-            StreamReader usuariocontrasena = new StreamReader("/JSON/Medicos/" + username+"/LogIn.json");
+            StreamReader usuariocontrasena = new StreamReader("JSON/Medicos/" + username+"/LogIn.json");
             string recuperado = usuariocontrasena.ReadToEnd();
             usuariocontrasena.Close();
             Medico medRecuperado = JsonConvert.DeserializeObject<Medico>(recuperado);
@@ -42,7 +42,7 @@ namespace ProyectoConsultorio.Clinica.Usuarios
             {
                 this.UserName = username;
                 this.Password = password;
-                this.path = "/JSON/Medicos/" + username+"/";
+                this.path = "JSON/Medicos/" + username+"/";
            
             }
         }
