@@ -7,12 +7,25 @@
 		Icon="/Recursos/Imagenes/icono_margen.png"
         Title="Manejo de Inventario" Width="800" Height="800" Background="#1BA1E2">
 
-	<StackPanel Orientation="Horizontal">
+	<StackPanel Orientation="Horizontal" Margin="10">
 		<TabControl Margin="5">
 			<TabItem Header="Limpieza">
-				<StackPanel Margin="20">
-					<TextBlock Margin="0 5">Insumo     Cantidad</TextBlock>
-					<ListBox x:Name="lbLimpieza"/>
+				<StackPanel Orientation="Horizontal" Margin="20">
+					<StackPanel Orientation="Vertical" Margin="20">
+						<TextBlock Margin="10" Text="Tabla Insumo  -  Cantidad"/>
+						<ListBox x:Name="lbLimpieza"/>
+					</StackPanel>
+					<StackPanel Orientation="Vertical" Margin="50">
+						<TextBlock Margin="10" Text="Ingrese el nombre del nuevo insumo"/>
+						<TextBox Margin="10" x:Name="tbCantidadInsumo" Watermark="Escriba acá"/>
+						<Button Margin="10" Content="Ingresar" x:Name="btAddNewInsumo"/>
+						<TextBlock Margin="10" Text="Ingrese la cantidad a modificar"/>
+						<TextBox Margin="10" x:Name="tbCantidad" Watermark="Valor numérico"/>
+						<StackPanel Orientation="Horizontal">
+							<Button Content="+" x:Name="btAddCantidad"/>
+							<Button Content="-" x:Name="btRestarCantidad"/>
+						</StackPanel>
+					</StackPanel>
 				</StackPanel>
 			</TabItem>
 			<TabItem Header="Medicamentos">

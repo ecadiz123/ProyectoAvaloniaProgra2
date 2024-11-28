@@ -32,15 +32,15 @@
 	  </AvaloniaXaml>
 	</ItemGroup>
 	<ItemGroup>
+	  <Compile Update="Ventanas\Medicos\ListaFichaWindow.axaml.cs">
+	    <DependentUpon>ListaFichaWindow.axaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Ventanas\Medicos\ModFichasWindow.axaml.cs">
 	    <SubType>Code</SubType>
 	    <DependentUpon>ModFichasWindow.axaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Ventanas\Medicos\MedMenuWindow.axaml.cs">
 	    <DependentUpon>MedMenuWindow.axaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="Ventanas\Medicos\ManejoFichasWindow.axaml.cs">
-	    <DependentUpon>ManejoFichasWindow.axaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Ventanas\Medicos\VerMedHoraWindow.axaml.cs">
 	    <DependentUpon>VerMedHoraWindow.axaml</DependentUpon>
