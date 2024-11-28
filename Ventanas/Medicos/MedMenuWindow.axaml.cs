@@ -23,8 +23,8 @@ namespace ProyectoConsultorio
         }
         private void ManejoFichas(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
-            var manejoFichasWindow = new ManejoFichasWindow();
-            manejoFichasWindow.Show(); // Muestra la ventana secundaria
+            var listaFichaWindow = new ListaFichaWindow();
+            listaFichaWindow.Show(); // Muestra la ventana secundaria
             this.Close();
         }
 

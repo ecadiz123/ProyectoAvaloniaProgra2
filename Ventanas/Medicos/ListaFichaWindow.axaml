@@ -1,0 +1,24 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        x:Class="ProyectoConsultorio.ListaFichaWindow"
+		Icon="/Recursos/Imagenes/icono_margen.png"
+        Title="Visor de lista de pacientes" Width="800" Height="800" Background="#1BA1E2">
+
+	<StackPanel Orientation="Vertical">
+		<TabControl Margin="5">
+			<TabItem Header="Pacientes">
+				<StackPanel Margin="20">
+					<TextBlock Margin="0 5">Nombre del paciente - RUT</TextBlock>
+					<ListBox x:Name="lbPacientes"/>
+				</StackPanel>
+			</TabItem>
+		</TabControl>
+		<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+			<Button Content="Volver" Click="VolverMenu" HorizontalContentAlignment="Center" Margin="10" VerticalContentAlignment="Center" Width="120" Height="60"/>
+			<Button Content="Modificar paciente &#x0a; seleccionado" Click="btModPaciente" HorizontalContentAlignment="Center" Margin="10" VerticalContentAlignment="Center" Width="150" Height="60"/>	
+		</StackPanel>
+	</StackPanel>
+		
+</Window>
