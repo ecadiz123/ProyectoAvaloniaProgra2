@@ -37,11 +37,13 @@ namespace ProyectoConsultorio
                     var errorWindow1 = new ErrorWindow();
                     errorWindow1.ErrorMsg.Text = "No Existe Usuario";
                     errorWindow1.Show();
-                } 
-                var errorWindow = new ErrorWindow();
-                errorWindow.ErrorMsg.Text = ex.Message;
-                errorWindow.Show();
-
+                }
+                if (!(ex is DirectoryNotFoundException) )
+                {
+                    var errorWindow = new ErrorWindow();
+                    errorWindow.ErrorMsg.Text = ex.Message;
+                    errorWindow.Show();
+                }
                
 
             }
