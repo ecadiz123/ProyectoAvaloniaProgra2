@@ -1,6 +1,8 @@
 @startuml CasoDeUso
 actor Secretaria
 actor Medico
+actor Pacientes
+actor Trabajador
 
 usecase "Iniciar Sesión Secretaria" as UCS0
 usecase "Iniciar Sesion Medico" as UCM0
@@ -17,7 +19,7 @@ usecase "Ver Horas Agendadas" as UCM1
 usecase "Manejo de Fichas Médicas" as UCM2
 usecase "Ver Lista Pacientes" as UCM3
 
-Secretaria --> UCS0 
+Secretaria -> UCS0 
 UCS0 --> UCS1
 UCS0 --> UCS2
 UCS0 --> UCS3
@@ -26,9 +28,17 @@ UCS0 --> UCS5
 UCS0 --> UCS6
 UCS0 --> UCS7
 
-Medico --> UCM0
-UCM0 --> UCM1
-UCM0 --> UCM2
-UCM0 --> UCM3
+Medico -> UCM0
+UCM0 -> UCM1
+UCM0 -> UCM2
+UCM0 -> UCM3
+Medico --> UCS3
 
+Pacientes -->UCS1
+Pacientes -->UCS2
+Pacientes -->UCM1
+Pacientes -->UCM2
+Pacientes -->UCM3
+
+Trabajador --> UCS7
 @enduml
