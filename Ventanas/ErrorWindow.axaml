@@ -3,12 +3,19 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         x:Class="ProyectoConsultorio.ErrorWindow"
-        Title="ERROR" Width="500" Height="300">
-
+		Icon="/Recursos/Imagenes/icono_error.png"
+        Title="ERROR" Width="800" Height="400" Background="#1BA1E2">
+<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
 	<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-		<Image HorizontalAlignment="Left" Margin="20" Height="125" Width="125" Source="/Recursos/Imagenes/icono_error.png"/>
+		<Image HorizontalAlignment="Left" Margin="30" Height="125" Width="125" Source="/Recursos/Imagenes/icono_error.png"/>
+		<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
 		<TextBlock  VerticalAlignment="Center" Foreground="#031d3b" Margin="5" FontSize="25" FontWeight="Bold" Text ="Se ha producido un error"/>
-		<Button Content="Volver" Click="Entendido" HorizontalContentAlignment="Center" Margin="10" VerticalContentAlignment="Center" Width="75" Height="30"/>
-    </StackPanel>
-
+		<TextBlock  VerticalAlignment="Center" Foreground="#031d3b" Margin="5" FontSize="15" FontWeight="Bold" Text ="Descripción del error"/>
+		</StackPanel>
+		</StackPanel>
+	<StackPanel HorizontalAlignment="Center">
+	<Button FontSize="15" FontWeight="UltraBold" Content="Cerrar" Click="Entendido" HorizontalContentAlignment="Center" Margin="10" 
+			VerticalContentAlignment="Center" Width="150" Height="30"/>
+	</StackPanel>
+</StackPanel>
 </Window>

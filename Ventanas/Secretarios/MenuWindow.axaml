@@ -10,7 +10,6 @@
 	<StackPanel>
 		<StackPanel>
 			<Button Background="Red" Foreground="AntiqueWhite" Content="Cerrar sesion" Click="CerrarSesion" HorizontalAlignment="Left" Margin="10" Width="110" />
-			<Button Background="Red" Foreground="AntiqueWhite" Content="Prueba Error" Click="Error" HorizontalAlignment="Left" Margin="10" Width="110" />
 		</StackPanel>
 
 		<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
