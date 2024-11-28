@@ -52,6 +52,10 @@ namespace ProyectoConsultorio.Clinica.Usuarios
                 this.UserName = username;
                 this.Password = password;
                 this.path = "JSON/Secretarios/" + username + "/";
+                JsonSalaEspera();
+                JsonListaBox();
+                JsonMedicos();
+                
             }
         }
         public void LogOff()//GUarda estado de secretario en Json

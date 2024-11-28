@@ -12,7 +12,7 @@ namespace ProyectoConsultorio.Clinica.Infraestructura
     public class Box : IInfraestructura
     {
         private Medico medico;
-        private Limpieza Limpieza { get; set; }
+        private Limpieza limpieza; 
         private int numeroBox;
 
     
@@ -23,6 +23,9 @@ namespace ProyectoConsultorio.Clinica.Infraestructura
       
         
         public int NumeroBox { get => numeroBox; set => numeroBox = value; }
+        public Limpieza Limpieza { get => limpieza; set => limpieza = value; }
+        public List<Medicamentos> Medicamentos { get => medicamentos; set => medicamentos = value; }
+        public List<Desechable> Desechables { get => desechables; set => desechables = value; }
 
         public void AddInsumoCantidad(IInsumo insumo, int c)
         {

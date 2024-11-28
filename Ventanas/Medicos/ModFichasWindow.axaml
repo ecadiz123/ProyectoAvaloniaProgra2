@@ -9,13 +9,13 @@
 	<StackPanel Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Vertical">
 		<StackPanel Margin="10" Orientation="Vertical">
 		<TextBlock Text="Grupo Sanguineo" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5"/>
-		<RadioButton GroupName="rbA"
+		<RadioButton GroupName="rbA" x:Name="rbA"
               Content="A" FontSize="20"/>
-		<RadioButton GroupName="rbB"
+		<RadioButton GroupName="rbB"  x:Name="rbB"
 				  Content="B" FontSize="20"/>
-		<RadioButton GroupName="rbAB"
+		<RadioButton GroupName="rbAB"  x:Name="rbAB"
 				  Content="AB" FontSize="20"/>
-		<RadioButton GroupName="rbO"
+		<RadioButton GroupName="rbO" x:Name="rbO"
 		  Content="O" FontSize="20"/>
 		</StackPanel>
 		<StackPanel Orientation="Vertical" Margin="10">

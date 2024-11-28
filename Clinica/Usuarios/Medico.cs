@@ -43,7 +43,9 @@ namespace ProyectoConsultorio.Clinica.Usuarios
                 this.UserName = username;
                 this.Password = password;
                 this.path = "JSON/Medicos/" + username+"/";
-           
+
+                RecuperarhorasDispJson();
+                RecuperarPacientesJson();
             }
         }
       
@@ -84,6 +86,7 @@ namespace ProyectoConsultorio.Clinica.Usuarios
             this.horasDisponibles = HDispJson;
 
         }
+       
 
         
     }

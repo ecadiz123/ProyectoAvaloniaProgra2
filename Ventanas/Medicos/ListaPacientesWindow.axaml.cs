@@ -12,8 +12,9 @@ namespace ProyectoConsultorio
     public partial class ListaPacientesWindow : Window
     {
         public Medico med;
-        public ListaPacientesWindow()
+        public ListaPacientesWindow(Medico medico)
         {
+            this.med = medico;
             InitializeComponent();
 
             foreach(Paciente pac in med.Pacientes)

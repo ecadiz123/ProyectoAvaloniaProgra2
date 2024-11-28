@@ -9,8 +9,9 @@ namespace ProyectoConsultorio
     public partial class VerMedHoraWindow : Window
     {
         public Medico med; 
-        public VerMedHoraWindow()
+        public VerMedHoraWindow(Medico medico)
         {
+            this.med = medico;
             InitializeComponent();
             foreach(DateTime Hdisp in med.HorasDisponibles)
             {

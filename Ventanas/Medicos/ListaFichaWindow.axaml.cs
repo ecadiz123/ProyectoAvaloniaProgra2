@@ -10,8 +10,9 @@ namespace ProyectoConsultorio
     public partial class ListaFichaWindow : Window
     {
         public Medico med;
-        public ListaFichaWindow()
+        public ListaFichaWindow(Medico medico)
         {
+            this.med = medico;
             InitializeComponent();
 
             foreach (Paciente pac in med.Pacientes)
@@ -25,11 +26,13 @@ namespace ProyectoConsultorio
         {
             try
             {
-                var modFichasWindow = new ModFichasWindow();
+                ;
                 string pacienteRut = Convert.ToString(lbPacientes.SelectedItem);
                 Paciente pacienteSelec = med.Pacientes.Find(x => x.Rut == int.Parse(pacienteRut));
-                modFichasWindow.med = med;
-                modFichasWindow.fichaActual = pacienteSelec.Ficha;
+
+
+
+                var modFichasWindow = new ModFichasWindow(this.med,pacienteSelec, pacienteSelec.Ficha);
                 modFichasWindow.Show(); // Muestra la ventana secundaria
                 this.Close();
             }
