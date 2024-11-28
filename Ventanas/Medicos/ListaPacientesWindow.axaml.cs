@@ -3,24 +3,28 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using ProyectoConsultorio.Clases;
 using System.Linq;
+using ProyectoConsultorio.Clinica.Usuarios;
+using ProyectoConsultorio.Clinica.Clientes;
 
 namespace ProyectoConsultorio
 {
+    
     public partial class ListaPacientesWindow : Window
     {
+        public Medico med;
         public ListaPacientesWindow()
         {
             InitializeComponent();
 
-            lbPacientes.ItemsSource = new string[]
-                {"Ibuprofeno   10", "Paracetamol   10", "Tapsin   50", "Anfetamina   25",
-                    "Prednisona   25", "Clonazepam   54", "Oxolamina   1" }
-                .OrderBy(x => x);
+            foreach(Paciente pac in med.Pacientes)
+            {
+                lbPacientes.Items.Add(pac.Nombre+" "+pac.Apellidopaterno+"\t\t\t"+pac.Rut+"-"+pac.Digitoverificador);
+            }
         }
         private void VolverMenu(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             var medMenuWindow = new MedMenuWindow();
-
+            medMenuWindow.medico = med;
             medMenuWindow.Show();
 
             this.Close();

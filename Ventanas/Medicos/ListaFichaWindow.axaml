@@ -2,6 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:local="clr-namespace:ProyectoConsultorio.Clinica.Clientes;assembly=ProyectoConsultorio"
         x:Class="ProyectoConsultorio.ListaFichaWindow"
 		Icon="/Recursos/Imagenes/icono_margen.png"
         Title="Visor de lista de pacientes" Width="800" Height="800" Background="#1BA1E2">
@@ -11,7 +12,7 @@
 			<TabItem Header="Pacientes">
 				<StackPanel Margin="20">
 					<TextBlock Margin="0 5">Nombre del paciente - RUT</TextBlock>
-					<ListBox x:Name="lbPacientes"/>
+					<ListBox x:Name="lbPacientes"  />
 				</StackPanel>
 			</TabItem>
 		</TabControl>

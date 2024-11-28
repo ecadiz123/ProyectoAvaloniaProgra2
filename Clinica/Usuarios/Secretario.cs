@@ -56,7 +56,12 @@ namespace ProyectoConsultorio.Clinica.Usuarios
         }
         public void LogOff()//GUarda estado de secretario en Json
         {
-
+            StreamWriter sr1 = new StreamWriter(this.path+"ListaBox.json");
+            string jsonBox = JsonConvert.SerializeObject(this.box);
+            sr1.WriteLine(jsonBox);
+            sr1.Close();
+            StreamWriter sr2 = new StreamWriter(this.path + "ListaMedicos.json");
+            string jsonLMed = JsonConvert.SerializeObject(this.medicosClinica);
         }
         public void AñadirPaciente(Medico medicoAtiende, Paciente nuevoPaciente)
         {
@@ -72,14 +77,14 @@ namespace ProyectoConsultorio.Clinica.Usuarios
             MedicosClinica.Find(x => x.UserName == medicoAtiende.UserName).Pacientes.Remove(pacienteElim);
         }
 
-      //  public void MarcarTurnoTExternoSeguridad(Seguridad texterno, EstadoTurno nuevoTurno)
-      //  {
-      //      seguridad.Find(x => x.Nombre == texterno.Nombre).EstadoTurno = nuevoTurno;
-      //  }
-      //  public void MarcarTurnoTExternoLimpieza(Limpieza texterno, EstadoTurno nuevoTurno)
-      //  {
-      //      limpieza.Find(x => x.Nombre == texterno.Nombre).EstadoTurno = nuevoTurno;
-      //  }
+         public void MarcarTurnoTExternoSeguridad(Seguridad texterno, EstadoTurno nuevoTurno)
+           {
+           seguridad.Find(x => x.Nombre == texterno.Nombre).EstadoTurno = nuevoTurno;
+          }
+          public void MarcarTurnoTExternoLimpieza(Limpieza texterno, EstadoTurno nuevoTurno)
+          {
+           limpieza.Find(x => x.Nombre == texterno.Nombre).EstadoTurno = nuevoTurno;
+         }
         
         //Metodos Json
 

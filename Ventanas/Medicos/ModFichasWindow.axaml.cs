@@ -1,10 +1,14 @@
 using Avalonia.Controls;
 using ProyectoConsultorio.Clases;
+using ProyectoConsultorio.Clinica.Clientes;
+using ProyectoConsultorio.Clinica.Usuarios;
 
 namespace ProyectoConsultorio
 {
     public partial class ModFichasWindow : Window
     {
+        public Medico med;
+        public FichaMedica fichaActual;
         public ModFichasWindow()
         {
             InitializeComponent();
