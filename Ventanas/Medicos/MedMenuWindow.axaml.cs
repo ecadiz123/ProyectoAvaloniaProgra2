@@ -1,9 +1,12 @@
 using Avalonia.Controls;
+using ProyectoConsultorio.Clinica.Usuarios;
 
 namespace ProyectoConsultorio
 {
+    
     public partial class MedMenuWindow : Window
     {
+        public Medico medico;
         public MedMenuWindow()
         {
             InitializeComponent();

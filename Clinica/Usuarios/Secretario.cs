@@ -80,14 +80,7 @@ namespace ProyectoConsultorio.Clinica.Usuarios
       //  {
       //      limpieza.Find(x => x.Nombre == texterno.Nombre).EstadoTurno = nuevoTurno;
       //  }
-        public void AnhiadirPersonasInf(int cantidadPersonasEntrantes)
-        {
-            sala.AddPersonaActual(cantidadPersonasEntrantes);
-        }
-        public void ElimPersonasInf(int Box, int personasSalientes)
-        {
-            box.Find(x => x.NumeroBox == Box).EliminarPersonaActual(personasSalientes);
-        }
+        
         //Metodos Json
 
         public void JsonListaBox()
