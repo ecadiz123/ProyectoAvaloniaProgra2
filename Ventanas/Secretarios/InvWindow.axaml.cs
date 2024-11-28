@@ -13,15 +13,26 @@ namespace ProyectoConsultorio
         {
             InitializeComponent();
 
-            lbMedicamentos.ItemsSource = new string[]
-                {"Ibuprofeno   10", "Paracetamol   10", "Tapsin   50", "Anfetamina   25",
-                    "Prednisona   25", "Clonazepam   54", "Oxolamina   1" }
-            .OrderBy(x => x);
-
-            lbLimpieza.ItemsSource = new string[]
+            lbLimpiezaSalaEspera.ItemsSource = new string[]
                 {"Escoba   10", "Trapo   10", "Pala   50", "CIF   25",
-                    "Cera   25", "QUIX   54", "Rastrillo   1" }
+                  "Cera   25", "QUIX   54", "Rastrillo   1" }
             .OrderBy(x => x);
+            lbMedsB1.ItemsSource = new string[]
+                {"Escoba   10", "Trapo   10", "Pala   50", "CIF   25",
+                  "Cera   25", "QUIX   54", "Rastrillo   1" }
+            .OrderBy(x => x);
+            lbLimpiezaB1.ItemsSource = new string[]
+                {"Escoba   10", "Trapo   10", "Pala   50", "CIF   25",
+                  "Cera   25", "QUIX   54", "Rastrillo   1" }
+               .OrderBy(x => x);
+            lbMedsB2.ItemsSource = new string[]
+                {"Escoba   10", "Trapo   10", "Pala   50", "CIF   25",
+                  "Cera   25", "QUIX   54", "Rastrillo   1" }
+                .OrderBy(x => x);
+            lbLimpiezaB2.ItemsSource = new string[]
+                {"Escoba   10", "Trapo   10", "Pala   50", "CIF   25",
+                  "Cera   25", "QUIX   54", "Rastrillo   1" }
+               .OrderBy(x => x);
 
         }
         private void VolverMenu(object? sender, Avalonia.Interactivity.RoutedEventArgs e)

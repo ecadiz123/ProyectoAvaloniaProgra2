@@ -1,11 +1,12 @@
 using Avalonia.Controls;
 using ProyectoConsultorio.Clinica.Usuarios;
-
+using System;
+using System.IO;
 namespace ProyectoConsultorio
 {
     public partial class LogInMedWindow : Window
     {
-        public Medico medicoUsuario;
+        public Medico medicoUsuario =new Medico();
         public LogInMedWindow()
         {
             InitializeComponent();
@@ -13,23 +14,43 @@ namespace ProyectoConsultorio
         }
         private void AbrirMenuMed(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
+
             try
             {
                 string userName = tbUsuario.Text;
                 string password = tbContrasenia.Text;
 
                 medicoUsuario.LogIn(userName, password);
+
+                //Si login no tira error
+
+                var medMenuWindow = new MedMenuWindow();
+                medMenuWindow.medico = medicoUsuario;
+                medMenuWindow.Show();// Muestra la ventana secundaria
+
+                this.Close();
             }
-            catch
+            catch (Exception ex)
             {
-                var errorWindow = new ErrorWindow();
-                errorWindow.
+                if (ex is DirectoryNotFoundException)
+                {
+                    var errorWindow1 = new ErrorWindow();
+                    errorWindow1.ErrorMsg.Text = "No Existe Usuario";
+                    errorWindow1.Show();
+                }
+                if (!(ex is DirectoryNotFoundException) )
+                {
+                    var errorWindow = new ErrorWindow();
+                    errorWindow.ErrorMsg.Text = ex.Message;
+                    errorWindow.Show();
+                }
+               
+
             }
+           
 
                 
-            var medMenuWindow = new MedMenuWindow();
-            medMenuWindow.Show(); // Muestra la ventana secundaria
-            this.Close();
+        
         }
         private void Volver(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {

@@ -14,13 +14,6 @@ namespace ProyectoConsultorio
             ingresoWindow.Show(); // Muestra la ventana secundaria
             this.Close();
         }
-
-        private void DisponiblesDoctores(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
-        {
-            var horasDocWindow = new HorasDocWindow();
-            horasDocWindow.Show(); // Muestra la ventana secundaria
-            this.Close();
-        }
         private void ModificarHora(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             var modHoraWindow = new ModHoraWindow();
@@ -54,12 +47,6 @@ namespace ProyectoConsultorio
             this.Close();
         }
 
-        private void Error(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
-        {
-            var errorWindow = new ErrorWindow();
-            errorWindow.Show(); // Muestra la ventana secundaria
-            this.Close();
-        }
         private void CerrarVentana(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             this.Close(); // Cierra la ventana

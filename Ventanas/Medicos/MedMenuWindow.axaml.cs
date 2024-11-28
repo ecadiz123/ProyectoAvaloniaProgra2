@@ -1,9 +1,12 @@
 using Avalonia.Controls;
+using ProyectoConsultorio.Clinica.Usuarios;
 
 namespace ProyectoConsultorio
 {
+    
     public partial class MedMenuWindow : Window
     {
+        public Medico medico;
         public MedMenuWindow()
         {
             InitializeComponent();
@@ -11,6 +14,7 @@ namespace ProyectoConsultorio
         private void VerAgendada(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             var verMedHoraWindow = new VerMedHoraWindow();
+            verMedHoraWindow.med=this.medico;
             verMedHoraWindow.Show(); // Muestra la ventana secundaria
             this.Close();
         }
@@ -31,13 +35,8 @@ namespace ProyectoConsultorio
         private void VerListaPacientes(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             var listaPacientesWindow = new ListaPacientesWindow();
+
             listaPacientesWindow.Show(); // Muestra la ventana secundaria
-            this.Close();
-        }
-        private void Error(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
-        {
-            var errorWindow = new ErrorWindow();
-            errorWindow.Show(); // Muestra la ventana secundaria
             this.Close();
         }
     }

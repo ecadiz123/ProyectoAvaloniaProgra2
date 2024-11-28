@@ -29,7 +29,8 @@ namespace ProyectoConsultorio.Clinica.Usuarios
         public Box BoxActual { get => boxActual; set => boxActual = value; }
 
         public void LogIn(string username, string password)
-        {
+        {   
+         
             StreamReader usuariocontrasena = new StreamReader("/JSON/Medicos/" + username+"/LogIn.json");
             string recuperado = usuariocontrasena.ReadToEnd();
             usuariocontrasena.Close();
@@ -42,7 +43,7 @@ namespace ProyectoConsultorio.Clinica.Usuarios
                 this.UserName = username;
                 this.Password = password;
                 this.path = "/JSON/Medicos/" + username+"/";
-
+           
             }
         }
       
