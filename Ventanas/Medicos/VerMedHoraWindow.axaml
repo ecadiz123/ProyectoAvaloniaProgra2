@@ -15,7 +15,7 @@
 		<Border Margin="10" BorderBrush="Black" BorderThickness="2" Padding="10" CornerRadius="10">
 			<StackPanel Orientation="Vertical" >
 				<TextBlock Text="Añade horas disponibles" FontSize="20" Margin="10"/>
-				<TimePicker Margin="10" ClockIdentifier="24HourClock"
+				<TimePicker x:Name="Tpicker" Margin="10" ClockIdentifier="24HourClock"
               MinuteIncrement="10"/>
 				<ListBox x:Name="HorasDisponibles"/>
 				<StackPanel Orientation="Horizontal">
