@@ -1,4 +1,9 @@
 {
-    "UserName": "ERomero",
-    "Password": "admin"
+  "UserName": "ERomero",
+  "Password": "123",
+  "MedicosClinica": null,
+  "Seguridad": null,
+  "Limpieza": null,
+  "Sala": null,
+  "Box": null
 }

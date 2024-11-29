@@ -1,0 +1,28 @@
+[
+  {
+    "EmpresaContratista": "Guardianes Corporativos Ltda.",
+    "EstadoTurno": 2,
+    "Rut": 87654321,
+    "Edad": 50,
+    "Nombre": "Luis",
+    "Apellidomaterno": "Ramirez",
+    "Apellidopaterno": "Fernandez",
+    "Telefono": 923456789,
+    "Fechanacimiento": "1973-04-15T00:00:00",
+    "Digitoverificador": 4,
+    "Email": "lfernandez@mail.com"
+  },
+  {
+    "EmpresaContratista": "Protección y Seguridad S.A.",
+    "EstadoTurno": 0,
+    "Rut": 12345678,
+    "Edad": 37,
+    "Nombre": "Laura",
+    "Apellidomaterno": "Martinez",
+    "Apellidopaterno": "Gonzalez",
+    "Telefono": 998877665,
+    "Fechanacimiento": "1986-09-10T00:00:00",
+    "Digitoverificador": 9,
+    "Email": "lgonzalez@mail.com"
+  }
+]

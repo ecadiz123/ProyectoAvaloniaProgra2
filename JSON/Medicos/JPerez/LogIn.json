@@ -1,5 +1,7 @@
 {
-    "UserName": "JPerez",
-    "Password": "JPerez",
-    "NombreAp": "Juan Perez"
+  "UserName": "JPerez",
+  "Password": "123",
+  "HorasDisponibles": [],
+  "Pacientes": [],
+  "NombreAp": "Juan Perez"
 }

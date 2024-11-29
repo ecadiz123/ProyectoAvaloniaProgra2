@@ -1,1 +1,98 @@
-[{"MotivoConsulta":"Dolor Cabeza y mareo","TieneTutor":false,"Fechaatencion":"2024-11-28T02:09:04.6454686-03:00","Ficha":null,"Tutor":null,"Rut":9999999,"Edad":24,"Nombre":"Federico","Apellidomaterno":"Vergara","Apellidopaterno":"Henrique","Telefono":954532203,"Fechanacimiento":"2000-10-05T00:00:00","Digitoverificador":9,"Email":"FedeVergara@gmail.com"},{"MotivoConsulta":"Fractura Brazo Derecho","TieneTutor":false,"Fechaatencion":"2024-11-28T02:09:04.6538935-03:00","Ficha":null,"Tutor":null,"Rut":8888888,"Edad":30,"Nombre":"Antonio","Apellidomaterno":"Navarrete","Apellidopaterno":"Valenzuela","Telefono":985643581,"Fechanacimiento":"1994-10-05T00:00:00","Digitoverificador":8,"Email":"AntonValenz@gmail.com"},{"MotivoConsulta":"hombro Dislocado","TieneTutor":false,"Fechaatencion":"2024-11-28T02:09:04.653898-03:00","Ficha":null,"Tutor":null,"Rut":25463526,"Edad":19,"Nombre":"Ezequiel","Apellidomaterno":"Veliz","Apellidopaterno":"Contreras","Telefono":998765421,"Fechanacimiento":"2005-10-05T00:00:00","Digitoverificador":5,"Email":"EzContVel@gmail.com"},{"MotivoConsulta":"Molestia Lumbar","TieneTutor":false,"Fechaatencion":"2024-11-28T02:09:04.6538985-03:00","Ficha":null,"Tutor":null,"Rut":18413261,"Edad":31,"Nombre":"Anais","Apellidomaterno":"Riquelme","Apellidopaterno":"Cabrera","Telefono":925261354,"Fechanacimiento":"1993-10-05T00:00:00","Digitoverificador":3,"Email":"AnCabrera@gmail.com"}]
+[
+  {
+    "MotivoConsulta": "Chequeo postoperatorio",
+    "TieneTutor": false,
+    "Fechaatencion": "0001-01-01T00:00:00",
+    "Ficha": {
+      "GrupoSanguineo": 0,
+      "Antecedentes": "Asma infantil, operación de apendicitis en 2015",
+      "Alergias": "Polen, Penicilina",
+      "Observaciones": "Paciente debe evitar la exposición prolongada al polvo."
+    },
+    "Tutor": {
+      "Relacion": 0,
+      "Rut": 0,
+      "Edad": 0,
+      "Nombre": " ",
+      "Apellidomaterno": "",
+      "Apellidopaterno": "",
+      "Telefono": 0,
+      "Fechanacimiento": "0001-01-01T00:00:00",
+      "Digitoverificador": 0,
+      "Email": ""
+    },
+    "Rut": 11223344,
+    "Edad": 40,
+    "Nombre": "Laura",
+    "Apellidomaterno": "Reyes",
+    "Apellidopaterno": "Castro",
+    "Telefono": 998877665,
+    "Fechanacimiento": "1983-08-25T00:00:00",
+    "Digitoverificador": 9,
+    "Email": "lcastro@mail.com"
+  },
+  {
+    "MotivoConsulta": "Evaluación de presión arterial",
+    "TieneTutor": false,
+    "Fechaatencion": "0001-01-01T00:00:00",
+    "Ficha": {
+      "GrupoSanguineo": 3,
+      "Antecedentes": "Hipertensión controlada, fractura de tobillo en 2020",
+      "Alergias": "Ninguna conocida",
+      "Observaciones": "Revisar presión arterial periódicamente."
+    },
+    "Tutor": {
+      "Relacion": 0,
+      "Rut": 0,
+      "Edad": 0,
+      "Nombre": " ",
+      "Apellidomaterno": "",
+      "Apellidopaterno": "",
+      "Telefono": 0,
+      "Fechanacimiento": "0001-01-01T00:00:00",
+      "Digitoverificador": 0,
+      "Email": ""
+    },
+    "Rut": 44556677,
+    "Edad": 55,
+    "Nombre": "Pedro",
+    "Apellidomaterno": "Mendez",
+    "Apellidopaterno": "Rojas",
+    "Telefono": 912345678,
+    "Fechanacimiento": "1968-04-10T00:00:00",
+    "Digitoverificador": 2,
+    "Email": "projas@mail.com"
+  },
+  {
+    "MotivoConsulta": "Consulta prenatal",
+    "TieneTutor": false,
+    "Fechaatencion": "0001-01-01T00:00:00",
+    "Ficha": {
+      "GrupoSanguineo": 1,
+      "Antecedentes": "Diabetes tipo II desde 2018",
+      "Alergias": "Mariscos",
+      "Observaciones": "Se recomienda control estricto de la glucosa y dieta balanceada."
+    },
+    "Tutor": {
+      "Relacion": 0,
+      "Rut": 0,
+      "Edad": 0,
+      "Nombre": " ",
+      "Apellidomaterno": "",
+      "Apellidopaterno": "",
+      "Telefono": 0,
+      "Fechanacimiento": "0001-01-01T00:00:00",
+      "Digitoverificador": 0,
+      "Email": ""
+    },
+    "Rut": 77889900,
+    "Edad": 32,
+    "Nombre": "Ana",
+    "Apellidomaterno": "Lopez",
+    "Apellidopaterno": "Gonzalez",
+    "Telefono": 987123654,
+    "Fechanacimiento": "1991-11-15T00:00:00",
+    "Digitoverificador": 7,
+    "Email": "agonzalez@mail.com"
+  }
+]
