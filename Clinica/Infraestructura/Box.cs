@@ -26,6 +26,7 @@ namespace ProyectoConsultorio.Clinica.Infraestructura
         public Limpieza Limpieza { get => limpieza; set => limpieza = value; }
         public List<Medicamentos> Medicamentos { get => medicamentos; set => medicamentos = value; }
         public List<Desechable> Desechables { get => desechables; set => desechables = value; }
+	public Medico Medico {get => medico; set => medico = value;}
 
         public void AddInsumoCantidad(IInsumo insumo, int c)
         {
