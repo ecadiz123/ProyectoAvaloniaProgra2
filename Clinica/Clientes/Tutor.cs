@@ -17,10 +17,8 @@ namespace ProyectoConsultorio.Clinica.Clientes
     public class Tutor : Persona
     {
         private relacion_t relacion;
-        private Paciente paciente;
 
         public relacion_t Relacion { get => relacion; set => relacion = value; }
-        public Paciente Paciente { get => paciente; set => paciente = value; }
 
        
     }
