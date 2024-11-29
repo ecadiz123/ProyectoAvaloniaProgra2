@@ -17,7 +17,6 @@ namespace ProyectoConsultorio.Clinica.Usuarios
         string password = string.Empty;
         string path = string.Empty;
 
-        private Box boxActual;
 
         private List<Paciente> pacientes = new List<Paciente>();
         private List<DateTime> horasDisponibles = new List<DateTime>(); 
@@ -27,7 +26,6 @@ namespace ProyectoConsultorio.Clinica.Usuarios
         public string Password { get => password; set => password = value; }
         public List<DateTime> HorasDisponibles { get => horasDisponibles; set => horasDisponibles = value; }
         public List<Paciente> Pacientes { get => pacientes; set => pacientes = value; }
-        public Box BoxActual { get => boxActual; set => boxActual = value; }
         public string NombreAp { get => nombreAp; set => nombreAp = value; }
 
         public void LogIn(string username, string password)
