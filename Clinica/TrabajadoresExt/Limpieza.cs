@@ -13,6 +13,6 @@ namespace ProyectoConsultorio.Clinica.TrabajadoresExt
 
      
         public string EmpresaContratista { get => empresaContratista; set => empresaContratista = value; }
-        public EstadoTurno EstadoTurno { get => EstadoTurno; set => EstadoTurno = value; }
+        public EstadoTurno EstadoTurno { get => estadoTurno; set => estadoTurno = value; }
     }
 }
