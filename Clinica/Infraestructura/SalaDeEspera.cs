@@ -10,32 +10,27 @@ namespace ProyectoConsultorio.Clinica.Infraestructura
 {
     public class SalaDeEspera : IInfraestructura
     {
-        private List<Seguridad> seguridadDeTurno;
+        private Seguridad seguridadDeTurno;
      
         private List<InsumoLimpieza> insumoLimpieza;
         
 
        
-        public List<Seguridad> SeguridaDeTurno { get => seguridadDeTurno; set => seguridadDeTurno = value; }
+       
+        internal List<InsumoLimpieza> InsumoLimpieza { get => insumoLimpieza; set => insumoLimpieza = value; }
 
-
-        public void CambiodeTurno(Seguridad seguridadEntra,Seguridad seguridadSale)
+        public void CambiodeTurno(Seguridad Entra)
         {
-            SeguridaDeTurno.Add(seguridadEntra);
-            //Se usa metodo find para que el metodo remove
-            //De la lista pueda encontrar sin problema 
-            //a la persona a eliminar
-            var segSale= SeguridaDeTurno.Find(x => x.Nombre == seguridadSale.Nombre);
-            seguridadDeTurno.Remove(segSale);
+            seguridadDeTurno= Entra;
         }
 
         public void AddInsumoCantidad(IInsumo insumo, int c)
         {
-            
+            insumo.AddCantidad(c);
         }
         public void ElimInsumoCantidad(IInsumo insumo, int c)
         {
-            
+            insumo.AddCantidad(c);
         }
     }
 }
