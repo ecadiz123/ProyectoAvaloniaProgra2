@@ -13,7 +13,7 @@
 			<TabItem Header="Pacientes">
 				<StackPanel Margin="20">
 					<TextBlock Margin="0 5">Nombre del paciente - RUT</TextBlock>
-					<ListBox x:Name="lbPacientes"  />
+					<ListBox x:Name="lbPacientes" x:DataType="local:Paciente" DisplayMemberBinding="{Binding NCompleto}" />
 				</StackPanel>
 			</TabItem>
 		</TabControl>

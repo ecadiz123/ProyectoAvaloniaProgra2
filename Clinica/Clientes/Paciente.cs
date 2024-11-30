@@ -1,4 +1,5 @@
-﻿using ProyectoConsultorio.Clinica.Usuarios;
+﻿using Avalonia.Controls.Templates;
+using ProyectoConsultorio.Clinica.Usuarios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,11 +17,16 @@ namespace ProyectoConsultorio.Clinica.Clientes
         
         private FichaMedica ficha;
 
+        private string nCompleto;
+
+       
+
         public string MotivoConsulta { get => motivoConsulta; set => motivoConsulta = value; }
         public bool TieneTutor { get => tieneTutor; set => tieneTutor = value; }
         public DateTime Fechaatencion { get => fechaatencion; set => fechaatencion = value; }
        
         public FichaMedica Ficha { get => ficha; set => ficha = value; }
         public Tutor Tutor { get => tutor; set => tutor = value; }
+        public string NCompleto { get => nCompleto; set => nCompleto = value; }
     }
 }

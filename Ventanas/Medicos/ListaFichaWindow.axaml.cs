@@ -10,6 +10,10 @@ namespace ProyectoConsultorio
     public partial class ListaFichaWindow : Window
     {
         public Medico med;
+        public ListaFichaWindow()
+        {
+            InitializeComponent();
+        }
         public ListaFichaWindow(Medico medico)
         {
             this.med = medico;
@@ -17,6 +21,7 @@ namespace ProyectoConsultorio
 
             foreach (Paciente pac in med.Pacientes)
             {
+                pac.NCompleto = pac.Nombre + " " + pac.Apellidopaterno;
                 lbPacientes.Items.Add(pac);
                 
             }
