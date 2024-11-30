@@ -4,6 +4,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         x:Class="ProyectoConsultorio.LogInSecWindow"
 		Icon="/Recursos/Imagenes/icono_margen.png"
+		WindowState="Maximized"
         Title="Inicio de Sesión Secretaría" Width="500" Height="700" Background="#1BA1E2">
 	
 	<ScrollViewer>

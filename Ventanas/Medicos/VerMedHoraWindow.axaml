@@ -4,28 +4,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         x:Class="ProyectoConsultorio.VerMedHoraWindow"
 		Icon="/Recursos/Imagenes/icono_margen.png"
+		WindowState="Maximized"
         Title="Calendario de horas médico" Width="1100" Height="800" Background="#1BA1E2">
-	<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
-		<Border Margin="10" BorderBrush="Black" BorderThickness="2" Padding="10" CornerRadius="10">
-			<StackPanel>
-		<TextBlock Text="Selecciona una fecha" FontSize="20" Margin="10"/>
-		<Calendar x:Name="calendar" SelectionMode="MultipleRange"/>
-			</StackPanel>
-		</Border>
-		<Border Margin="10" BorderBrush="Black" BorderThickness="2" Padding="10" CornerRadius="10">
-			<StackPanel Orientation="Vertical" >
-				<TextBlock Text="Añade horas disponibles" FontSize="20" Margin="10"/>
-				<TimePicker x:Name="Tpicker" Margin="10" ClockIdentifier="24HourClock"
-              MinuteIncrement="10"/>
-				<ListBox x:Name="HorasDisponibles"/>
-				<StackPanel Orientation="Horizontal">
-					<Button Content="Volver" Click="VolverMenu" HorizontalContentAlignment="Center" Margin="10" VerticalContentAlignment="Center" Width="75" Height="30"/>
-					<Button Content="Añadir " Click="AddHoraMed" HorizontalContentAlignment="Center" Margin="10" VerticalContentAlignment="Center" Width="75" Height="30"/>
-				</StackPanel>
-			</StackPanel>
-		</Border>
-	</StackPanel>
 
-	
-		
+	<ScrollViewer>
+		<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+			<Border Margin="10" BorderBrush="Black" BorderThickness="2" Padding="10" CornerRadius="10">
+				<StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
+					<TextBlock HorizontalAlignment="Center" Text="Selecciona una fecha y hora disponible" FontSize="20" Margin="10"/>
+					<Calendar HorizontalAlignment="Center" x:Name="calendar" SelectionMode="MultipleRange"/>
+					<TimePicker HorizontalAlignment="Center"  x:Name="Tpicker" Margin="10" ClockIdentifier="24HourClock" Background="AntiqueWhite"
+				  MinuteIncrement="10"/>
+				</StackPanel>
+			</Border>
+			<Border Margin="10" BorderBrush="Black" BorderThickness="2" Padding="10" CornerRadius="10">
+				<StackPanel Orientation="Vertical" >
+					<TextBlock Text="Listado de horas disponibles" FontSize="20" Margin="10"/>
+					<ListBox x:Name="HorasDisponibles"/>
+					<StackPanel Orientation="Horizontal" Margin="10">
+						<Button Content="Volver" Click="VolverMenu" HorizontalContentAlignment="Center" Margin="10" VerticalContentAlignment="Center" Width="75" Height="30"/>
+						<Button Content="Añadir " Click="AddHoraMed" HorizontalContentAlignment="Center" Margin="10" VerticalContentAlignment="Center" Width="75" Height="30"/>
+						<Button Content="Eliminar" Click="EliminarHoraMed" HorizontalContentAlignment="Center" Margin="10" VerticalContentAlignment="Center" Width="75" Height="30"/>
+					</StackPanel>
+				</StackPanel>
+			</Border>
+		</StackPanel>
+	</ScrollViewer>
+
 </Window>

@@ -4,6 +4,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         x:Class="ProyectoConsultorio.MainWindow"
 		Icon="/Recursos/Imagenes/icono_margen.png"
+		WindowState="Maximized"
         Title="Consultorio" Width="1000" Height="800" Background="#1BA1E2">
 	
 <ScrollViewer>

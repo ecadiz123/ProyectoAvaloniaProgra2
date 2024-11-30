@@ -4,6 +4,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         x:Class="ProyectoConsultorio.IngresoHoraWindow"
 Icon="/Recursos/Imagenes/icono_margen.png"
+		WindowState="Maximized"
         Title="Modificador de horas" Width="1100" Height="800" Background="#1BA1E2">
 
 	<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">

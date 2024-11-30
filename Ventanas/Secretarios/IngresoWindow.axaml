@@ -4,6 +4,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         x:Class="ProyectoConsultorio.IngresoWindow"
 		Icon="/Recursos/Imagenes/icono_margen.png"
+		WindowState="Maximized"
         Title="Ingreso de pacientes" Width="1000" Height="500" Background="#1BA1E2">
 
 

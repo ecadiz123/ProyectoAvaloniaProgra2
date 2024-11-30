@@ -8,16 +8,16 @@ namespace ProyectoConsultorio
 {
     public partial class VerMedHoraWindow : Window
     {
-        public Medico med; 
+        public Medico med;
         public VerMedHoraWindow(Medico medico)
         {
             this.med = medico;
             InitializeComponent();
-            foreach(DateTime Hdisp in med.HorasDisponibles)
+            foreach (DateTime Hdisp in med.HorasDisponibles)
             {
                 HorasDisponibles.Items.Add(Hdisp.ToString());
             }
-            
+
         }
 
         private void VolverMenu(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
@@ -29,16 +29,42 @@ namespace ProyectoConsultorio
         }
         private void AddHoraMed(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
-            DateTime nuevaFechaD = calendar.SelectedDate ?? DateTime.Now;// Operador ?? porque SelectedDate es tipo nulo
+            DateTime nuevaFechaD = calendar.SelectedDate ?? DateTime.Now;
+            TimeSpan hora = Tpicker.SelectedTime ?? TimeSpan.Zero;
 
-            TimeSpan hora= Tpicker.SelectedTime ??  TimeSpan.Zero;//TimeSpan es representacion de lahora
+            DateTime fechaConHora = new DateTime(
+                nuevaFechaD.Year,
+                nuevaFechaD.Month,
+                nuevaFechaD.Day,
+                hora.Hours,
+                hora.Minutes,
+                hora.Seconds
+            );
 
-            nuevaFechaD.Add(hora);
-            med.HorasDisponibles.Add(nuevaFechaD);
-            HorasDisponibles.Items.Add(nuevaFechaD.ToString());
-            
+            med.HorasDisponibles.Add(fechaConHora);
+            HorasDisponibles.Items.Add(fechaConHora.ToString("g"));
         }
+
+        private void EliminarHoraMed(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+
+            if (HorasDisponibles.SelectedItem is string horaSeleccionada)
+            {
+
+                if (DateTime.TryParse(horaSeleccionada, out DateTime horaAEliminar))
+                {
+                    med.HorasDisponibles.Remove(horaAEliminar);
+                    HorasDisponibles.Items.Remove(horaSeleccionada);
+                }
+            }
+            else
+            {
+                Console.WriteLine("Por favor selecciona una hora para eliminar");
+            }
+        }
+
     }
 }
-        
-    
+
+
+

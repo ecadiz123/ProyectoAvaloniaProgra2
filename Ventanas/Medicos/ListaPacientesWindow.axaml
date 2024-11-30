@@ -4,6 +4,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         x:Class="ProyectoConsultorio.ListaPacientesWindow"
 		Icon="/Recursos/Imagenes/icono_margen.png"
+		WindowState="Maximized"
         Title="Visor de lista de pacientes" Width="800" Height="800" Background="#1BA1E2">
 
 	<StackPanel Orientation="Vertical">
