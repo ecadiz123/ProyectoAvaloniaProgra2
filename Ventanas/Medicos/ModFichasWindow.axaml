@@ -4,6 +4,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         x:Class="ProyectoConsultorio.ModFichasWindow"
 		Icon="/Recursos/Imagenes/icono_margen.png"
+		WindowState="Maximized"
         Title="Modificar fichas medicas" Width="800" Height="1000" Background="#1BA1E2">
 <ScrollViewer>
 	<StackPanel Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Vertical">

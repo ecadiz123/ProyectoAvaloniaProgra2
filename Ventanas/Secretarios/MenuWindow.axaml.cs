@@ -55,5 +55,7 @@ namespace ProyectoConsultorio
         {
             this.Close(); // Cierra la ventana
         }
+
+
     }
 }

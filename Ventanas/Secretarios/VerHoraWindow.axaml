@@ -4,6 +4,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         x:Class="ProyectoConsultorio.VerHoraWindow"
 		Icon="/Recursos/Imagenes/icono_margen.png"
+		WindowState="Maximized"
         Title="Visor de horas agendadas" Width="1000" Height="800" Background="#1BA1E2">
 
 	<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
