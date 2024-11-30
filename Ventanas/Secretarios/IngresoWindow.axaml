@@ -74,7 +74,7 @@
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
 			<Button Foreground="#031d3b" Content="Volver" Click="VolverMenu" HorizontalContentAlignment="Center" Margin="10" 
 					VerticalContentAlignment="Center" Width="75" Height="30" HorizontalAlignment="Left"/>
-			<Button Foreground="#031d3b" Content="Ingresar Datos" Click="IngresoDatos" HorizontalContentAlignment="Center" Margin="10" 
+			<Button Foreground="#031d3b" Content="Ingresar" Click="IngresoDatos" HorizontalContentAlignment="Center" Margin="10" 
 					VerticalContentAlignment="Center" Width="75" Height="30" HorizontalAlignment="Right"/>
 			</StackPanel>
 			</StackPanel>

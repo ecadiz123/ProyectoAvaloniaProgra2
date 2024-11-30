@@ -13,8 +13,12 @@ namespace ProyectoConsultorio
     public partial class IngresoWindow : Window
     {
         public Secretario sec;
-        public Paciente Pnuevo;
+      
         
+        public IngresoWindow()
+        {
+            InitializeComponent();
+        }
         public IngresoWindow(Secretario secr)
         {
             this.sec = secr;
@@ -47,10 +51,7 @@ namespace ProyectoConsultorio
             };
         }
        
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
-        }
+     
         private void VolverMenu(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             var menuWindow = new MenuWindow(sec);
@@ -65,9 +66,10 @@ namespace ProyectoConsultorio
                 
                 Paciente pacienteNuevo = new Paciente();
                 pacienteNuevo.Nombre = tbNombres.Text;
-                string d = tbRUT.Text.Split('-')[1];
-                pacienteNuevo.Rut = int.Parse(tbRUT.Text);
-                pacienteNuevo.Digitoverificador = int.Parse(d);
+                
+                string[] R = tbRUT.Text.Split('-');
+                pacienteNuevo.Rut = int.Parse(R[0]);
+                pacienteNuevo.Digitoverificador = int.Parse(R[1]);
                 DateTimeOffset dpOff = dpNacimiento.SelectedDate ?? DateTimeOffset.Now;
                 pacienteNuevo.Fechanacimiento = dpOff.DateTime;
                 pacienteNuevo.Apellidopaterno = tbApellidoPaterno.Text;
@@ -81,9 +83,9 @@ namespace ProyectoConsultorio
                 {
                     Tutor tutor = new Tutor();
                     tutor.Nombre = tbTNombres.Text;
-                    string d2 = tbTRUT.Text.Split('-')[1];
-                    tutor.Rut = int.Parse(tbRUT.Text);
-                    tutor.Digitoverificador = int.Parse(d2);
+                    string[] RT = tbTRUT.Text.Split('-');
+                    tutor.Rut = int.Parse(RT[0]);
+                    tutor.Digitoverificador = int.Parse(R[1]);
                     DateTimeOffset dpOff2 = dpTNacimiento.SelectedDate ?? DateTimeOffset.Now;
                     tutor.Fechanacimiento = dpOff2.DateTime;
                     tutor.Apellidopaterno = tbTApellidoPaterno.Text;
@@ -94,6 +96,11 @@ namespace ProyectoConsultorio
                     pacienteNuevo.Tutor=tutor;
                 }
                 pacienteNuevo.Ficha = new FichaMedica();
+                //Ficha vacia ingresada
+                pacienteNuevo.Ficha.Antecedentes = " ";
+                pacienteNuevo.Ficha.Observaciones = " ";
+                pacienteNuevo.Ficha.Alergias = " ";
+                pacienteNuevo.Ficha.GrupoSanguineo = GrupoSanguineo.A;
                 var ingresoHoraWindow = new IngresoHoraWindow(sec,pacienteNuevo);
                
                 ingresoHoraWindow.Show(); // Muestra la ventana secundaria
