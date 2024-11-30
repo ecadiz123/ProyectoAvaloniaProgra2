@@ -6,25 +6,26 @@ using System.Threading.Tasks;
 
 namespace ProyectoConsultorio.Clinica.Inventario
 {
+
     public class InsumoLimpieza: IInsumo
     {
-        private string nombre;
-        private int cantidad;
-
-        public string Nombre { get => nombre; set => nombre = value; }
-        public int Cantidad { get => cantidad; set => cantidad = value; }
+        public string Nombre { get; set; }
+        public int Cantidad { get; set; }
 
         public void AddCantidad(int c)
         {
-            cantidad += c;
+            Cantidad += c;
         }
+
         public void RestarCantidad(int c)
         {
-            cantidad -= c;
+            Cantidad -= c;
         }
+
         public int VerCantidad()
         {
-            return cantidad;
+            return Cantidad;
         }
     }
 }
+

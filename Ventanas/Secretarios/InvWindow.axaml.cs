@@ -1,5 +1,6 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using ProyectoConsultorio.Clinica.Inventario;
 using ProyectoConsultorio.Clinica.Usuarios;
 using System;
 using System.Collections.Generic;
@@ -9,22 +10,23 @@ namespace ProyectoConsultorio
 {
     public partial class InvWindow : Window
     {
-        // Diccionarios para gestionar las cantidades de los insumos y medicamentos
-        private Dictionary<string, int> limpiezaSalaEspera = new Dictionary<string, int>();
-        private Dictionary<string, int> insumosBox1 = new Dictionary<string, int>();
-        private Dictionary<string, int> medicamentosBox1 = new Dictionary<string, int>();
-        private Dictionary<string, int> insumosBox2 = new Dictionary<string, int>();
-        private Dictionary<string, int> medicamentosBox2 = new Dictionary<string, int>();
-        public Secretario sec;
-        public InvWindow(Secretario secre)
-        { 
-            this.sec = secre;
+        private Secretario secretario;
+        // Listas para gestionar las cantidades de los insumos y medicamentos
+        private List<Insumo> limpiezaSalaEspera = new List<Insumo>();
+        private List<Insumo> insumosBox1 = new List<Insumo>();
+        private List<Insumo> medicamentosBox1 = new List<Insumo>();
+        private List<Insumo> insumosBox2 = new List<Insumo>();
+        private List<Insumo> medicamentosBox2 = new List<Insumo>();
+
+        public InvWindow()
+        {
             InitializeComponent();
         }
 
         // Volver al menú
         private void VolverMenu(object sender, RoutedEventArgs e)
         {
+
             this.Close();
         }
 
@@ -37,9 +39,9 @@ namespace ProyectoConsultorio
                 return;
             }
 
-            if (!limpiezaSalaEspera.ContainsKey(insumo))
+            if (!limpiezaSalaEspera.Any(i => i.Nombre == insumo))
             {
-                limpiezaSalaEspera.Add(insumo, 0);
+                limpiezaSalaEspera.Add(new Insumo { Nombre = insumo, Cantidad = 0 });
             }
 
             tbInsumoSalaEspera.Clear();
@@ -49,11 +51,12 @@ namespace ProyectoConsultorio
         private void SumarInsumoSalaEspera(object sender, RoutedEventArgs e)
         {
             string insumo = tbInsumoSalaEspera.Text.Trim();
-            if (!string.IsNullOrEmpty(insumo) && limpiezaSalaEspera.ContainsKey(insumo))
+            if (!string.IsNullOrEmpty(insumo))
             {
-                if (int.TryParse(tbCantidadSalaEspera.Text, out int cantidad))
+                var item = limpiezaSalaEspera.FirstOrDefault(i => i.Nombre == insumo);
+                if (item != null && int.TryParse(tbCantidadSalaEspera.Text, out int cantidad))
                 {
-                    limpiezaSalaEspera[insumo] += cantidad;
+                    item.Cantidad += cantidad;
                     tbCantidadSalaEspera.Clear();
                     ActualizarListaSalaEspera();
                 }
@@ -63,14 +66,15 @@ namespace ProyectoConsultorio
         private void RestarInsumoSalaEspera(object sender, RoutedEventArgs e)
         {
             string insumo = tbInsumoSalaEspera.Text.Trim();
-            if (!string.IsNullOrEmpty(insumo) && limpiezaSalaEspera.ContainsKey(insumo))
+            if (!string.IsNullOrEmpty(insumo))
             {
-                if (int.TryParse(tbCantidadSalaEspera.Text, out int cantidad))
+                var item = limpiezaSalaEspera.FirstOrDefault(i => i.Nombre == insumo);
+                if (item != null && int.TryParse(tbCantidadSalaEspera.Text, out int cantidad))
                 {
-                    limpiezaSalaEspera[insumo] -= cantidad;
-                    if (limpiezaSalaEspera[insumo] < 0)
+                    item.Cantidad -= cantidad;
+                    if (item.Cantidad < 0)
                     {
-                        limpiezaSalaEspera[insumo] = 0;
+                        item.Cantidad = 0;
                     }
                     tbCantidadSalaEspera.Clear();
                     ActualizarListaSalaEspera();
@@ -80,7 +84,7 @@ namespace ProyectoConsultorio
 
         private void ActualizarListaSalaEspera()
         {
-            lbLimpiezaSalaEspera.ItemsSource = limpiezaSalaEspera.Select(i => $"{i.Key} - {i.Value}").ToList();
+            lbLimpiezaSalaEspera.ItemsSource = limpiezaSalaEspera.Select(i => $"{i.Nombre} - {i.Cantidad}").ToList();
         }
 
         // Agregar un nuevo insumo o medicamento en Box 1
@@ -89,9 +93,9 @@ namespace ProyectoConsultorio
             string insumo = tbInsumoBox1.Text.Trim();
             if (string.IsNullOrEmpty(insumo)) return;
 
-            if (!insumosBox1.ContainsKey(insumo))
+            if (!insumosBox1.Any(i => i.Nombre == insumo))
             {
-                insumosBox1.Add(insumo, 0);
+                insumosBox1.Add(new Insumo { Nombre = insumo, Cantidad = 0 });
             }
 
             tbInsumoBox1.Clear();
@@ -103,9 +107,9 @@ namespace ProyectoConsultorio
             string medicamento = tbMedicamentoBox1.Text.Trim();
             if (string.IsNullOrEmpty(medicamento)) return;
 
-            if (!medicamentosBox1.ContainsKey(medicamento))
+            if (!medicamentosBox1.Any(i => i.Nombre == medicamento))
             {
-                medicamentosBox1.Add(medicamento, 0);
+                medicamentosBox1.Add(new Insumo { Nombre = medicamento, Cantidad = 0 });
             }
 
             tbMedicamentoBox1.Clear();
@@ -115,11 +119,12 @@ namespace ProyectoConsultorio
         private void SumarInsumoBox1(object sender, RoutedEventArgs e)
         {
             string insumo = tbInsumoBox1.Text.Trim();
-            if (!string.IsNullOrEmpty(insumo) && insumosBox1.ContainsKey(insumo))
+            if (!string.IsNullOrEmpty(insumo))
             {
-                if (int.TryParse(tbCantidadBox1.Text, out int cantidad))
+                var item = insumosBox1.FirstOrDefault(i => i.Nombre == insumo);
+                if (item != null && int.TryParse(tbCantidadBox1.Text, out int cantidad))
                 {
-                    insumosBox1[insumo] += cantidad;
+                    item.Cantidad += cantidad;
                     tbCantidadBox1.Clear();
                     ActualizarListaBox1();
                 }
@@ -129,14 +134,15 @@ namespace ProyectoConsultorio
         private void RestarInsumoBox1(object sender, RoutedEventArgs e)
         {
             string insumo = tbInsumoBox1.Text.Trim();
-            if (!string.IsNullOrEmpty(insumo) && insumosBox1.ContainsKey(insumo))
+            if (!string.IsNullOrEmpty(insumo))
             {
-                if (int.TryParse(tbCantidadBox1.Text, out int cantidad))
+                var item = insumosBox1.FirstOrDefault(i => i.Nombre == insumo);
+                if (item != null && int.TryParse(tbCantidadBox1.Text, out int cantidad))
                 {
-                    insumosBox1[insumo] -= cantidad;
-                    if (insumosBox1[insumo] < 0)
+                    item.Cantidad -= cantidad;
+                    if (item.Cantidad < 0)
                     {
-                        insumosBox1[insumo] = 0;
+                        item.Cantidad = 0;
                     }
                     tbCantidadBox1.Clear();
                     ActualizarListaBox1();
@@ -147,11 +153,12 @@ namespace ProyectoConsultorio
         private void SumarMedicamentoBox1(object sender, RoutedEventArgs e)
         {
             string medicamento = tbMedicamentoBox1.Text.Trim();
-            if (!string.IsNullOrEmpty(medicamento) && medicamentosBox1.ContainsKey(medicamento))
+            if (!string.IsNullOrEmpty(medicamento))
             {
-                if (int.TryParse(tbCantidadBox1Medicamentos.Text, out int cantidad))
+                var item = medicamentosBox1.FirstOrDefault(i => i.Nombre == medicamento);
+                if (item != null && int.TryParse(tbCantidadBox1Medicamentos.Text, out int cantidad))
                 {
-                    medicamentosBox1[medicamento] += cantidad;
+                    item.Cantidad += cantidad;
                     tbCantidadBox1Medicamentos.Clear();
                     ActualizarListaBox1();
                 }
@@ -161,14 +168,15 @@ namespace ProyectoConsultorio
         private void RestarMedicamentoBox1(object sender, RoutedEventArgs e)
         {
             string medicamento = tbMedicamentoBox1.Text.Trim();
-            if (!string.IsNullOrEmpty(medicamento) && medicamentosBox1.ContainsKey(medicamento))
+            if (!string.IsNullOrEmpty(medicamento))
             {
-                if (int.TryParse(tbCantidadBox1Medicamentos.Text, out int cantidad))
+                var item = medicamentosBox1.FirstOrDefault(i => i.Nombre == medicamento);
+                if (item != null && int.TryParse(tbCantidadBox1Medicamentos.Text, out int cantidad))
                 {
-                    medicamentosBox1[medicamento] -= cantidad;
-                    if (medicamentosBox1[medicamento] < 0)
+                    item.Cantidad -= cantidad;
+                    if (item.Cantidad < 0)
                     {
-                        medicamentosBox1[medicamento] = 0;
+                        item.Cantidad = 0;
                     }
                     tbCantidadBox1Medicamentos.Clear();
                     ActualizarListaBox1();
@@ -182,14 +190,14 @@ namespace ProyectoConsultorio
 
             // Agregar insumos de Box 1
             foreach (var insumo in insumosBox1)
-                items.Add($"{insumo.Key} - {insumo.Value} (Insumo)");
+                items.Add($"{insumo.Nombre} - {insumo.Cantidad} (Insumo)");
 
             lbLimpiezaBox1.ItemsSource = items;
 
             // Agregar medicamentos de Box 1
             var medicamentoItems = new List<string>();
             foreach (var medicamento in medicamentosBox1)
-                medicamentoItems.Add($"{medicamento.Key} - {medicamento.Value} (Medicamento)");
+                medicamentoItems.Add($"{medicamento.Nombre} - {medicamento.Cantidad} (Medicamento)");
 
             lbMedicamentosBox1.ItemsSource = medicamentoItems;
         }
@@ -200,9 +208,9 @@ namespace ProyectoConsultorio
             string insumo = tbInsumoBox2.Text.Trim();
             if (string.IsNullOrEmpty(insumo)) return;
 
-            if (!insumosBox2.ContainsKey(insumo))
+            if (!insumosBox2.Any(i => i.Nombre == insumo))
             {
-                insumosBox2.Add(insumo, 0);
+                insumosBox2.Add(new Insumo { Nombre = insumo, Cantidad = 0 });
             }
 
             tbInsumoBox2.Clear();
@@ -214,9 +222,9 @@ namespace ProyectoConsultorio
             string medicamento = tbMedicamentoBox2.Text.Trim();
             if (string.IsNullOrEmpty(medicamento)) return;
 
-            if (!medicamentosBox2.ContainsKey(medicamento))
+            if (!medicamentosBox2.Any(i => i.Nombre == medicamento))
             {
-                medicamentosBox2.Add(medicamento, 0);
+                medicamentosBox2.Add(new Insumo { Nombre = medicamento, Cantidad = 0 });
             }
 
             tbMedicamentoBox2.Clear();
@@ -226,11 +234,12 @@ namespace ProyectoConsultorio
         private void SumarInsumoBox2(object sender, RoutedEventArgs e)
         {
             string insumo = tbInsumoBox2.Text.Trim();
-            if (!string.IsNullOrEmpty(insumo) && insumosBox2.ContainsKey(insumo))
+            if (!string.IsNullOrEmpty(insumo))
             {
-                if (int.TryParse(tbCantidadBox2.Text, out int cantidad))
+                var item = insumosBox2.FirstOrDefault(i => i.Nombre == insumo);
+                if (item != null && int.TryParse(tbCantidadBox2.Text, out int cantidad))
                 {
-                    insumosBox2[insumo] += cantidad;
+                    item.Cantidad += cantidad;
                     tbCantidadBox2.Clear();
                     ActualizarListaBox2();
                 }
@@ -240,14 +249,15 @@ namespace ProyectoConsultorio
         private void RestarInsumoBox2(object sender, RoutedEventArgs e)
         {
             string insumo = tbInsumoBox2.Text.Trim();
-            if (!string.IsNullOrEmpty(insumo) && insumosBox2.ContainsKey(insumo))
+            if (!string.IsNullOrEmpty(insumo))
             {
-                if (int.TryParse(tbCantidadBox2.Text, out int cantidad))
+                var item = insumosBox2.FirstOrDefault(i => i.Nombre == insumo);
+                if (item != null && int.TryParse(tbCantidadBox2.Text, out int cantidad))
                 {
-                    insumosBox2[insumo] -= cantidad;
-                    if (insumosBox2[insumo] < 0)
+                    item.Cantidad -= cantidad;
+                    if (item.Cantidad < 0)
                     {
-                        insumosBox2[insumo] = 0;
+                        item.Cantidad = 0;
                     }
                     tbCantidadBox2.Clear();
                     ActualizarListaBox2();
@@ -258,11 +268,12 @@ namespace ProyectoConsultorio
         private void SumarMedicamentoBox2(object sender, RoutedEventArgs e)
         {
             string medicamento = tbMedicamentoBox2.Text.Trim();
-            if (!string.IsNullOrEmpty(medicamento) && medicamentosBox2.ContainsKey(medicamento))
+            if (!string.IsNullOrEmpty(medicamento))
             {
-                if (int.TryParse(tbCantidadBox2Medicamentos.Text, out int cantidad))
+                var item = medicamentosBox2.FirstOrDefault(i => i.Nombre == medicamento);
+                if (item != null && int.TryParse(tbCantidadBox2Medicamentos.Text, out int cantidad))
                 {
-                    medicamentosBox2[medicamento] += cantidad;
+                    item.Cantidad += cantidad;
                     tbCantidadBox2Medicamentos.Clear();
                     ActualizarListaBox2();
                 }
@@ -272,14 +283,15 @@ namespace ProyectoConsultorio
         private void RestarMedicamentoBox2(object sender, RoutedEventArgs e)
         {
             string medicamento = tbMedicamentoBox2.Text.Trim();
-            if (!string.IsNullOrEmpty(medicamento) && medicamentosBox2.ContainsKey(medicamento))
+            if (!string.IsNullOrEmpty(medicamento))
             {
-                if (int.TryParse(tbCantidadBox2Medicamentos.Text, out int cantidad))
+                var item = medicamentosBox2.FirstOrDefault(i => i.Nombre == medicamento);
+                if (item != null && int.TryParse(tbCantidadBox2Medicamentos.Text, out int cantidad))
                 {
-                    medicamentosBox2[medicamento] -= cantidad;
-                    if (medicamentosBox2[medicamento] < 0)
+                    item.Cantidad -= cantidad;
+                    if (item.Cantidad < 0)
                     {
-                        medicamentosBox2[medicamento] = 0;
+                        item.Cantidad = 0;
                     }
                     tbCantidadBox2Medicamentos.Clear();
                     ActualizarListaBox2();
@@ -293,19 +305,25 @@ namespace ProyectoConsultorio
 
             // Agregar insumos de Box 2
             foreach (var insumo in insumosBox2)
-                items.Add($"{insumo.Key} - {insumo.Value} (Insumo)");
+                items.Add($"{insumo.Nombre} - {insumo.Cantidad} (Insumo)");
 
             lbLimpiezaBox2.ItemsSource = items;
 
             // Agregar medicamentos de Box 2
             var medicamentoItems = new List<string>();
             foreach (var medicamento in medicamentosBox2)
-                medicamentoItems.Add($"{medicamento.Key} - {medicamento.Value} (Medicamento)");
+                medicamentoItems.Add($"{medicamento.Nombre} - {medicamento.Cantidad} (Medicamento)");
 
             lbMedicamentosBox2.ItemsSource = medicamentoItems;
         }
+    }
 
-
+    // Clase Insumo para manejar los elementos (insumos o medicamentos)
+    public class Insumo
+    {
+        public string Nombre { get; set; }
+        public int Cantidad { get; set; }
     }
 }
+
 
