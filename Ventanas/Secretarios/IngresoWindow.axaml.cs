@@ -86,7 +86,7 @@ namespace ProyectoConsultorio
                     string[] RT = tbTRUT.Text.Split('-');
                     tutor.Rut = int.Parse(RT[0]);
                     tutor.Digitoverificador = int.Parse(R[1]);
-                    DateTimeOffset dpOff2 = dpTNacimiento.SelectedDate ?? DateTimeOffset.Now;
+                    DateTimeOffset dpOff2 = dpTNacimiento.SelectedDate ?? DateTimeOffset.Now;//?? es un operador para cambiar de algo que recibe null a algo normal
                     tutor.Fechanacimiento = dpOff2.DateTime;
                     tutor.Apellidopaterno = tbTApellidoPaterno.Text;
                     tutor.Apellidomaterno = tbTApellidoMaterno.Text;
@@ -109,8 +109,16 @@ namespace ProyectoConsultorio
             catch(Exception ex)
             {
                 ErrorWindow err = new ErrorWindow();
-                err.ErrorMsg.Text = ex.Message;
-                err.ErrorMsg.Text += ex.Source;
+                if (ex is NullReferenceException)
+                {
+                    err.ErrorMsg.Text = "Ingrese Datos Validos";
+                }else
+                {
+                    err.ErrorMsg.Text = ex.Message;
+
+                }
+
+
                 err.Show();
             }
         }
