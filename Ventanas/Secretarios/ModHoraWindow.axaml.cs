@@ -8,8 +8,9 @@ namespace ProyectoConsultorio
     public partial class ModHoraWindow : Window
     {
         public Secretario sec;
-        public ModHoraWindow()
+        public ModHoraWindow(Secretario secre)
         {
+            this.sec = secre;
             InitializeComponent();
             lbPacientes.ItemsSource = new string[]
                 {"Ibuprofeno   10", "Paracetamol   10", "Tapsin   50", "Anfetamina   25",

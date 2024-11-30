@@ -8,8 +8,9 @@ namespace ProyectoConsultorio
     public partial class VerHoraWindow : Window
     {
         public Secretario sec;
-        public VerHoraWindow()
+        public VerHoraWindow(Secretario secre)
         {
+            this.sec = secre;
             InitializeComponent();
 
         }

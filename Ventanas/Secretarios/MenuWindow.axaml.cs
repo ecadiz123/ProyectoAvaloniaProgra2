@@ -19,14 +19,14 @@ namespace ProyectoConsultorio
         }
         private void ModificarHora(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
-            var modHoraWindow = new ModHoraWindow();
+            var modHoraWindow = new ModHoraWindow(sec);
             modHoraWindow.Show(); // Muestra la ventana secundaria
             this.Close();
         }
 
         private void VerHoraAgendada(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
-            var verHoraWindow = new VerHoraWindow();
+            var verHoraWindow = new VerHoraWindow(sec);
             verHoraWindow.Show(); // Muestra la ventana secundaria
             this.Close();
         }
@@ -40,7 +40,7 @@ namespace ProyectoConsultorio
         }
         private void ManejoTurnos(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
-            var turnosWindow = new TurnosWindow();
+            var turnosWindow = new TurnosWindow(sec);
             turnosWindow.Show(); // Muestra la ventana secundaria
             this.Close();
         }

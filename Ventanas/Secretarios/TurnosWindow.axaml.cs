@@ -8,8 +8,9 @@ namespace ProyectoConsultorio
     public partial class TurnosWindow : Window
     {
         public Secretario sec;
-        public TurnosWindow()
+        public TurnosWindow(Secretario secre)
         {
+            this.sec = secre;
             InitializeComponent();
         }
         private void VolverMenu(object? sender, Avalonia.Interactivity.RoutedEventArgs e)

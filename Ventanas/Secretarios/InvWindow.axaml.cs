@@ -1,5 +1,6 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using ProyectoConsultorio.Clinica.Usuarios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +15,10 @@ namespace ProyectoConsultorio
         private Dictionary<string, int> medicamentosBox1 = new Dictionary<string, int>();
         private Dictionary<string, int> insumosBox2 = new Dictionary<string, int>();
         private Dictionary<string, int> medicamentosBox2 = new Dictionary<string, int>();
-
-        public InvWindow()
-        {
+        public Secretario sec;
+        public InvWindow(Secretario secre)
+        { 
+            this.sec = secre;
             InitializeComponent();
         }
 
