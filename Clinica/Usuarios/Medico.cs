@@ -53,11 +53,11 @@ namespace ProyectoConsultorio.Clinica.Usuarios
         public void LogOff()//Se debe Hacer log off para guardar estado de medico en json
         {
             StreamWriter sw1 = new StreamWriter(this.path + "ListPacientes.json");
-            string pacientesJson = JsonConvert.SerializeObject(this.pacientes);
+            string pacientesJson = JsonConvert.SerializeObject(this.pacientes, Formatting.Indented);
             sw1.WriteLine(pacientesJson);
             sw1.Close();
             StreamWriter sw2 = new StreamWriter(this.path + "HorasDisponibles.json");
-            string HDispJson = JsonConvert.SerializeObject(this.horasDisponibles);
+            string HDispJson = JsonConvert.SerializeObject(this.horasDisponibles, Formatting.Indented);
             sw2.WriteLine(HDispJson);
             sw2.Close();
         }

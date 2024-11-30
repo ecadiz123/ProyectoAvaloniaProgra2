@@ -62,27 +62,27 @@ namespace ProyectoConsultorio.Clinica.Usuarios
         {
             //guarda estado Box
             StreamWriter sr1 = new StreamWriter(this.path+"ListaBox.json");
-            string jsonBox = JsonConvert.SerializeObject(this.box);
+            string jsonBox = JsonConvert.SerializeObject(this.box,Formatting.Indented);
             sr1.WriteLine(jsonBox);
             sr1.Close();
             //Guarda estado medicos
             StreamWriter sr2 = new StreamWriter(this.path + "ListaMedicos.json");
-            string jsonLMed = JsonConvert.SerializeObject(this.medicosClinica);
+            string jsonLMed = JsonConvert.SerializeObject(this.medicosClinica, Formatting.Indented);
             sr2.WriteLine(jsonLMed);
             sr2.Close();
             //Guarda Estados sala de espera
             StreamWriter sr3 = new StreamWriter(this.path + "SalaDeEspera.json");
-            string Sesp = JsonConvert.SerializeObject(this.sala);
+            string Sesp = JsonConvert.SerializeObject(this.sala, Formatting.Indented);
             sr3.WriteLine(Sesp);
             sr3.Close();
             //Guarda estados Limpieza
             StreamWriter sr4 = new StreamWriter(this.path + "ListaLimp.json");
-            string jsonlimp = JsonConvert.SerializeObject(this.Limpieza);
+            string jsonlimp = JsonConvert.SerializeObject(this.Limpieza, Formatting.Indented);
             sr4.WriteLine(jsonlimp);
             sr4.Close();
             //Estados Seguridad
             StreamWriter sr5 = new StreamWriter(this.path + "ListaSeg.json");
-            string jsonSeg = JsonConvert.SerializeObject(this.Seguridad);
+            string jsonSeg = JsonConvert.SerializeObject(this.Seguridad, Formatting.Indented);
             sr5.WriteLine(jsonSeg);
             sr5.Close();
         }
