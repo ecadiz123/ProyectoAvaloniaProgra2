@@ -40,7 +40,7 @@ namespace ProyectoConsultorio.Clinica.Usuarios
 
         public void LogIn(string username, string password)
         {
-            StreamReader usuariocontrasena = new StreamReader("JSON/Secretarios/" + username + "/LogIn.json");
+            StreamReader usuariocontrasena = new StreamReader("../../../JSON/Secretarios/" + username + "/LogIn.json");
             string recuperado = usuariocontrasena.ReadToEnd();
             usuariocontrasena.Close();
             Secretario secRecuperado = JsonConvert.DeserializeObject<Secretario>(recuperado);
@@ -51,7 +51,7 @@ namespace ProyectoConsultorio.Clinica.Usuarios
             {
                 this.UserName = username;
                 this.Password = password;
-                this.path = "JSON/Secretarios/" + username + "/";
+                this.path = "../../../JSON/Secretarios/" + username + "/";
                 JsonSalaEspera();
                 JsonListaBox();
                 JsonMedicos();
@@ -60,18 +60,31 @@ namespace ProyectoConsultorio.Clinica.Usuarios
         }
         public void LogOff()//GUarda estado de secretario en Json
         {
+            //guarda estado Box
             StreamWriter sr1 = new StreamWriter(this.path+"ListaBox.json");
             string jsonBox = JsonConvert.SerializeObject(this.box);
             sr1.WriteLine(jsonBox);
             sr1.Close();
+            //Guarda estado medicos
             StreamWriter sr2 = new StreamWriter(this.path + "ListaMedicos.json");
             string jsonLMed = JsonConvert.SerializeObject(this.medicosClinica);
             sr2.WriteLine(jsonLMed);
             sr2.Close();
+            //Guarda Estados sala de espera
             StreamWriter sr3 = new StreamWriter(this.path + "SalaDeEspera.json");
             string Sesp = JsonConvert.SerializeObject(this.sala);
             sr3.WriteLine(Sesp);
             sr3.Close();
+            //Guarda estados Limpieza
+            StreamWriter sr4 = new StreamWriter(this.path + "ListaLimp.json");
+            string jsonlimp = JsonConvert.SerializeObject(this.Limpieza);
+            sr4.WriteLine(jsonlimp);
+            sr4.Close();
+            //Estados Seguridad
+            StreamWriter sr5 = new StreamWriter(this.path + "ListaSeg.json");
+            string jsonSeg = JsonConvert.SerializeObject(this.Seguridad);
+            sr5.WriteLine(jsonSeg);
+            sr5.Close();
         }
         public void AñadirPaciente(Medico medicoAtiende, Paciente nuevoPaciente)
         {
@@ -133,6 +146,35 @@ namespace ProyectoConsultorio.Clinica.Usuarios
             
 
         }
+        public void JsonLimpieza()
+        {
+            StreamReader sr = new StreamReader(this.path + "ListaLimp.json");
+            string json = sr.ReadToEnd();
+            sr.Close();
+            var Limpiezajson = JsonConvert.DeserializeObject<List<Limpieza>>(json);
+            this.Limpieza = Limpiezajson;
 
+
+
+
+
+
+
+        }
+        public void JsonSeguridad()
+        {
+            StreamReader sr = new StreamReader(this.path + "ListaSeg.json");
+            string json = sr.ReadToEnd();
+            sr.Close();
+            var LSeg = JsonConvert.DeserializeObject<List<Seguridad>>(json);
+            this.Seguridad= LSeg;
+
+
+
+
+
+
+
+        }
     }
 }

@@ -1,15 +1,1 @@
-{
-  "SeguridadDeTurno": {
-    "EmpresaContratista": "Protección y Seguridad S.A.",
-    "EstadoTurno": 0,
-    "Rut": 12345678,
-    "Edad": 37,
-    "Nombre": "Laura",
-    "Apellidomaterno": "Martinez",
-    "Apellidopaterno": "Gonzalez",
-    "Telefono": 998877665,
-    "Fechanacimiento": "1986-09-10T00:00:00",
-    "Digitoverificador": 9,
-    "Email": "lgonzalez@mail.com"
-  }
-}
+{}

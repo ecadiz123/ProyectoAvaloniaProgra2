@@ -1,16 +1,1 @@
-[
-  {
-    "UserName": "SMartinez",
-    "Password": "123",
-    "HorasDisponibles": [],
-    "Pacientes": [],
-    "NombreAp": "Sebastian Martinez"
-  },
-  {
-    "UserName": "JPerez",
-    "Password": "123",
-    "HorasDisponibles": [],
-    "Pacientes": [],
-    "NombreAp": "Juan Perez"
-  }
-]
+[{"UserName":"SMartinez","Password":"123","HorasDisponibles":[],"Pacientes":[],"NombreAp":"Sebastian Martinez"},{"UserName":"JPerez","Password":"123","HorasDisponibles":[],"Pacientes":[],"NombreAp":"Juan Perez"}]
