@@ -46,15 +46,12 @@ namespace ProyectoConsultorio
         }
         private void ManejoInventarios(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
-            var invWindow = new InvWindow();
+            var invWindow = new InvWindow(sec);
             invWindow.Show(); // Muestra la ventana secundaria
             this.Close();
         }
 
-        private void CerrarVentana(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
-        {
-            this.Close(); // Cierra la ventana
-        }
+        
 
 
     }
