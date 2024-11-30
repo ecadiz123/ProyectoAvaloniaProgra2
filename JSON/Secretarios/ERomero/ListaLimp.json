@@ -1,1 +1,28 @@
-null
+[
+  {
+    "EmpresaContratista": "Empresa de Limpieza 1",
+    "EstadoTurno": 2,
+    "Rut": 98765432,
+    "Edad": 45,
+    "Nombre": "Carlos",
+    "Apellidomaterno": "Rodriguez",
+    "Apellidopaterno": "Lopez",
+    "Telefono": 987654321,
+    "Fechanacimiento": "1978-05-22T00:00:00",
+    "Digitoverificador": 5,
+    "Email": "clopez@mail.com"
+  },
+  {
+    "EmpresaContratista": "Empresa de Limpieza 1",
+    "EstadoTurno": 1,
+    "Rut": 12345900,
+    "Edad": 31,
+    "Nombre": "Ana",
+    "Apellidomaterno": "Pereira",
+    "Apellidopaterno": "Perez",
+    "Telefono": 23123654,
+    "Fechanacimiento": "1990-11-15T00:00:00",
+    "Digitoverificador": 7,
+    "Email": "ppereira@mail.com"
+  }
+]

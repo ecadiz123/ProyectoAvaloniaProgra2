@@ -1,1 +1,33 @@
-{}
+{
+  "InsumoLimpieza": [
+    {
+      "Nombre": "Cloro",
+      "Cantidad": 1
+    },
+    {
+      "Nombre": "Desinfectante",
+      "Cantidad": 2
+    },
+    {
+      "Nombre": "Toallas Desinfectantes",
+      "Cantidad": 5
+    },
+    {
+      "Nombre": "Jabón Líquido",
+      "Cantidad": 3
+    }
+  ],
+  "SeguridadDeTurno": {
+    "EmpresaContratista": "Protección y Seguridad S.A.",
+    "EstadoTurno": 0,
+    "Rut": 12345678,
+    "Edad": 37,
+    "Nombre": "Laura",
+    "Apellidomaterno": "Martinez",
+    "Apellidopaterno": "Gonzalez",
+    "Telefono": 998877665,
+    "Fechanacimiento": "1986-09-10T00:00:00",
+    "Digitoverificador": 9,
+    "Email": "lgonzalez@mail.com"
+  }
+}
