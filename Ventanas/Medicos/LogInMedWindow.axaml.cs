@@ -24,8 +24,11 @@ namespace ProyectoConsultorio
 
                 //Si login no tira error
 
-                var medMenuWindow = new MedMenuWindow();
-                medMenuWindow.medico = medicoUsuario;
+
+                //Medico Usuario se va a pasar entre todas las ventanas, por lo que se coloca en constructor
+                //para confirmar que se este pasando
+                var medMenuWindow = new MedMenuWindow(medicoUsuario);
+             
                 medMenuWindow.Show();// Muestra la ventana secundaria
 
                 this.Close();

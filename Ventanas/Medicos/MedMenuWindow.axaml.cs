@@ -8,14 +8,15 @@ namespace ProyectoConsultorio
     public partial class MedMenuWindow : Window
     {
         public Medico medico;
-        public MedMenuWindow()
-        {
+        public MedMenuWindow(Medico med)
+        {   
+            this.medico = med;
             InitializeComponent();
         }
         private void VerAgendada(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             var verMedHoraWindow = new VerMedHoraWindow(this.medico);
-            verMedHoraWindow.med=this.medico;
+            
             verMedHoraWindow.Show(); // Muestra la ventana secundaria
             this.Close();
         }
@@ -30,7 +31,7 @@ namespace ProyectoConsultorio
         private void ManejoFichas(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             var listaFichaWindow = new ListaFichaWindow(this.medico);
-            listaFichaWindow.med = this.medico;
+           
             listaFichaWindow.Show(); // Muestra la ventana secundaria
             this.Close();
         }
