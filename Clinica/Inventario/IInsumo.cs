@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoConsultorio.Clinica.Inventario
 {
-    public  interface IInsumo
+    public interface IInsumo
     {
         string Nombre { get; set; }
         int Cantidad { get; set; }
@@ -15,3 +15,4 @@ namespace ProyectoConsultorio.Clinica.Inventario
         void RestarCantidad(int c);
     }
 }
+
