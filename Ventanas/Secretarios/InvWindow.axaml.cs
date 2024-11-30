@@ -22,6 +22,11 @@ namespace ProyectoConsultorio
         {
             InitializeComponent();
         }
+        public InvWindow(Secretario sec)
+        {
+            this.secretario = secretario;
+            InitializeComponent();
+        }
 
         // Volver al menú
         private void VolverMenu(object sender, RoutedEventArgs e)
