@@ -17,11 +17,12 @@ namespace ProyectoConsultorio.Clinica.Infraestructura
 
        
        
-        internal List<InsumoLimpieza> InsumoLimpieza { get => insumoLimpieza; set => insumoLimpieza = value; }
+        public List<InsumoLimpieza> InsumoLimpieza { get => insumoLimpieza; set => insumoLimpieza = value; }
+        public Seguridad SeguridadDeTurno { get => seguridadDeTurno; set => seguridadDeTurno = value; }
 
         public void CambiodeTurno(Seguridad Entra)
         {
-            seguridadDeTurno= Entra;
+            SeguridadDeTurno= Entra;
         }
 
         public void AddInsumoCantidad(IInsumo insumo, int c)

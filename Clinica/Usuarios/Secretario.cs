@@ -38,6 +38,8 @@ namespace ProyectoConsultorio.Clinica.Usuarios
         public SalaDeEspera Sala { get => sala; set => sala = value; }
         public List<Box> Box { get => box; set => box = value; }
 
+        //NO COLOQUEN CONSTRUCTORES, NEWTONSOFT NO LEE JSON CON 
+        //CONSTRUCTORES QUE NO SEAN EL DEFAULT
         public void LogIn(string username, string password)
         {
             StreamReader usuariocontrasena = new StreamReader("../../../JSON/Secretarios/" + username + "/LogIn.json");
@@ -54,6 +56,8 @@ namespace ProyectoConsultorio.Clinica.Usuarios
                 this.path = "../../../JSON/Secretarios/" + username + "/";
                 JsonSalaEspera();
                 JsonListaBox();
+                JsonSeguridad();
+                JsonLimpieza();
                 JsonMedicos();
                 
             }
@@ -65,11 +69,7 @@ namespace ProyectoConsultorio.Clinica.Usuarios
             string jsonBox = JsonConvert.SerializeObject(this.box,Formatting.Indented);
             sr1.WriteLine(jsonBox);
             sr1.Close();
-            //Guarda estado medicos
-            StreamWriter sr2 = new StreamWriter(this.path + "ListaMedicos.json");
-            string jsonLMed = JsonConvert.SerializeObject(this.medicosClinica, Formatting.Indented);
-            sr2.WriteLine(jsonLMed);
-            sr2.Close();
+            
             //Guarda Estados sala de espera
             StreamWriter sr3 = new StreamWriter(this.path + "SalaDeEspera.json");
             string Sesp = JsonConvert.SerializeObject(this.sala, Formatting.Indented);
@@ -85,6 +85,11 @@ namespace ProyectoConsultorio.Clinica.Usuarios
             string jsonSeg = JsonConvert.SerializeObject(this.Seguridad, Formatting.Indented);
             sr5.WriteLine(jsonSeg);
             sr5.Close();
+            //Se guardan los estados de los medicos con sus metodos
+            foreach(Medico med in  this.MedicosClinica)
+            {
+                med.LogOff();
+            }
         }
         public void AñadirPaciente(Medico medicoAtiende, Paciente nuevoPaciente)
         {
@@ -127,7 +132,16 @@ namespace ProyectoConsultorio.Clinica.Usuarios
             string json = sr.ReadToEnd();
             sr.Close();
             List<Medico> medJson = JsonConvert.DeserializeObject<List<Medico>>(json);
-            this.medicosClinica = medJson;
+            
+            //Ahora se le colocan los valores de los json a cada medico
+            
+            foreach (Medico medico in medJson)
+            {
+                medico.RecuperarJsonLogIn(medico.UserName);
+                medico.RecuperarPacientesJson();
+                medico.RecuperarhorasDispJson();
+            }
+            this.MedicosClinica = medJson;
         }
 
 
@@ -136,7 +150,7 @@ namespace ProyectoConsultorio.Clinica.Usuarios
             StreamReader sr = new StreamReader(this.path + "SalaDeEspera.json");
             string json = sr.ReadToEnd();
             sr.Close();
-            var SEsperaJson = JsonConvert.DeserializeObject<SalaDeEspera>(json);
+            SalaDeEspera SEsperaJson = JsonConvert.DeserializeObject<SalaDeEspera>(json);
             this.sala = SEsperaJson;
 
             

@@ -28,6 +28,9 @@ namespace ProyectoConsultorio.Clinica.Usuarios
         public List<Paciente> Pacientes { get => pacientes; set => pacientes = value; }
         public string NombreAp { get => nombreAp; set => nombreAp = value; }
 
+        //NO COLOQUEN CONSTRUCTORES, NEWTONSOFT NO LEE JSON CON 
+        //CONSTRUCTORES QUE NO SEAN EL DEFAULT
+
         public void LogIn(string username, string password)
         {   
          
@@ -69,6 +72,18 @@ namespace ProyectoConsultorio.Clinica.Usuarios
         public void ElimHoraDisponible(DateTime elimHora)
         {
             HorasDisponibles.Remove(elimHora);
+        }
+        //metodo para recuperar info en secretario
+        public void RecuperarJsonLogIn(string username)
+        {
+            StreamReader usuariocontrasena = new StreamReader("../../../JSON/Medicos/" + username + "/LogIn.json");
+            string recuperado = usuariocontrasena.ReadToEnd();
+            usuariocontrasena.Close();
+            Medico medRecuperado = JsonConvert.DeserializeObject<Medico>(recuperado);
+            this.UserName = username;
+            this.Password = medRecuperado.Password;
+            this.nombreAp = medRecuperado.nombreAp;
+            this.path = "../../../JSON/Medicos/" + username + "/";
         }
         public void RecuperarPacientesJson()
         {

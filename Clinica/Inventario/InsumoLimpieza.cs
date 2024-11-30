@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoConsultorio.Clinica.Inventario
 {
-    internal class InsumoLimpieza: IInsumo
+    public class InsumoLimpieza: IInsumo
     {
         private string nombre;
         private int cantidad;

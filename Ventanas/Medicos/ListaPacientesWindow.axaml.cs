@@ -12,6 +12,10 @@ namespace ProyectoConsultorio
     public partial class ListaPacientesWindow : Window
     {
         public Medico med;
+        public ListaPacientesWindow()
+        {
+            InitializeComponent();
+        }
         public ListaPacientesWindow(Medico medico)
         {
             this.med = medico;

@@ -8,7 +8,7 @@ Icon="/Recursos/Imagenes/icono_margen.png"
         Title="Modificador de horas" Width="1100" Height="800" Background="#1BA1E2">
 
 	<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
-		<Calendar x:Name="calendar" SelectionMode="MultipleRange"/>
+		
 		<ListBox Margin="10" Width="200" Height="200" x:Name="LbHdisp"
 						 HorizontalAlignment="Center">
 			
@@ -20,7 +20,7 @@ Icon="/Recursos/Imagenes/icono_margen.png"
 				 HorizontalAlignment="Center" x:Name="LbDoctores">
 					
 				</ListBox>
-				<Button Content="Confirmar hora" Click="VolverMenu" HorizontalContentAlignment="Center" Margin="10" VerticalContentAlignment="Center" Width="150" Height="30"/>
+				<Button Content="Confirmar hora" Click="ConfirmarH" HorizontalContentAlignment="Center" Margin="10" VerticalContentAlignment="Center" Width="150" Height="30"/>
 			</StackPanel>
 		</Border>
 	</StackPanel>
