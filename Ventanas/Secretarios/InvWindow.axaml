@@ -6,7 +6,7 @@
         xmlns:vm="using:ProyectoConsultorio.ViewModels"
         Icon="/Recursos/Imagenes/icono_margen.png"
         WindowState="Maximized"
-        Title="Manejo de Inventario" Width="1400" Height="700" Background="#1BA1E2">
+        Title="Manejo de Inventario" Background="#1BA1E2">
 
 	<ScrollViewer>
 	<StackPanel Orientation="Horizontal" Margin="10">
@@ -19,15 +19,22 @@
 			<!-- Sala de Espera -->
 			<TabItem Header="Sala de espera">
 				<StackPanel Orientation="Horizontal">
-					<StackPanel HorizontalAlignment="Center" Orientation="Vertical" Width="600" Height="400">
-						<TextBlock HorizontalAlignment="Center" Text="Limpieza"/>
+					<Border Background="#c1d6f7"
+					 BorderBrush="Black"
+					 BorderThickness="2"
+					 CornerRadius="3"
+					 Padding="10" Margin="5">
+					<StackPanel HorizontalAlignment="Center" Orientation="Vertical" Width="1000" Height="400">
+						<TextBlock HorizontalAlignment="Center" Text="Limpieza" FontSize="20" FontWeight="ExtraBold"/>
 						<StackPanel>
 							<StackPanel Orientation="Horizontal" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center">
 								<StackPanel Orientation="Vertical" VerticalAlignment="Center">
-									<TextBlock Margin="10" Text="Tabla Insumo  -  Cantidad"/>
+									<TextBlock FontSize="15" Margin="10" Text="Tabla Insumo  -  Cantidad"/>
+									<TextBlock Margin="10" Text="1. Escriba el nombre del insumo y presione Ingresar"/>
+									<TextBlock Margin="10" Text="2. Vuelva a ingresar el nombre y edite la cantidad usando + o -"/>
 									<ListBox x:Name="lbLimpiezaSalaEspera"/>
 								</StackPanel>
-								<StackPanel Orientation="Vertical" Margin="50">
+								<StackPanel Orientation="Vertical" Margin="10">
 									<TextBlock Margin="5" Text="Ingrese el nombre del nuevo insumo"/>
 									<TextBox Margin="5" x:Name="tbInsumoSalaEspera" Watermark="Escriba acá"/>
 									<Button Margin="5" Content="Ingresar" x:Name="btAddNewInsumoSalaEspera" Click="btAddNewInsumoSalaEspera_Click"/>
@@ -41,22 +48,31 @@
 							</StackPanel>
 						</StackPanel>
 					</StackPanel>
+					</Border>
 				</StackPanel>
+				
 			</TabItem>
 
 			<!-- Box 1 -->
 			<TabItem Header="Box 1">
 				<StackPanel Orientation="Horizontal" Margin="20">
 					<!-- Limpieza -->
-					<StackPanel HorizontalAlignment="Center" Orientation="Vertical" Width="600" Height="400">
-						<TextBlock HorizontalAlignment="Center" Text="Limpieza"/>
+					<StackPanel HorizontalAlignment="Center" Orientation="Vertical" Width="850" Height="400">
+						<TextBlock HorizontalAlignment="Center" Text="Limpieza" FontSize="20" FontWeight="ExtraBold"/>
 						<StackPanel>
-							<StackPanel Orientation="Horizontal" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+							<Border Background="#c1d6f7"
+								BorderBrush="Black"
+								 BorderThickness="2"
+								 CornerRadius="3"
+								Padding="10" Margin="5">
+							<StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
 								<StackPanel Orientation="Vertical" VerticalAlignment="Center">
-									<TextBlock Margin="10" Text="Tabla Insumo de Limpieza - Cantidad"/>
+									<TextBlock  FontSize="15" Margin="10" Text="Tabla Insumo de Limpieza - Cantidad"/>
+									<TextBlock Margin="10" Text="1. Escriba el nombre del insumo y presione Ingresar"/>
+									<TextBlock Margin="10" Text="2. Vuelva a ingresar el nombre y edite la cantidad usando + o -"/>
 									<ListBox x:Name="lbLimpiezaBox1"/>
 								</StackPanel>
-								<StackPanel Orientation="Vertical" Margin="50">
+								<StackPanel Orientation="Vertical" Margin="10">
 									<TextBlock Margin="5" Text="Ingrese el nombre del nuevo insumo de limpieza"/>
 									<TextBox Margin="5" x:Name="tbInsumoBox1" Watermark="Escriba acá"/>
 									<Button Margin="5" Content="Ingresar" x:Name="btAddNewInsumoBox1" Click="btAddNewInsumoBox1_Click"/>
@@ -68,19 +84,27 @@
 									</StackPanel>
 								</StackPanel>
 							</StackPanel>
+							</Border>
 						</StackPanel>
 					</StackPanel>
 
 					<!-- Medicamentos -->
-					<StackPanel HorizontalAlignment="Center" Orientation="Vertical" Width="600" Height="400">
-						<TextBlock HorizontalAlignment="Center" Text="Medicamentos"/>
+					<StackPanel HorizontalAlignment="Center" Orientation="Vertical" Width="850" Height="400">
+						<TextBlock HorizontalAlignment="Center" Text="Medicamentos" FontSize="20" FontWeight="ExtraBold"/>
 						<StackPanel>
-							<StackPanel Orientation="Horizontal" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center">
-								<StackPanel Orientation="Vertical" VerticalAlignment="Center">
-									<TextBlock Margin="10" Text="Tabla Medicamento - Cantidad"/>
+							<Border Background="#c1d6f7"
+								BorderBrush="Black"
+								 BorderThickness="2"
+								 CornerRadius="3"
+								Padding="10" Margin="5">
+							<StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
+								<StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="40">
+									<TextBlock FontSize="15" Margin="10" Text="Tabla Medicamento - Cantidad"/>
+									<TextBlock Margin="10" Text="1. Escriba el nombre del insumo y presione Ingresar"/>
+									<TextBlock Margin="10" Text="2. Vuelva a ingresar el nombre y edite la cantidad usando + o -"/>
 									<ListBox x:Name="lbMedicamentosBox1"/>
 								</StackPanel>
-								<StackPanel Orientation="Vertical" Margin="50">
+								<StackPanel Orientation="Vertical" Margin="10">
 									<TextBlock Margin="5" Text="Ingrese el nombre del nuevo medicamento"/>
 									<TextBox Margin="5" x:Name="tbMedicamentoBox1" Watermark="Escriba acá"/>
 									<Button Margin="5" Content="Ingresar" x:Name="btAddNewMedicamentoBox1" Click="btAddNewMedicamentoBox1_Click"/>
@@ -92,6 +116,7 @@
 									</StackPanel>
 								</StackPanel>
 							</StackPanel>
+							</Border>
 						</StackPanel>
 					</StackPanel>
 				</StackPanel>
@@ -102,15 +127,22 @@
 			<TabItem Header="Box 2">
 				<StackPanel Orientation="Horizontal" Margin="20">
 					<!-- Limpieza -->
-					<StackPanel HorizontalAlignment="Center" Orientation="Vertical" Width="600" Height="400">
-						<TextBlock HorizontalAlignment="Center" Text="Limpieza"/>
+					<StackPanel HorizontalAlignment="Center" Orientation="Vertical" Width="850" Height="400">
+						<TextBlock HorizontalAlignment="Center" Text="Limpieza" FontSize="20" FontWeight="ExtraBold"/>
 						<StackPanel>
-							<StackPanel Orientation="Horizontal" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+							<Border Background="#c1d6f7"
+								BorderBrush="Black"
+								 BorderThickness="2"
+								 CornerRadius="3"
+								 Padding="10" Margin="5">
+							<StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
 								<StackPanel Orientation="Vertical" VerticalAlignment="Center">
-									<TextBlock Margin="10" Text="Tabla Insumo de Limpieza - Cantidad"/>
+									<TextBlock FontSize="15" Margin="10" Text="Tabla Insumo de Limpieza - Cantidad"/>
+									<TextBlock Margin="10" Text="1. Escriba el nombre del insumo y presione Ingresar"/>
+									<TextBlock Margin="10" Text="2. Vuelva a ingresar el nombre y edite la cantidad usando + o -"/>
 									<ListBox x:Name="lbLimpiezaBox2"/>
 								</StackPanel>
-								<StackPanel Orientation="Vertical" Margin="50">
+								<StackPanel Orientation="Vertical" Margin="10">
 									<TextBlock Margin="5" Text="Ingrese el nombre del nuevo insumo de limpieza"/>
 									<TextBox Margin="5" x:Name="tbInsumoBox2" Watermark="Escriba acá"/>
 									<Button Margin="5" Content="Ingresar" x:Name="btAddNewInsumoBox2" Click="btAddNewInsumoBox2_Click"/>
@@ -122,19 +154,27 @@
 									</StackPanel>
 								</StackPanel>
 							</StackPanel>
+							</Border>
 						</StackPanel>
 					</StackPanel>
 
 					<!-- Medicamentos -->
-					<StackPanel HorizontalAlignment="Center" Orientation="Vertical" Width="600" Height="400">
-						<TextBlock HorizontalAlignment="Center" Text="Medicamentos"/>
+					<StackPanel HorizontalAlignment="Center" Orientation="Vertical" Width="850" Height="400">
+						<TextBlock HorizontalAlignment="Center" Text="Medicamentos" FontSize="20" FontWeight="ExtraBold"/>
 						<StackPanel>
-							<StackPanel Orientation="Horizontal" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center">
-								<StackPanel Orientation="Vertical" VerticalAlignment="Center">
-									<TextBlock Margin="10" Text="Tabla Medicamento - Cantidad"/>
+							<Border Background="#c1d6f7"
+								BorderBrush="Black"
+								 BorderThickness="2"
+								 CornerRadius="3"
+								 Padding="10" Margin="5">
+							<StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
+								<StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="40">
+									<TextBlock FontSize="15" Margin="10" Text="Tabla Medicamento - Cantidad"/>
+									<TextBlock Margin="10" Text="1. Escriba el nombre del insumo y presione Ingresar"/>
+									<TextBlock Margin="10" Text="2. Vuelva a ingresar el nombre y edite la cantidad usando + o -"/>
 									<ListBox x:Name="lbMedicamentosBox2"/>
 								</StackPanel>
-								<StackPanel Orientation="Vertical" Margin="50">
+								<StackPanel Orientation="Vertical" Margin="10">
 									<TextBlock Margin="5" Text="Ingrese el nombre del nuevo medicamento"/>
 									<TextBox Margin="5" x:Name="tbMedicamentoBox2" Watermark="Escriba acá"/>
 									<Button Margin="5" Content="Ingresar" x:Name="btAddNewMedicamentoBox2" Click="btAddNewMedicamentoBox2_Click"/>
@@ -146,6 +186,7 @@
 									</StackPanel>
 								</StackPanel>
 							</StackPanel>
+								</Border>
 						</StackPanel>
 					</StackPanel>
 				</StackPanel>
