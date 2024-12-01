@@ -10,11 +10,32 @@ using ProyectoConsultorio.Clinica.Usuarios;
 
 namespace ProyectoConsultorio
 {
+
+    public struct ComboBoxIngreso//Struct para manejar mas facil el comboBox
+    {
+        private string previsionString;
+        private prevision_t prev;
+
+        public string PrevisionString { get => previsionString; set => previsionString = value; }
+        public prevision_t Prev { get => prev; set => prev = value; }
+    }
     public partial class IngresoWindow : Window
     {
         public Secretario sec;
-      
-        
+
+        public List<ComboBoxIngreso> comboBoxIngreso = new List<ComboBoxIngreso>
+        {
+            new ComboBoxIngreso{ PrevisionString="Fonasa", Prev=prevision_t.FONASA},
+            new ComboBoxIngreso{ PrevisionString="Banmédica" , Prev=prevision_t.BANMEDICA},
+            new ComboBoxIngreso{ PrevisionString="Colmena" , Prev=prevision_t.COLMENA },
+            new ComboBoxIngreso{ PrevisionString="Consalud" , Prev=prevision_t.CONSALUD },
+            new ComboBoxIngreso{ PrevisionString="Cruz Blanca" , Prev=prevision_t.CRUZBLANCA },
+            new ComboBoxIngreso{ PrevisionString= "Nueva Mas Vida", Prev=prevision_t.NUEVA_MAS_VIDA },
+            new ComboBoxIngreso{ PrevisionString="Vida Tres" , Prev=prevision_t.VIDA_TRES },
+            new ComboBoxIngreso{ PrevisionString= "Fundacion Banco Estado", Prev=prevision_t.FUNDACION_BANCO_DEL_ESTADO }
+
+        };
+
         public IngresoWindow()
         {
             InitializeComponent();
@@ -23,7 +44,7 @@ namespace ProyectoConsultorio
         {
             this.sec = secr;
             InitializeComponent();
-          
+            CboxPrevision.ItemsSource = comboBoxIngreso;
             DataContext = this;
 
             var BoolTutor = this.FindControl<CheckBox>("BoolTutor");
@@ -50,8 +71,8 @@ namespace ProyectoConsultorio
                 PanelDatos4.IsVisible = false;
             };
         }
-       
-     
+
+
         private void VolverMenu(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             var menuWindow = new MenuWindow(sec);
@@ -63,10 +84,10 @@ namespace ProyectoConsultorio
         {
             try
             {
-                
+
                 Paciente pacienteNuevo = new Paciente();
                 pacienteNuevo.Nombre = tbNombres.Text;
-                
+
                 string[] R = tbRUT.Text.Split('-');
                 pacienteNuevo.Rut = int.Parse(R[0]);
                 pacienteNuevo.Digitoverificador = int.Parse(R[1]);
@@ -76,10 +97,11 @@ namespace ProyectoConsultorio
                 pacienteNuevo.Apellidomaterno = tbApellidoMaterno.Text;
                 pacienteNuevo.Telefono = int.Parse(tbTelefono.Text);
                 pacienteNuevo.Email = tbMail.Text;
+                pacienteNuevo.Prevision = ((ComboBoxIngreso)CboxPrevision.SelectedItem).Prev;//Se castea manual el tipo pq ComboBox devuelve un tipo object generico
 
-               
 
-                if(BoolTutor.IsChecked==true)
+
+                if (BoolTutor.IsChecked == true)
                 {
                     Tutor tutor = new Tutor();
                     tutor.Nombre = tbTNombres.Text;
@@ -93,7 +115,7 @@ namespace ProyectoConsultorio
                     tutor.Telefono = int.Parse(tbTTelefono.Text);
                     tutor.Email = tbTMail.Text;
                     pacienteNuevo.TieneTutor = true;
-                    pacienteNuevo.Tutor=tutor;
+                    pacienteNuevo.Tutor = tutor;
                 }
                 pacienteNuevo.Ficha = new FichaMedica();
                 //Ficha vacia ingresada
@@ -101,18 +123,19 @@ namespace ProyectoConsultorio
                 pacienteNuevo.Ficha.Observaciones = " ";
                 pacienteNuevo.Ficha.Alergias = " ";
                 pacienteNuevo.Ficha.GrupoSanguineo = GrupoSanguineo.A;
-                var ingresoHoraWindow = new IngresoHoraWindow(sec,pacienteNuevo);
-               
+                var ingresoHoraWindow = new IngresoHoraWindow(sec, pacienteNuevo);
+
                 ingresoHoraWindow.Show(); // Muestra la ventana secundaria
                 this.Close();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 ErrorWindow err = new ErrorWindow();
                 if (ex is NullReferenceException)
                 {
                     err.ErrorMsg.Text = "Ingrese Datos Validos";
-                }else
+                }
+                else
                 {
                     err.ErrorMsg.Text = ex.Message;
 
@@ -122,6 +145,7 @@ namespace ProyectoConsultorio
                 err.Show();
             }
         }
-
     }
 }
+
+    

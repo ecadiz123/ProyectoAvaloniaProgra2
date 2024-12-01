@@ -25,6 +25,7 @@ namespace ProyectoConsultorio
         public InvWindow(Secretario sec)
         {
             this.secretario = secretario;
+
             InitializeComponent();
         }
 

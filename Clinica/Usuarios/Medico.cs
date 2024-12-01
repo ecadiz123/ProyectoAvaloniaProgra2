@@ -84,6 +84,8 @@ namespace ProyectoConsultorio.Clinica.Usuarios
             this.Password = medRecuperado.Password;
             this.nombreAp = medRecuperado.nombreAp;
             this.path = "../../../JSON/Medicos/" + username + "/";
+            RecuperarhorasDispJson();
+            RecuperarPacientesJson();
         }
         public void RecuperarPacientesJson()
         {

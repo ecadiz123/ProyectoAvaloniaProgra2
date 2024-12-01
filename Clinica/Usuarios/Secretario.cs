@@ -69,7 +69,7 @@ namespace ProyectoConsultorio.Clinica.Usuarios
             string jsonBox = JsonConvert.SerializeObject(this.box,Formatting.Indented);
             sr1.WriteLine(jsonBox);
             sr1.Close();
-            
+          
             //Guarda Estados sala de espera
             StreamWriter sr3 = new StreamWriter(this.path + "SalaDeEspera.json");
             string Sesp = JsonConvert.SerializeObject(this.sala, Formatting.Indented);
@@ -138,8 +138,7 @@ namespace ProyectoConsultorio.Clinica.Usuarios
             foreach (Medico medico in medJson)
             {
                 medico.RecuperarJsonLogIn(medico.UserName);
-                medico.RecuperarPacientesJson();
-                medico.RecuperarhorasDispJson();
+                
             }
             this.MedicosClinica = medJson;
         }

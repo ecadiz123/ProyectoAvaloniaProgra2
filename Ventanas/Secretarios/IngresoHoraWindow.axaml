@@ -2,22 +2,33 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+		xmlns:struct="clr-namespace:ProyectoConsultorio;assembly=ProyectoConsultorio"
+		xmlns:local="clr-namespace:ProyectoConsultorio.Clinica.Usuarios;assembly=ProyectoConsultorio"
         x:Class="ProyectoConsultorio.IngresoHoraWindow"
 Icon="/Recursos/Imagenes/icono_margen.png"
 		WindowState="Maximized"
         Title="Modificador de horas" Width="1100" Height="800" Background="#1BA1E2">
 
 	<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
-		
-		<ListBox Margin="10" Width="200" Height="200" x:Name="LbHdisp"
-						 HorizontalAlignment="Center">
+		<Border Margin="10" BorderBrush="Black" BorderThickness="2" Padding="10" CornerRadius="10">
+			<StackPanel>
+			<TextBlock Text="Doctores" FontSize="20" Margin="10"/>
+			<ListBox Margin="10" Width="200" Height="200" x:Name="LbDoctores"
+						 HorizontalAlignment="Center" x:DataType="local:Medico"
+							DisplayMemberBinding="{Binding NombreAp}" 
+					 SelectionChanged="ListBox_SelectionChanged">
 			
 		</ListBox>
+				
+			</StackPanel>
+			</Border>
 		<Border Margin="10" BorderBrush="Black" BorderThickness="2" Padding="10" CornerRadius="10">
 			<StackPanel Orientation="Vertical" >
-				<TextBlock Text="Doctores" FontSize="20" Margin="10"/>
+				<TextBlock Text="Horas Disponibles" FontSize="20" Margin="10"/>
 				<ListBox Margin="10" Width="200" Height="200"
-				 HorizontalAlignment="Center" x:Name="LbDoctores">
+				 HorizontalAlignment="Center" x:Name="LbHdisp" x:DataType="struct:HoraFechaDTime" DisplayMemberBinding="{Binding HoraFecha}"
+						>
 					
 				</ListBox>
 				<Button Content="Confirmar hora" Click="ConfirmarH" HorizontalContentAlignment="Center" Margin="10" VerticalContentAlignment="Center" Width="150" Height="30"/>
