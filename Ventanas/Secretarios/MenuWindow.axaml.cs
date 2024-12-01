@@ -6,6 +6,12 @@ namespace ProyectoConsultorio
     public partial class MenuWindow : Window
     {
         public Secretario sec;
+        public MenuWindow()
+        {
+            //CONSTRUCTOR DEFAULT VA A ESTAR SOLO PORQUE EL PREVIEW DEL VISUAL STUDIO LO REQUIERE
+            //NO UTILIZAR
+            InitializeComponent();
+        }
         public MenuWindow(Secretario secr)
         {
             this.sec = secr;

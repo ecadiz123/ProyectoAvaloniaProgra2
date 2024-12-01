@@ -2,6 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:local="clr-namespace:ProyectoConsultorio;assembly=ProyectoConsultorio"
         x:Class="ProyectoConsultorio.ModHoraWindow"
 		Icon="/Recursos/Imagenes/icono_margen.png"
 		WindowState="Maximized"
@@ -11,13 +12,20 @@
 		<TabControl Margin="5">
 			<TabItem Header="Pacientes">
 				<StackPanel Margin="20">
-					<TextBlock Margin="0 5">Nombre       RUT</TextBlock>
-					<ListBox x:Name="lbPacientes"/>
+					<StackPanel Orientation="Horizontal" Spacing="200">
+						<TextBlock Margin="0 5">Doctor</TextBlock>
+						<TextBlock Margin="0 5">Paciente</TextBlock>
+
+					</StackPanel>
+					
+					<ListBox x:Name="lbPacientes" x:DataType="local:MedyPac" 
+							 DisplayMemberBinding="{Binding MedYPac}"/>
 				</StackPanel>
 			</TabItem>
 		</TabControl>
-		<StackPanel>
+		<StackPanel Orientation="Horizontal" Spacing="600">
 			<Button Content="Volver" Click="VolverMenu" HorizontalContentAlignment="Center" Margin="10" VerticalContentAlignment="Center" Width="75" Height="30"/>
+			<Button Content="Modificar" Click="Modificar" ></Button>
 		</StackPanel>
 	</StackPanel>
 		

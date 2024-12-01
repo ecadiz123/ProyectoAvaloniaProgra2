@@ -123,7 +123,7 @@ namespace ProyectoConsultorio
                 pacienteNuevo.Ficha.Observaciones = " ";
                 pacienteNuevo.Ficha.Alergias = " ";
                 pacienteNuevo.Ficha.GrupoSanguineo = GrupoSanguineo.A;
-                var ingresoHoraWindow = new IngresoHoraWindow(sec, pacienteNuevo);
+                var ingresoHoraWindow = new IngresoHoraWindow(sec, pacienteNuevo, true);
 
                 ingresoHoraWindow.Show(); // Muestra la ventana secundaria
                 this.Close();
