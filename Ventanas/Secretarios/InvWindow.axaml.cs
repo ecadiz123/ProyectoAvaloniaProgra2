@@ -11,7 +11,6 @@ namespace ProyectoConsultorio
     public partial class InvWindow : Window
     {
         private Secretario secretario;
-        // Listas para gestionar las cantidades de los insumos y medicamentos
         private List<Insumo> limpiezaSalaEspera = new List<Insumo>();
         private List<Insumo> insumosBox1 = new List<Insumo>();
         private List<Insumo> medicamentosBox1 = new List<Insumo>();
@@ -27,15 +26,12 @@ namespace ProyectoConsultorio
             this.secretario = secretario;
             InitializeComponent();
         }
-
-        // Volver al menú
         private void VolverMenu(object sender, RoutedEventArgs e)
         {
 
             this.Close();
         }
 
-        // Agregar un nuevo insumo en la Sala de Espera (solo insumos de limpieza)
         private void btAddNewInsumoSalaEspera_Click(object sender, RoutedEventArgs e)
         {
             string insumo = tbInsumoSalaEspera.Text.Trim();
@@ -193,13 +189,11 @@ namespace ProyectoConsultorio
         {
             var items = new List<string>();
 
-            // Agregar insumos de Box 1
             foreach (var insumo in insumosBox1)
                 items.Add($"{insumo.Nombre} - {insumo.Cantidad} (Insumo)");
 
             lbLimpiezaBox1.ItemsSource = items;
 
-            // Agregar medicamentos de Box 1
             var medicamentoItems = new List<string>();
             foreach (var medicamento in medicamentosBox1)
                 medicamentoItems.Add($"{medicamento.Nombre} - {medicamento.Cantidad} (Medicamento)");
