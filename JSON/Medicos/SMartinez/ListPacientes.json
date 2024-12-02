@@ -2,7 +2,7 @@
   {
     "MotivoConsulta": "Chequeo postoperatorio",
     "TieneTutor": false,
-    "Fechaatencion": "0001-01-01T00:00:00",
+    "Fechaatencion": "2024-12-10T09:30:00",
     "Ficha": {
       "GrupoSanguineo": 0,
       "Antecedentes": "Asma infantil, operación de apendicitis en 2015",
@@ -21,7 +21,6 @@
       "Digitoverificador": 0,
       "Email": ""
     },
-    "NCompleto": null,
     "Rut": 11223344,
     "Edad": 40,
     "Nombre": "Laura",
@@ -35,7 +34,7 @@
   {
     "MotivoConsulta": "Evaluación de presión arterial",
     "TieneTutor": false,
-    "Fechaatencion": "0001-01-01T00:00:00",
+    "Fechaatencion": "2024-12-16T10:00:00",
     "Ficha": {
       "GrupoSanguineo": 3,
       "Antecedentes": "Hipertensión controlada, fractura de tobillo en 2020",
@@ -54,7 +53,6 @@
       "Digitoverificador": 0,
       "Email": ""
     },
-    "NCompleto": null,
     "Rut": 44556677,
     "Edad": 55,
     "Nombre": "Pedro",
@@ -68,7 +66,7 @@
   {
     "MotivoConsulta": "Consulta prenatal",
     "TieneTutor": false,
-    "Fechaatencion": "0001-01-01T00:00:00",
+    "Fechaatencion": "2024-12-13T15:30:00",
     "Ficha": {
       "GrupoSanguineo": 1,
       "Antecedentes": "Diabetes tipo II desde 2018",
@@ -87,7 +85,6 @@
       "Digitoverificador": 0,
       "Email": ""
     },
-    "NCompleto": null,
     "Rut": 77889900,
     "Edad": 32,
     "Nombre": "Ana",

@@ -2,7 +2,7 @@
   {
     "MotivoConsulta": "Control general",
     "TieneTutor": true,
-    "Fechaatencion": "0001-01-01T00:00:00",
+    "Fechaatencion": "2024-12-01T12:30:00",
     "Ficha": {
       "GrupoSanguineo": 0,
       "Antecedentes": "Asma infantil, operación de apendicitis en 2015",
@@ -21,7 +21,6 @@
       "Digitoverificador": 2,
       "Email": "lmartinez@mail.com"
     },
-    "NCompleto": null,
     "Rut": 12345678,
     "Edad": 35,
     "Nombre": "Juan",
@@ -35,7 +34,7 @@
   {
     "MotivoConsulta": "Vacunación",
     "TieneTutor": false,
-    "Fechaatencion": "0001-01-01T00:00:00",
+    "Fechaatencion": "2024-12-06T12:00:00",
     "Ficha": {
       "GrupoSanguineo": 3,
       "Antecedentes": "Hipertensión controlada, fractura de tobillo en 2020",
@@ -54,7 +53,6 @@
       "Digitoverificador": 0,
       "Email": ""
     },
-    "NCompleto": null,
     "Rut": 23456789,
     "Edad": 28,
     "Nombre": "Maria",
@@ -68,7 +66,7 @@
   {
     "MotivoConsulta": "Revisión anual",
     "TieneTutor": true,
-    "Fechaatencion": "0001-01-01T00:00:00",
+    "Fechaatencion": "2024-12-20T10:30:00",
     "Ficha": {
       "GrupoSanguineo": 1,
       "Antecedentes": "Diabetes tipo II desde 2018",
@@ -87,7 +85,6 @@
       "Digitoverificador": 5,
       "Email": "Calle Tutores 789"
     },
-    "NCompleto": null,
     "Rut": 34567890,
     "Edad": 18,
     "Nombre": "Carlos",
