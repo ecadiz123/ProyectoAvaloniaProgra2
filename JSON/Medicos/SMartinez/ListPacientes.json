@@ -21,7 +21,7 @@
       "Digitoverificador": 0,
       "Email": ""
     },
-    "NCompleto": null,
+    "NCompleto": "Laura Castro",
     "Rut": 11223344,
     "Edad": 40,
     "Nombre": "Laura",
@@ -54,7 +54,7 @@
       "Digitoverificador": 0,
       "Email": ""
     },
-    "NCompleto": null,
+    "NCompleto": "Pedro Rojas",
     "Rut": 44556677,
     "Edad": 55,
     "Nombre": "Pedro",
@@ -87,7 +87,7 @@
       "Digitoverificador": 0,
       "Email": ""
     },
-    "NCompleto": null,
+    "NCompleto": "Ana Gonzalez",
     "Rut": 77889900,
     "Edad": 32,
     "Nombre": "Ana",
