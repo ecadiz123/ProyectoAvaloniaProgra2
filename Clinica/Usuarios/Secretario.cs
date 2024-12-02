@@ -59,7 +59,6 @@ namespace ProyectoConsultorio.Clinica.Usuarios
                 JsonSeguridad();
                 JsonLimpieza();
                 JsonMedicos();
-                
             }
         }
         public void LogOff()//GUarda estado de secretario en Json
@@ -104,7 +103,6 @@ namespace ProyectoConsultorio.Clinica.Usuarios
             //En lista de medicos
             MedicosClinica.Find(x => x.UserName == medicoAtiende.UserName).Pacientes.Remove(pacienteElim);
         }
-
          public void MarcarTurnoTExternoSeguridad(Seguridad texterno, EstadoTurno nuevoTurno)
            {
            seguridad.Find(x => x.Nombre == texterno.Nombre).EstadoTurno = nuevoTurno;
@@ -123,7 +121,6 @@ namespace ProyectoConsultorio.Clinica.Usuarios
             sr.Close();
             var boxJson = JsonConvert.DeserializeObject<List<Box>>(json);
             this.box = boxJson;
-
         }
      
         public void JsonMedicos()
@@ -151,13 +148,6 @@ namespace ProyectoConsultorio.Clinica.Usuarios
             sr.Close();
             SalaDeEspera SEsperaJson = JsonConvert.DeserializeObject<SalaDeEspera>(json);
             this.sala = SEsperaJson;
-
-            
-            
-            
-
-            
-
         }
         public void JsonLimpieza()
         {
@@ -166,13 +156,6 @@ namespace ProyectoConsultorio.Clinica.Usuarios
             sr.Close();
             var Limpiezajson = JsonConvert.DeserializeObject<List<Limpieza>>(json);
             this.Limpieza = Limpiezajson;
-
-
-
-
-
-
-
         }
         public void JsonSeguridad()
         {
@@ -181,13 +164,6 @@ namespace ProyectoConsultorio.Clinica.Usuarios
             sr.Close();
             var LSeg = JsonConvert.DeserializeObject<List<Seguridad>>(json);
             this.Seguridad= LSeg;
-
-
-
-
-
-
-
         }
     }
 }
