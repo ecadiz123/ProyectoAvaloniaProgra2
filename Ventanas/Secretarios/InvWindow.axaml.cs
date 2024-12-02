@@ -10,7 +10,7 @@ namespace ProyectoConsultorio
 {
     public partial class InvWindow : Window
     {
-        private Secretario secretario;
+        private Secretario sec;
         private List<Insumo> limpiezaSalaEspera = new List<Insumo>();
         private List<Insumo> insumosBox1 = new List<Insumo>();
         private List<Insumo> medicamentosBox1 = new List<Insumo>();
@@ -21,15 +21,16 @@ namespace ProyectoConsultorio
         {
             InitializeComponent();
         }
-        public InvWindow(Secretario sec)
+        public InvWindow(Secretario secre)
         {
-            this.secretario = secretario;
+            this.sec = secre;
 
             InitializeComponent();
         }
         private void VolverMenu(object sender, RoutedEventArgs e)
         {
-
+            var menuWindow = new MenuWindow(sec);
+            menuWindow.Show(); // Muestra la ventana secundaria
             this.Close();
         }
 

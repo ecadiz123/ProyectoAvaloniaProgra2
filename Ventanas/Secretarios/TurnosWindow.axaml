@@ -1,28 +1,23 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         x:Class="ProyectoConsultorio.TurnosWindow"
 		Icon="/Recursos/Imagenes/icono_margen.png"
 		WindowState="Maximized"
-        Title="Manejo de turnos" Width="800" Height="800" Background="#1BA1E2">
-
+        Title="Manejo de turnos" Width="800" Height="600" Background="#1BA1E2">
+	
+	<ScrollViewer>
 	<StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
 		<TabControl Margin="5">
 			<TabItem Header="Limpieza">
-				<StackPanel Margin="15">
-					<TextBlock Text="Nombre del empleado:"></TextBlock>
-					<TextBlock Text="Estado de turno:"></TextBlock>
-				</StackPanel>
+				<ListBox x:Name="lbLimpieza" Width="600" Height="300" />
 			</TabItem>
+
 			<TabItem Header="Seguridad">
-				<StackPanel Margin="15">
-					<TextBlock Text="Nombre del empleado:"></TextBlock>
-					<TextBlock Text="Estado de turno:"></TextBlock>
-				</StackPanel>
+				<ListBox x:Name="lbSeguridad" Width="600" Height="300" />
 			</TabItem>
 		</TabControl>
+
 		<Button Content="Volver" Click="VolverMenu" HorizontalContentAlignment="Center" Margin="10" VerticalContentAlignment="Center" Width="75" Height="30"/>
 	</StackPanel>
-		
+	</ScrollViewer>
 </Window>

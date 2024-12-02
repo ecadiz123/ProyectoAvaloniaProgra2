@@ -21,6 +21,7 @@
       "Digitoverificador": 0,
       "Email": ""
     },
+    "NCompleto": null,
     "Rut": 11223344,
     "Edad": 40,
     "Nombre": "Laura",
@@ -53,6 +54,7 @@
       "Digitoverificador": 0,
       "Email": ""
     },
+    "NCompleto": null,
     "Rut": 44556677,
     "Edad": 55,
     "Nombre": "Pedro",
@@ -85,6 +87,7 @@
       "Digitoverificador": 0,
       "Email": ""
     },
+    "NCompleto": null,
     "Rut": 77889900,
     "Edad": 32,
     "Nombre": "Ana",
