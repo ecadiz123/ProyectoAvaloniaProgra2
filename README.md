@@ -13,3 +13,4 @@ Medico 2
 Secretario
 - UserName: ERomero
 - Password: 123
+SI SE DESEAN GUARDAR LOS CAMBIOS HECHOS SE DEBE CERRAR SESIÓN
