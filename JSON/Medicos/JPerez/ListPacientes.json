@@ -21,7 +21,6 @@
       "Digitoverificador": 2,
       "Email": "lmartinez@mail.com"
     },
-    "NCompleto": "Juan Perez",
     "Rut": 12345678,
     "Edad": 35,
     "Nombre": "Juan",
@@ -54,7 +53,6 @@
       "Digitoverificador": 0,
       "Email": ""
     },
-    "NCompleto": "Maria Hernandez",
     "Rut": 23456789,
     "Edad": 28,
     "Nombre": "Maria",
@@ -87,7 +85,6 @@
       "Digitoverificador": 5,
       "Email": "Calle Tutores 789"
     },
-    "NCompleto": "Carlos Lopez",
     "Rut": 34567890,
     "Edad": 18,
     "Nombre": "Carlos",

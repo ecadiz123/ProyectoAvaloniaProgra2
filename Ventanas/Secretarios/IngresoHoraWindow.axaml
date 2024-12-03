@@ -32,7 +32,7 @@ Icon="/Recursos/Imagenes/icono_margen.png"
 					
 				</ListBox>
 				<StackPanel>
-					<Button Content="Volver" Click="VolverMenu" HorizontalContentAlignment="Center" Margin="10" VerticalContentAlignment="Center" Width="75" Height="30"/>
+					<Button Content="Volver" Click="VolverAtras" HorizontalContentAlignment="Center" Margin="10" VerticalContentAlignment="Center" Width="75" Height="30"/>
 					<Button Content="Confirmar hora" Click="ConfirmarH" HorizontalContentAlignment="Center" Margin="10" VerticalContentAlignment="Center" Width="150" Height="30"/>
 				</StackPanel>
 			</StackPanel>

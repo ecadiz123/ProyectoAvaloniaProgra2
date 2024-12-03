@@ -136,11 +136,6 @@ namespace ProyectoConsultorio
             LbHdisp.ItemsSource = hfecha;
         }
 
-        private void VolverMenu(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
-        {
-            var menuWindow = new MenuWindow(sec);
-            menuWindow.Show(); // Muestra la ventana secundaria
-            this.Close();
-        }
+       
     }
 }
